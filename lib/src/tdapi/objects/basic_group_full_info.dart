@@ -2,12 +2,7 @@ part of '../tdapi.dart';
 
 class BasicGroupFullInfo extends TdObject {
   /// Contains full information about a basic group
-  BasicGroupFullInfo(
-      {this.photo,
-      this.description,
-      this.creatorUserId,
-      this.members,
-      this.inviteLink});
+  BasicGroupFullInfo({this.photo, this.description, this.creatorUserId, this.members, this.inviteLink});
 
   /// [photo] Chat photo; may be null
   ChatPhoto? photo;
@@ -22,21 +17,21 @@ class BasicGroupFullInfo extends TdObject {
   List<ChatMember>? members;
 
   /// [inviteLink] Invite link for this group; available only after it has been generated at least once and only for the group creator
-  String? inviteLink;
+  ChatInviteLink? inviteLink;
 
   /// callback sign
   dynamic extra;
 
   /// Parse from a json
   BasicGroupFullInfo.fromJson(Map<String, dynamic> json) {
-    /* this.photo = ChatPhoto.fromJson(json['photo'] ?? <String, dynamic>{});
+    this.photo = ChatPhoto.fromJson(json['photo'] ?? <String, dynamic>{});
     this.description = json['description'];
     this.creatorUserId = json['creator_user_id'];
     this.members = List<ChatMember>.from((json['members'] ?? [])
       .map((item) => ChatMember.fromJson(item ?? <String, dynamic>{}))
       .toList());
-    this.inviteLink = json['invite_link'];
-    this.extra = json['@extra'] ?? ''; */
+    this.inviteLink = ChatInviteLink.fromJson(json['invite_link'] ?? <String, dynamic>{});
+    this.extra = json['@extra'] ?? '';
   }
 
   @override
@@ -46,8 +41,8 @@ class BasicGroupFullInfo extends TdObject {
       "photo": this.photo == null ? null : this.photo!.toJson(),
       "description": this.description,
       "creator_user_id": this.creatorUserId,
-      "members": this.members!.map((i) => i.toJson()).toList(),
-      "invite_link": this.inviteLink,
+      "members": List<ChatMember>.from(this.members ?? []).map((i) => i.toJson()).toList(),
+      "invite_link": this.inviteLink == null ? null : this.inviteLink!.toJson(),
     };
   }
 
