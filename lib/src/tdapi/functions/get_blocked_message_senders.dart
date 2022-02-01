@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class GetBlockedMessageSenders extends TdFunction {
   /// Returns users and chats that were blocked by the current user

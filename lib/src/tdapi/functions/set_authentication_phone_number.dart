@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class SetAuthenticationPhoneNumber extends TdFunction {
   /// Sets the phone number of the user and sends an authentication code to the user. Works only when the current authorization state is authorizationStateWaitPhoneNumber,. or if there is no pending authentication query and the current authorization state is authorizationStateWaitCode, authorizationStateWaitRegistration, or authorizationStateWaitPassword

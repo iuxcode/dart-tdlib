@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class SecretChatState extends TdObject {
   /// Describes the current secret chat state

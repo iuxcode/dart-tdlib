@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class GetAutoDownloadSettingsPresets extends TdFunction {
   /// Returns auto-download settings presets for the current user

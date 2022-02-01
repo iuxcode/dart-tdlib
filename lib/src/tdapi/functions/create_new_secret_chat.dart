@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class CreateNewSecretChat extends TdFunction {
   /// Creates a new secret chat. Returns the newly created chat

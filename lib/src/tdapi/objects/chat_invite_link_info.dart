@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class ChatInviteLinkInfo extends TdObject {
   /// Contains information about a chat invite link

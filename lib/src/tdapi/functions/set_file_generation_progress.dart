@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class SetFileGenerationProgress extends TdFunction {
   /// Informs TDLib on a file generation progress

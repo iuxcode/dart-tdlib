@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class GetMessageEmbeddingCode extends TdFunction {
   /// Returns an HTML code for embedding the message. Available only for messages in supergroups and channels with a username

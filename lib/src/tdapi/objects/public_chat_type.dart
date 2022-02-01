@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class PublicChatType extends TdObject {
   /// Describes a type of public chats

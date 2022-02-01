@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class GetNetworkStatistics extends TdFunction {
   /// Returns network data usage statistics. Can be called before authorization

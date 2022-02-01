@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class GetScopeNotificationSettings extends TdFunction {
   /// Returns the notification settings for chats of a given type

@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class FinishFileGeneration extends TdFunction {
   /// Finishes the file generation

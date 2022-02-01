@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class TestVectorIntObject extends TdObject {
   /// A simple object containing a vector of objects that hold a number; for testing only

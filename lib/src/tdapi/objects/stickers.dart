@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class Stickers extends TdObject {
   /// Represents a list of stickers

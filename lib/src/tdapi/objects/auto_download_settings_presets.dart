@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class AutoDownloadSettingsPresets extends TdObject {
   /// Contains auto-download settings presets for the user

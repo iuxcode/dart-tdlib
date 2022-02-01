@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class TextEntities extends TdObject {
   /// Contains a list of text entities

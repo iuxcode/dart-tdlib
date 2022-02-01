@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class RecoveryEmailAddress extends TdObject {
   /// Contains information about the current recovery email address

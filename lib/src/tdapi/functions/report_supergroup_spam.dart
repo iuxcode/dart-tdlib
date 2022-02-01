@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class ReportSupergroupSpam extends TdFunction {
   /// Reports some messages from a user in a supergroup as spam; requires administrator rights in the supergroup

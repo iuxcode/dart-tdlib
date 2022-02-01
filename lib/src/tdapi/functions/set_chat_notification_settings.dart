@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class SetChatNotificationSettings extends TdFunction {
   /// Changes the notification settings of a chat. Notification settings of a chat with the current user (Saved Messages) can't be changed

@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class SetCustomLanguagePack extends TdFunction {
   /// Adds or changes a custom local language pack to the current localization target

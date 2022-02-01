@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class GetFileExtension extends TdFunction {
   /// Returns the extension of a file, guessed by its MIME type. Returns an empty string on failure. Can be called synchronously

@@ -1,4 +1,4 @@
-part of 'tdapi.dart';
+part of 'main.dart';
 
 // todo: considering setExtra method or like that...
 abstract class TdFunction {

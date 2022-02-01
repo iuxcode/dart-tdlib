@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class TdlibParameters extends TdObject {
   /// Contains parameters for TDLib initialization

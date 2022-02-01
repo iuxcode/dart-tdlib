@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class InputSticker extends TdObject {
   /// Describes a sticker that needs to be added to a sticker set

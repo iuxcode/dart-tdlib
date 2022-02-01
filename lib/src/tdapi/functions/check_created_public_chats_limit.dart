@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class CheckCreatedPublicChatsLimit extends TdFunction {
   /// Checks whether the maximum number of owned public chats has been reached. Returns corresponding error if the limit was reached

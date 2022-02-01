@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class NetworkType extends TdObject {
   /// Represents the type of a network

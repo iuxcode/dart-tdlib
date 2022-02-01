@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class DiceStickers extends TdObject {
   /// Contains animated stickers which should be used for dice animation rendering

@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class SendMessage extends TdFunction {
   /// Sends a message. Returns the sent message

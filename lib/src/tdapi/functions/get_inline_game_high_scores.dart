@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class GetInlineGameHighScores extends TdFunction {
   /// Returns game high scores and some part of the high score table in the range of the specified user; for bots only

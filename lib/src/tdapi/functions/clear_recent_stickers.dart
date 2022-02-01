@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class ClearRecentStickers extends TdFunction {
   /// Clears the list of recently used stickers

@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class SetGroupCallParticipantIsSpeaking extends TdFunction {
   /// Informs TDLib that a group call participant speaking state has changed

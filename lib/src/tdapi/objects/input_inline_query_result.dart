@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class InputInlineQueryResult extends TdObject {
   /// Represents a single result of an inline query; for bots only

@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class GetCountries extends TdFunction {
   /// Returns information about existing countries. Can be called before authorization

@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class SetBackground extends TdFunction {
   /// Changes the background selected by the user; adds background to the list of installed backgrounds

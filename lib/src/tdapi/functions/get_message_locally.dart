@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class GetMessageLocally extends TdFunction {
   /// Returns information about a message, if it is available locally without sending network request. This is an offline request

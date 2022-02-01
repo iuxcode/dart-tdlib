@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class PollType extends TdObject {
   /// Describes the type of a poll

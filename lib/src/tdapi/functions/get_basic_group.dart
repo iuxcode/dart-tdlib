@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class GetBasicGroup extends TdFunction {
   /// Returns information about a basic group by its identifier. This is an offline request if the current user is not a bot

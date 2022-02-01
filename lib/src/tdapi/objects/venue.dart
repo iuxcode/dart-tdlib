@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class Venue extends TdObject {
   /// Describes a venue

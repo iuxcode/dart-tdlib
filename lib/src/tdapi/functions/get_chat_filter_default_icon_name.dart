@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class GetChatFilterDefaultIconName extends TdFunction {
   /// Returns default icon name for a filter. Can be called synchronously

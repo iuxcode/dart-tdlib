@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class CreateChatFilter extends TdFunction {
   /// Creates new chat filter. Returns information about the created chat filter

@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class InlineQueryResult extends TdObject {
   /// Represents a single result of an inline query

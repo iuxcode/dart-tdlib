@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class CountryInfo extends TdObject {
   /// Contains information about a country

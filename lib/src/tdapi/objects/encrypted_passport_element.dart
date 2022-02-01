@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class EncryptedPassportElement extends TdObject {
   /// Contains information about an encrypted Telegram Passport element; for bots only

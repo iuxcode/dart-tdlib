@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class GetTemporaryPasswordState extends TdFunction {
   /// Returns information about the current temporary password

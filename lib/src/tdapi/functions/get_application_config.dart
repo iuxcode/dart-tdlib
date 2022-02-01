@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class GetApplicationConfig extends TdFunction {
   /// Returns application config, provided by the server. Can be called before authorization

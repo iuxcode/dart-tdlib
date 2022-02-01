@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class KeyboardButton extends TdObject {
   /// Represents a single button in a bot keyboard

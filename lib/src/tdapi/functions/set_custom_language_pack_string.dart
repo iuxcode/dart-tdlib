@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class SetCustomLanguagePackString extends TdFunction {
   /// Adds, edits or deletes a string in a custom local language pack. Can be called before authorization

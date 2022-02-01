@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class CallId extends TdObject {
   /// Contains the call identifier

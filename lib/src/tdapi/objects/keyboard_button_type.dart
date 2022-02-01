@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class KeyboardButtonType extends TdObject {
   /// Describes a keyboard button type

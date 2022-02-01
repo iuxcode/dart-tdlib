@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class PageBlockCaption extends TdObject {
   /// Contains a caption of an instant view web page block, consisting of a text and a trailing credit

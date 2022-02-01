@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class PageBlockHorizontalAlignment extends TdObject {
   /// Describes a horizontal alignment of a table cell content

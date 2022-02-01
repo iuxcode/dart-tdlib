@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class InputMessageContent extends TdObject {
   /// The content of a message to send

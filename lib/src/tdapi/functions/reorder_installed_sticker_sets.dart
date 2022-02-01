@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class ReorderInstalledStickerSets extends TdFunction {
   /// Changes the order of installed sticker sets

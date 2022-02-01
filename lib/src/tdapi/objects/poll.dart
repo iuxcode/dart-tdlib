@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class Poll extends TdObject {
   /// Describes a poll

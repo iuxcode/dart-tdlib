@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class InputChatPhoto extends TdObject {
   /// Describes a photo to be set as a user profile or chat photo

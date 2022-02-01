@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class ChatReportReason extends TdObject {
   /// Describes the reason why a chat is reported

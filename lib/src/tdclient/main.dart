@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/services.dart';
-import 'package:tdlib/src/tdapi/tdapi.dart' show TdObject, TdFunction, convertToObject;
+import 'package:tdlib/src/tdapi/main.dart' show TdObject, TdFunction, convertToObject;
 import 'dart:convert' show json;
 
 class TdClient {

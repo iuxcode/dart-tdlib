@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class FormattedText extends TdObject {
   /// A text with some entities

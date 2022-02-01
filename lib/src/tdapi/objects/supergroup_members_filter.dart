@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class SupergroupMembersFilter extends TdObject {
   /// Specifies the kind of chat members to return in getSupergroupMembers

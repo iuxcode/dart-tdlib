@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class UserType extends TdObject {
   /// Represents the type of a user. The following types are possible: regular users, deleted users and bots

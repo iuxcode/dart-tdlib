@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class BankCardInfo extends TdObject {
   /// Information about a bank card

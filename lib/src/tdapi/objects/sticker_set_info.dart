@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class StickerSetInfo extends TdObject {
   /// Represents short information about a sticker set

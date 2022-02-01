@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class ValidateOrderInfo extends TdFunction {
   /// Validates the order information provided by a user and returns the available shipping options for a flexible invoice

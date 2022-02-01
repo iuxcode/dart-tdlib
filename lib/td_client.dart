@@ -1,3 +1,3 @@
 library td_client;
 
-export 'package:tdlib/src/tdclient/tdclient.dart';
+export './src/tdclient/main.dart';

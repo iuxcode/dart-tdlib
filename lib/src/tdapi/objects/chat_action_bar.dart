@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class ChatActionBar extends TdObject {
   /// Describes actions which should be possible to do through a chat action bar

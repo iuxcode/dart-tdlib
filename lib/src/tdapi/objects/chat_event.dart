@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class ChatEvent extends TdObject {
   /// Represents a chat event

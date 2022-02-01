@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class GetLogVerbosityLevel extends TdFunction {
   /// Returns current verbosity level of the internal logging of TDLib. Can be called synchronously

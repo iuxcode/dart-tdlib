@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class SetSupergroupUsername extends TdFunction {
   /// Changes the username of a supergroup or channel, requires owner privileges in the supergroup or channel

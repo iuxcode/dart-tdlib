@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class SendCallDebugInformation extends TdFunction {
   /// Sends debug information for a call

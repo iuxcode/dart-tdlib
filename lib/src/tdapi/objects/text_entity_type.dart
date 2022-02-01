@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class TextEntityType extends TdObject {
   /// Represents a part of the text which must be formatted differently

@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class TestBytes extends TdObject {
   /// A simple object containing a sequence of bytes; for testing only

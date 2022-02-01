@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class GetFile extends TdFunction {
   /// Returns information about a file; this is an offline request

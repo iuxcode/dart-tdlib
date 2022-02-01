@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class StorageStatistics extends TdObject {
   /// Contains the exact storage usage statistics split by chats and file type

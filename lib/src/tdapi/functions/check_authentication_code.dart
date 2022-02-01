@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class CheckAuthenticationCode extends TdFunction {
   /// Checks the authentication code. Works only when the current authorization state is authorizationStateWaitCode

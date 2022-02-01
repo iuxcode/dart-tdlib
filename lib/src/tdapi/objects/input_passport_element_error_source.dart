@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class InputPassportElementErrorSource extends TdObject {
   /// Contains the description of an error in a Telegram Passport element; for bots only

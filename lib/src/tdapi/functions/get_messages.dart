@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class GetMessages extends TdFunction {
   /// Returns information about messages. If a message is not found, returns null on the corresponding position of the result

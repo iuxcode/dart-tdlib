@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class SetName extends TdFunction {
   /// Changes the first and last name of the current user

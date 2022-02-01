@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class Ok extends TdObject {
   /// An object of this type is returned on a successful function call for certain functions

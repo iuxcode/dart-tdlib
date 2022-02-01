@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class DraftMessage extends TdObject {
   /// Contains information about a message draft

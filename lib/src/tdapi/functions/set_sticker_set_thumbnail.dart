@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class SetStickerSetThumbnail extends TdFunction {
   /// Sets a sticker set thumbnail; for bots only. Returns the sticker set

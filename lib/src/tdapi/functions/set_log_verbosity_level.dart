@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class SetLogVerbosityLevel extends TdFunction {
   /// Sets the verbosity level of the internal logging of TDLib. Can be called synchronously

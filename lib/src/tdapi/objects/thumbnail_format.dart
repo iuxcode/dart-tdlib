@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class ThumbnailFormat extends TdObject {
   /// Describes format of the thumbnail

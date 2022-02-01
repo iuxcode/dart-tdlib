@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class SearchBackground extends TdFunction {
   /// Searches for a background by its name

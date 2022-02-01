@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class BotCommand extends TdObject {
   /// Represents a command supported by a bot

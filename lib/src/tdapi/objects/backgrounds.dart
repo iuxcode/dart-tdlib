@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class Backgrounds extends TdObject {
   /// Contains a list of backgrounds

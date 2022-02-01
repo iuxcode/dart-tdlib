@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class CheckChatUsernameResult extends TdObject {
   /// Represents result of checking whether a username can be set for a chat

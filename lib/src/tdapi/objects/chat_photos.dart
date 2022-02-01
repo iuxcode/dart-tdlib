@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class ChatPhotos extends TdObject {
   /// Contains a list of chat or user profile photos

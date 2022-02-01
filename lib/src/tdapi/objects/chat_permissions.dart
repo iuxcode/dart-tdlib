@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class ChatPermissions extends TdObject {
   /// Describes actions that a user is allowed to take in a chat

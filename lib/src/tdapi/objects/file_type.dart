@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class FileType extends TdObject {
   /// Represents the type of a file

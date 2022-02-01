@@ -1,4 +1,4 @@
-part of 'tdapi.dart';
+part of 'main.dart';
 
 abstract class TdObject {
   static const CONSTRUCTOR = 'object';

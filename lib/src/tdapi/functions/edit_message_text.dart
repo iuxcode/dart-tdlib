@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class EditMessageText extends TdFunction {
   /// Edits the text of a message (or a text of a game message). Returns the edited message after the edit is completed on the server side

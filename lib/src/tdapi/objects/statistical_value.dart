@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class StatisticalValue extends TdObject {
   /// A value with information about its recent changes

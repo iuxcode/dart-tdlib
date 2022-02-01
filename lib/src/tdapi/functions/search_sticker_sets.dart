@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class SearchStickerSets extends TdFunction {
   /// Searches for ordinary sticker sets by looking for specified query in their title and name. Excludes installed sticker sets from the results

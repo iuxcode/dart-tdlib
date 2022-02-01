@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class TextParseMode extends TdObject {
   /// Describes the way the text should be parsed for TextEntities

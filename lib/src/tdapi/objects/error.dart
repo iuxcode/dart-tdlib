@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class TdError extends TdObject {
   /// An object of this type can be returned on every function call, in case of an error

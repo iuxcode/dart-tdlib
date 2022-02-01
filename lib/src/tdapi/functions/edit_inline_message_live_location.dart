@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class EditInlineMessageLiveLocation extends TdFunction {
   /// Edits the content of a live location in an inline message sent via a bot; for bots only

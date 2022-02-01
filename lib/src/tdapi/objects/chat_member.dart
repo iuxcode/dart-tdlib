@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class ChatMember extends TdObject {
   /// A user with information about joining/leaving a chat

@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class TestSquareInt extends TdFunction {
   /// Returns the squared received number; for testing only. This is an offline method. Can be called before authorization

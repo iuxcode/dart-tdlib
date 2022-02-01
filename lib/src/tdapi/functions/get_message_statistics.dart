@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class GetMessageStatistics extends TdFunction {
   /// Returns detailed statistics about a message. Can be used only if Message.can_get_statistics == true

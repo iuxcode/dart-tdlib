@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class SearchEmojis extends TdFunction {
   /// Searches for emojis by keywords. Supported only if the file database is enabled

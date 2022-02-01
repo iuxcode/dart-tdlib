@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class UserStatus extends TdObject {
   /// Describes the last time the user was online

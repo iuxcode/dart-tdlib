@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class LanguagePackStrings extends TdObject {
   /// Contains a list of language pack strings

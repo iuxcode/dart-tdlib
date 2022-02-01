@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class RemoveNotification extends TdFunction {
   /// Removes an active notification from notification list. Needs to be called only if the notification is removed by the current user

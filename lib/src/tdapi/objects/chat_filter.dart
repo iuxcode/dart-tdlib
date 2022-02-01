@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class ChatFilter extends TdObject {
   /// Represents a filter of user chats

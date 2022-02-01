@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class SetSupergroupStickerSet extends TdFunction {
   /// Changes the sticker set of a supergroup; requires can_change_info rights

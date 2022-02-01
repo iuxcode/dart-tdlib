@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class UserPrivacySettingRule extends TdObject {
   /// Represents a single rule for managing privacy settings

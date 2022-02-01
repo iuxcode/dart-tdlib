@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class Session extends TdObject {
   /// Contains information about one session in a Telegram application used by the current user. Sessions should be shown to the user in the returned order

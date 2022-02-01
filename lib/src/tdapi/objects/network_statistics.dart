@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class NetworkStatistics extends TdObject {
   /// A full list of available network statistic entries

@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class SetPollAnswer extends TdFunction {
   /// Changes the user answer to a poll. A poll in quiz mode can be answered only once

@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class RemoveTopChat extends TdFunction {
   /// Removes a chat from the list of frequently used chats. Supported only if the chat info database is enabled

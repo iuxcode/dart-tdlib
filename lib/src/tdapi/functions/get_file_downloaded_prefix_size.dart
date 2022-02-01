@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class GetFileDownloadedPrefixSize extends TdFunction {
   /// Returns file downloaded prefix size from a given offset

@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class PushMessageContent extends TdObject {
   /// Contains content of a push message notification

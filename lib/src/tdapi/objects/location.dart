@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class Location extends TdObject {
   /// Describes a location on planet Earth

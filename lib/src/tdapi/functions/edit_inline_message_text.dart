@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class EditInlineMessageText extends TdFunction {
   /// Edits the text of an inline text or game message sent via a bot; for bots only

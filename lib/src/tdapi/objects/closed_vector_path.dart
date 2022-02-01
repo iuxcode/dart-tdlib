@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class ClosedVectorPath extends TdObject {
   /// Represents a closed vector path. The path begins at the end point of the last command

@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class CallState extends TdObject {
   /// Describes the current call state

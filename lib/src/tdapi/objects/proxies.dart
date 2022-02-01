@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class Proxies extends TdObject {
   /// Represents a list of proxy servers

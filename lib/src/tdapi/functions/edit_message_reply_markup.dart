@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class EditMessageReplyMarkup extends TdFunction {
   /// Edits the message reply markup; for bots only. Returns the edited message after the edit is completed on the server side

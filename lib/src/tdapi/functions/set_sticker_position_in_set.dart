@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class SetStickerPositionInSet extends TdFunction {
   /// Changes the position of a sticker in the set to which it belongs; for bots only. The sticker set must have been created by the bot

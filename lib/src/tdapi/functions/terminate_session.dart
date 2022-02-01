@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class TerminateSession extends TdFunction {
   /// Terminates a session of the current user

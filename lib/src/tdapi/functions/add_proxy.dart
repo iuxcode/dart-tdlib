@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class AddProxy extends TdFunction {
   /// Adds a proxy server for network requests. Can be called before authorization

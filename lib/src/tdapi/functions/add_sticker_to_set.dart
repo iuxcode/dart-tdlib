@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class AddStickerToSet extends TdFunction {
   /// Adds a new sticker to a set; for bots only. Returns the sticker set

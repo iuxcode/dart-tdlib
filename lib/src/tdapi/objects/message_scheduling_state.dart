@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class MessageSchedulingState extends TdObject {
   /// Contains information about the time when a scheduled message will be sent

@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class AcceptCall extends TdFunction {
   /// Accepts an incoming call

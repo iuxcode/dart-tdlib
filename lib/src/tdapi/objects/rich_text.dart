@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class RichText extends TdObject {
   /// Describes a text object inside an instant-view web page

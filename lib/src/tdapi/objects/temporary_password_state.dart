@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class TemporaryPasswordState extends TdObject {
   /// Returns information about the availability of a temporary password, which can be used for payments

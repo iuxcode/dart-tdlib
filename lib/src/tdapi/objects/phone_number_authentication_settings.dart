@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class PhoneNumberAuthenticationSettings extends TdObject {
   /// Contains settings for the authentication of the user's phone number

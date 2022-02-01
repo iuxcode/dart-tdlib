@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class ScopeNotificationSettings extends TdObject {
   /// Contains information about notification settings for several chats

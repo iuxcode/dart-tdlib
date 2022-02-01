@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class GetTrendingStickerSets extends TdFunction {
   /// Returns a list of trending sticker sets. For the optimal performance the number of returned sticker sets is chosen by the library

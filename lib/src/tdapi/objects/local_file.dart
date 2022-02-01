@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class LocalFile extends TdObject {
   /// Represents a local file

@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class LeaveChat extends TdFunction {
   /// Removes the current user from chat members. Private and secret chats can't be left using this method

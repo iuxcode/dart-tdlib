@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class RemoveRecentlyFoundChat extends TdFunction {
   /// Removes a chat from the list of recently found chats

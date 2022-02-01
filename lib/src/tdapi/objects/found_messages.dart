@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class FoundMessages extends TdObject {
   /// Contains a list of messages found by a search

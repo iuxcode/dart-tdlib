@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class ChatMemberStatus extends TdObject {
   /// Provides information about the status of a member in a chat

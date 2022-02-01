@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class RemoveContacts extends TdFunction {
   /// Removes users from the contact list

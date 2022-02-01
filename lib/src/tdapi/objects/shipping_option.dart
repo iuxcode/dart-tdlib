@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class ShippingOption extends TdObject {
   /// One shipping option

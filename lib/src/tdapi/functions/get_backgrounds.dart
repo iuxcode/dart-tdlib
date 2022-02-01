@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class GetBackgrounds extends TdFunction {
   /// Returns backgrounds installed by the user

@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class RegisterUser extends TdFunction {
   /// Finishes user registration. Works only when the current authorization state is authorizationStateWaitRegistration

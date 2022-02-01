@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class PassportElements extends TdObject {
   /// Contains information about saved Telegram Passport elements

@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class SetUserPrivacySettingRules extends TdFunction {
   /// Changes user privacy settings

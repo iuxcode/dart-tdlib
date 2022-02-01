@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class DeletePassportElement extends TdFunction {
   /// Deletes a Telegram Passport element

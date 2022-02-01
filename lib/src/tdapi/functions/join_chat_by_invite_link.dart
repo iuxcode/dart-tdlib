@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class JoinChatByInviteLink extends TdFunction {
   /// Uses an invite link to add the current user to the chat if possible. The new member will not be added until the chat state has been synchronized with the server

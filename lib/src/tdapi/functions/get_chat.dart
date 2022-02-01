@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class GetChat extends TdFunction {
   /// Returns information about a chat by its identifier, this is an offline request if the current user is not a bot

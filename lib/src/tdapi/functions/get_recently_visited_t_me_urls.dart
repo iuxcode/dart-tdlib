@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class GetRecentlyVisitedTMeUrls extends TdFunction {
   /// Returns t.me URLs recently visited by a newly registered user

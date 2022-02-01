@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class GetPhoneNumberInfo extends TdFunction {
   /// Returns information about a phone number by its prefix. Can be called before authorization

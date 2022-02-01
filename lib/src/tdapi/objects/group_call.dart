@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class GroupCall extends TdObject {
   /// Describes a group call

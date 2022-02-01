@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class ConnectionState extends TdObject {
   /// Describes the current state of the connection to Telegram servers

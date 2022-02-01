@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class ConnectedWebsites extends TdObject {
   /// Contains a list of websites the current user is logged in with Telegram

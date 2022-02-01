@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class ChangeStickerSet extends TdFunction {
   /// Installs/uninstalls or activates/archives a sticker set

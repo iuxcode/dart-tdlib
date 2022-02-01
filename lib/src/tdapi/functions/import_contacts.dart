@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class ImportContacts extends TdFunction {
   /// Adds new contacts or edits existing contacts by their phone numbers; contacts' user identifiers are ignored

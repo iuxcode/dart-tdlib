@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class GetSupergroup extends TdFunction {
   /// Returns information about a supergroup or a channel by its identifier. This is an offline request if the current user is not a bot

@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class MessageStatistics extends TdObject {
   /// A detailed statistics about a message

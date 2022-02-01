@@ -1,4 +1,4 @@
-part of '../tdapi.dart';
+part of '../main.dart';
 
 class ChangePhoneNumber extends TdFunction {
   /// Changes the phone number of the user and sends an authentication code to the user's new phone number. On success, returns information about the sent code
