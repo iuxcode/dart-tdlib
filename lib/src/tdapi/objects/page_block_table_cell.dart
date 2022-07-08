@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class PageBlockTableCell extends TdObject {
   /// Represents a cell of a table

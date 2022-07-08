@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class DeleteSavedCredentials extends TdFunction {
   /// Deletes saved credentials for all payment provider bots

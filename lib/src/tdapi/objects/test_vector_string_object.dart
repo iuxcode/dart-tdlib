@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class TestVectorStringObject extends TdObject {
   /// A simple object containing a vector of objects that hold a string; for testing only

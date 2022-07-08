@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class TestGetDifference extends TdFunction {
   /// Forces an updates.getDifference call to the Telegram servers; for testing only

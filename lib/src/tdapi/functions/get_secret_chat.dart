@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetSecretChat extends TdFunction {
   /// Returns information about a secret chat by its identifier. This is an offline request

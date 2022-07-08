@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class CreateNewStickerSet extends TdFunction {
   /// Creates a new sticker set; for bots only. Returns the newly created sticker set

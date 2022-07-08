@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetChatMember extends TdFunction {
   /// Returns information about a single member of a chat

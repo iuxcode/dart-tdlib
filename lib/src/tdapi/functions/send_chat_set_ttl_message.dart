@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SendChatSetTtlMessage extends TdFunction {
   /// Changes the current TTL setting (sets a new self-destruct timer) in a secret chat and sends the corresponding message

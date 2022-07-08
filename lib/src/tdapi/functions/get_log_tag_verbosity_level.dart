@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetLogTagVerbosityLevel extends TdFunction {
   /// Returns current verbosity level for a specified TDLib internal log tag. Can be called synchronously

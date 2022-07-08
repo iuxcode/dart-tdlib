@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ToggleSupergroupIsAllHistoryAvailable extends TdFunction {
   /// Toggles whether the message history of a supergroup is available to new members; requires can_change_info rights

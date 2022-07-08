@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class CheckRecoveryEmailAddressCode extends TdFunction {
   /// Checks the 2-step verification recovery email address verification code

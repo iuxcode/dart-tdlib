@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class LogStream extends TdObject {
   /// Describes a stream to which TDLib internal log is written

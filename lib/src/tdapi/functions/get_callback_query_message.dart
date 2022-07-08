@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetCallbackQueryMessage extends TdFunction {
   /// Returns information about a message with the callback button that originated a callback query; for bots only

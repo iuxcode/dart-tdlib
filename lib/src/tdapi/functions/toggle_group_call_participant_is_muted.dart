@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ToggleGroupCallParticipantIsMuted extends TdFunction {
   /// Toggles whether a group call participant is muted, unmuted, or allowed to unmute themself

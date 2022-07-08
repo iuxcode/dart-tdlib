@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetChatListsToAddChat extends TdFunction {
   /// Returns chat lists to which the chat can be added. This is an offline request

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class NotificationSettingsScope extends TdObject {
   /// Describes the types of chats to which notification settings are applied

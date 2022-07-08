@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class StopPoll extends TdFunction {
   /// Stops a poll. A poll in a message can be stopped when the message has can_be_edited flag set

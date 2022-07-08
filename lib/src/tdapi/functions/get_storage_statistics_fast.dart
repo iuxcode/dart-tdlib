@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetStorageStatisticsFast extends TdFunction {
   /// Quickly returns approximate storage usage statistics. Can be called before authorization

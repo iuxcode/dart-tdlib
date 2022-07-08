@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetStickerSet extends TdFunction {
   /// Returns information about a sticker set by its identifier

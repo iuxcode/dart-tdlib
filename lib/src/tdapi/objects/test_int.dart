@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class TestInt extends TdObject {
   /// A simple object containing a number; for testing only

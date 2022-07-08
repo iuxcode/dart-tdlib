@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class AuthorizationState extends TdObject {
   /// Represents the current authorization state of the TDLib client

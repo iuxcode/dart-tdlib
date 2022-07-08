@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class DeleteProfilePhoto extends TdFunction {
   /// Deletes a profile photo

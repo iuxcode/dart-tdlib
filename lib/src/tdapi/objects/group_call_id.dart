@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GroupCallId extends TdObject {
   /// Contains the group call identifier

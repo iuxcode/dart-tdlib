@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class DeviceToken extends TdObject {
   /// Represents a data needed to subscribe for push notifications through registerDevice method. To use specific push notification service, the correct application platform must be specified and a valid server authentication data must be uploaded at https://my.telegram.org

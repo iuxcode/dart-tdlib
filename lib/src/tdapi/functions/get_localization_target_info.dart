@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetLocalizationTargetInfo extends TdFunction {
   /// Returns information about the current localization target. This is an offline request if only_local is true. Can be called before authorization

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class CallProtocol extends TdObject {
   /// Specifies the supported call protocols

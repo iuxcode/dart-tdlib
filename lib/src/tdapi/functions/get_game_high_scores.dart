@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetGameHighScores extends TdFunction {
   /// Returns the high scores for a game and some part of the high score table in the range of the specified user; for bots only

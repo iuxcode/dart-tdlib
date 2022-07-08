@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class TMeUrls extends TdObject {
   /// Contains a list of t.me URLs

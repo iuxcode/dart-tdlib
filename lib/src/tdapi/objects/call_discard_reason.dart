@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class CallDiscardReason extends TdObject {
   /// Describes the reason why a call was discarded

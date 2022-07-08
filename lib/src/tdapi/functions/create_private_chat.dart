@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class CreatePrivateChat extends TdFunction {
   /// Returns an existing chat corresponding to a given user

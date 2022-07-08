@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class DeleteFile extends TdFunction {
   /// Deletes a file from the TDLib file cache

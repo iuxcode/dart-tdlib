@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ClearImportedContacts extends TdFunction {
   /// Clears all imported contacts, contact list remains unchanged

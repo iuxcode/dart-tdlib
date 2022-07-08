@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SetScopeNotificationSettings extends TdFunction {
   /// Changes notification settings for chats of a given type

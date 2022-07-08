@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetChatHistory extends TdFunction {
   /// Returns messages in a chat. The messages are returned in a reverse chronological order (i.e., in order of decreasing message_id).. For optimal performance the number of returned messages is chosen by the library. This is an offline request if only_local is true

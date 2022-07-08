@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class Seconds extends TdObject {
   /// Contains a value representing a number of seconds

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SearchChatRecentLocationMessages extends TdFunction {
   /// Returns information about the recent locations of chat members that were sent to the chat. Returns up to 1 location message per user

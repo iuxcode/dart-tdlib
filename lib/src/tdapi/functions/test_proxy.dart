@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class TestProxy extends TdFunction {
   /// Sends a simple network request to the Telegram servers via proxy; for testing only. Can be called before authorization

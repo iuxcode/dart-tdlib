@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SavedCredentials extends TdObject {
   /// Contains information about saved card credentials

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class DatedFile extends TdObject {
   /// File with the date it was uploaded

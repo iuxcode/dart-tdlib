@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class MessageSendingState extends TdObject {
   /// Contains information about the sending state of the message

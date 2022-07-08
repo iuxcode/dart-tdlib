@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class DisconnectWebsite extends TdFunction {
   /// Disconnects website from the current user's Telegram account

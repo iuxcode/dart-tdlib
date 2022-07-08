@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SearchHashtags extends TdFunction {
   /// Searches for recently used hashtags by their prefix

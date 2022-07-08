@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class LogTags extends TdObject {
   /// Contains a list of available TDLib internal log tags

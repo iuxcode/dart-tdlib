@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class PaymentResult extends TdObject {
   /// Contains the result of a payment request

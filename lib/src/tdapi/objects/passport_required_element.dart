@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class PassportRequiredElement extends TdObject {
   /// Contains a description of the required Telegram Passport element that was requested by a service

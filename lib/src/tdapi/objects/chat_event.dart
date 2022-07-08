@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ChatEvent extends TdObject {
   /// Represents a chat event

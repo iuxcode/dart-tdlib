@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class CreateNewBasicGroupChat extends TdFunction {
   /// Creates a new basic group and sends a corresponding messageBasicGroupChatCreate. Returns the newly created chat

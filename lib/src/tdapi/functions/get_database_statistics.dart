@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetDatabaseStatistics extends TdFunction {
   /// Returns database statistics

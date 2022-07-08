@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetLogTags extends TdFunction {
   /// Returns list of available TDLib internal log tags, for example,

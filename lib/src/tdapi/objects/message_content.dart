@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class MessageContent extends TdObject {
   /// Contains the content of a message

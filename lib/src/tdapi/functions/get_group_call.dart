@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetGroupCall extends TdFunction {
   /// Returns information about a group call

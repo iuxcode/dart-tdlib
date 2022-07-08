@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetAttachedStickerSets extends TdFunction {
   /// Returns a list of sticker sets attached to a file. Currently only photos and videos can have attached sticker sets

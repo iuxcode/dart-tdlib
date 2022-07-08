@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GroupCallRecentSpeaker extends TdObject {
   /// Describes a recently speaking user in a group call

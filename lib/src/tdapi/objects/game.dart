@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class Game extends TdObject {
   /// Describes a game

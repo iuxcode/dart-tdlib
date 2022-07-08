@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetChatFilter extends TdFunction {
   /// Returns information about a chat filter by its identifier

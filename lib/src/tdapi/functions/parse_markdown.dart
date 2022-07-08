@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ParseMarkdown extends TdFunction {
   /// Parses Markdown entities in a human-friendly format, ignoring markup errors. Can be called synchronously

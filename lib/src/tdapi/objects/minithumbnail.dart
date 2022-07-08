@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class Minithumbnail extends TdObject {
   /// Thumbnail image of a very poor quality and low resolution

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SetChatDraftMessage extends TdFunction {
   /// Changes the draft message in a chat

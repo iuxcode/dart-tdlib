@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetPassportElement extends TdFunction {
   /// Returns one of the available Telegram Passport elements

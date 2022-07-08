@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class InputCredentials extends TdObject {
   /// Contains information about the payment method chosen by the user

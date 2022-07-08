@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SetChatDescription extends TdFunction {
   /// Changes information about a chat. Available for basic groups, supergroups, and channels. Requires can_change_info rights

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class DeleteSavedOrderInfo extends TdFunction {
   /// Deletes saved order info

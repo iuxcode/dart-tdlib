@@ -1,4 +1,4 @@
-part of 'main.dart';
+part of 'index.dart';
 
 // todo: considering setExtra method or like that...
 abstract class TdFunction {

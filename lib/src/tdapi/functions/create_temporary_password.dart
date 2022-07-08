@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class CreateTemporaryPassword extends TdFunction {
   /// Creates a new temporary password for processing payments

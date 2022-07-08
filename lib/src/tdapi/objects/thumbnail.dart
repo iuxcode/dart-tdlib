@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class Thumbnail extends TdObject {
   /// Represents a thumbnail

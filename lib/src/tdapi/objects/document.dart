@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class Document extends TdObject {
   /// Describes a document of any type

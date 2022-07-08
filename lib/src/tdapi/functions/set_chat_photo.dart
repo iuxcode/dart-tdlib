@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SetChatPhoto extends TdFunction {
   /// Changes the photo of a chat. Supported only for basic groups, supergroups and channels. Requires can_change_info rights

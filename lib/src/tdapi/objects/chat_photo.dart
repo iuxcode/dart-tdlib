@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ChatPhoto extends TdObject {
   /// Describes a chat or user profile photo

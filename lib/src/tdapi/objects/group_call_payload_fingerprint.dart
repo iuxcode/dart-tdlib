@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GroupCallPayloadFingerprint extends TdObject {
   /// Describes a payload fingerprint for interaction with tgcalls

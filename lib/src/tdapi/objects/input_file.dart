@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class InputFile extends TdObject {
   /// Points to a file

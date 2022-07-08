@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class LogVerbosityLevel extends TdObject {
   /// Contains a TDLib internal log verbosity level

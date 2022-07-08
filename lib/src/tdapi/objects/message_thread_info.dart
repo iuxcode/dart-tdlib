@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class MessageThreadInfo extends TdObject {
   /// Contains information about a message thread

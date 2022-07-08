@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SendPassportAuthorizationForm extends TdFunction {
   /// Sends a Telegram Passport authorization form, effectively sharing data with the service. This method must be called after getPassportAuthorizationFormAvailableElements if some previously available elements are going to be reused

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class StorageStatisticsByChat extends TdObject {
   /// Contains the storage usage statistics for a specific chat

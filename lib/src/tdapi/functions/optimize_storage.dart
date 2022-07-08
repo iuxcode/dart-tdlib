@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class OptimizeStorage extends TdFunction {
   /// Optimizes storage usage, i.e. deletes some files and returns new storage usage statistics. Secret thumbnails can't be deleted

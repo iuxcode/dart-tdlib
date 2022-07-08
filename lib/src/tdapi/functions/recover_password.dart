@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class RecoverPassword extends TdFunction {
   /// Recovers the password using a recovery code sent to an email address that was previously set up

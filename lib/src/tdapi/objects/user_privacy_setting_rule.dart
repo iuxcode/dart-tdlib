@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class UserPrivacySettingRule extends TdObject {
   /// Represents a single rule for managing privacy settings

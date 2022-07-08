@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class Close extends TdFunction {
   /// Closes the TDLib instance. All databases will be flushed to disk and properly closed. After the close completes, updateAuthorizationState with authorizationStateClosed will be sent. Can be called before initialization

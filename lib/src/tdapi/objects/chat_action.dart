@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ChatAction extends TdObject {
   /// Describes the different types of activity in a chat

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class Point extends TdObject {
   /// A point on a Cartesian plane

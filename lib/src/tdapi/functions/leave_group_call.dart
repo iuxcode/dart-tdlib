@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class LeaveGroupCall extends TdFunction {
   /// Leaves a group call

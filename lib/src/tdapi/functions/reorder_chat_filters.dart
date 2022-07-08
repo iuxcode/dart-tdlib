@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ReorderChatFilters extends TdFunction {
   /// Changes the order of chat filters

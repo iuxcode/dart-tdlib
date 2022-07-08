@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GroupCallParticipant extends TdObject {
   /// Represents a group call participant

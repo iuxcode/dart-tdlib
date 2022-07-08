@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class StorageStatisticsFast extends TdObject {
   /// Contains approximate storage usage statistics, excluding files of unknown file type

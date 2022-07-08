@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class MessageSendOptions extends TdObject {
   /// Options to be used when a message is sent

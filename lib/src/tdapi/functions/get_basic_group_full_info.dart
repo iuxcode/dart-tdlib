@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetBasicGroupFullInfo extends TdFunction {
   /// Returns full information about a basic group by its identifier

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class NotificationType extends TdObject {
   /// Contains detailed information about a notification

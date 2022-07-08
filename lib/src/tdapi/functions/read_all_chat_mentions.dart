@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ReadAllChatMentions extends TdFunction {
   /// Marks all mentions in a chat as read

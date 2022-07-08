@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class NotificationGroup extends TdObject {
   /// Describes a group of notifications

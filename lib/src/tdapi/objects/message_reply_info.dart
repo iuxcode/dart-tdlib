@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class MessageReplyInfo extends TdObject {
   /// Contains information about replies to a message

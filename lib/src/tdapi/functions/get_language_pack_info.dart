@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetLanguagePackInfo extends TdFunction {
   /// Returns information about a language pack. Returned language pack identifier may be different from a provided one. Can be called before authorization

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class CallbackQueryAnswer extends TdObject {
   /// Contains a bot's answer to a callback query

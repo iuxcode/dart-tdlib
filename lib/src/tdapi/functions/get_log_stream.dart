@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetLogStream extends TdFunction {
   /// Returns information about currently used log stream for internal logging of TDLib. Can be called synchronously

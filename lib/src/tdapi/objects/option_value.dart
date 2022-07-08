@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class OptionValue extends TdObject {
   /// Represents the value of an option

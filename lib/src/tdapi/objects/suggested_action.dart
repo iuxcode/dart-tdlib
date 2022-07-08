@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SuggestedAction extends TdObject {
   /// Describes an action suggested to the current user

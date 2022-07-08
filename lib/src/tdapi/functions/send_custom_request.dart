@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SendCustomRequest extends TdFunction {
   /// Sends a custom request; for bots only

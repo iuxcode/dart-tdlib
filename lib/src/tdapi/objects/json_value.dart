@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class JsonValue extends TdObject {
   /// Represents a JSON value

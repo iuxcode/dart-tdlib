@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class PaymentsProviderStripe extends TdObject {
   /// Stripe payment provider

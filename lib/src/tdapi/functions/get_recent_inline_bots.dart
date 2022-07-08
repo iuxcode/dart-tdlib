@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetRecentInlineBots extends TdFunction {
   /// Returns up to 20 recently used inline bots in the order of their last usage

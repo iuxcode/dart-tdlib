@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class MessageForwardOrigin extends TdObject {
   /// Contains information about the origin of a forwarded message

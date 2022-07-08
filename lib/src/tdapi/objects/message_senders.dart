@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class MessageSenders extends TdObject {
   /// Represents a list of message senders

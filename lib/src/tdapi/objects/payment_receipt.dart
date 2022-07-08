@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class PaymentReceipt extends TdObject {
   /// Contains information about a successful payment

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class InlineQueryResults extends TdObject {
   /// Represents the results of the inline query. Use sendInlineQueryResultMessage to send the result of the query

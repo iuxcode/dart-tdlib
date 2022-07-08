@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ResetBackgrounds extends TdFunction {
   /// Resets list of installed backgrounds to its default value

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class MessageCopyOptions extends TdObject {
   /// Options to be used when a message content is copied without a link to the original message

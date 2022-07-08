@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GameHighScores extends TdObject {
   /// Contains a list of game high scores

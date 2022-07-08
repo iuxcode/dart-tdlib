@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class CreateBasicGroupChat extends TdFunction {
   /// Returns an existing chat corresponding to a known basic group

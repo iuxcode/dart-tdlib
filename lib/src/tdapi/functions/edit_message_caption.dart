@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class EditMessageCaption extends TdFunction {
   /// Edits the message content caption. Returns the edited message after the edit is completed on the server side

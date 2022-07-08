@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class PassportElementError extends TdObject {
   /// Contains the description of an error in a Telegram Passport element

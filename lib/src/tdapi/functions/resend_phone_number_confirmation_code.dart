@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ResendPhoneNumberConfirmationCode extends TdFunction {
   /// Resends phone number confirmation code

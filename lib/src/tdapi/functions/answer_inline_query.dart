@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class AnswerInlineQuery extends TdFunction {
   /// Sets the result of an inline query; for bots only

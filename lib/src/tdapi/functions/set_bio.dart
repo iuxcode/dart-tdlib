@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SetBio extends TdFunction {
   /// Changes the bio of the current user

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetStorageStatistics extends TdFunction {
   /// Returns storage usage statistics. Can be called before authorization

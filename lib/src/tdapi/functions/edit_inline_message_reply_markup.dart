@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class EditInlineMessageReplyMarkup extends TdFunction {
   /// Edits the reply markup of an inline message sent via a bot; for bots only

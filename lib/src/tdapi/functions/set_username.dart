@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SetUsername extends TdFunction {
   /// Changes the username of the current user

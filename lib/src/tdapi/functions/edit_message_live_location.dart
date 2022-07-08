@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class EditMessageLiveLocation extends TdFunction {
   /// Edits the message content of a live location. Messages can be edited for a limited period of time specified in the live location. Returns the edited message after the edit is completed on the server side

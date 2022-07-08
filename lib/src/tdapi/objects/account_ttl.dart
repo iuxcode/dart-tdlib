@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class AccountTtl extends TdObject {
   /// Contains information about the period of inactivity after which the current user's account will automatically be deleted

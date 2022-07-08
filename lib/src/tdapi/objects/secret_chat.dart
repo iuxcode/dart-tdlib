@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SecretChat extends TdObject {
   /// Represents a secret chat

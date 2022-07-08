@@ -1,4 +1,4 @@
-part of 'main.dart';
+part of 'index.dart';
 
 abstract class TdObject {
   static const CONSTRUCTOR = 'object';

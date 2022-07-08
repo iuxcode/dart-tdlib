@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class Contact extends TdObject {
   /// Describes a user contact

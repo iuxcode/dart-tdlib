@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class PhotoSize extends TdObject {
   /// Describes an image in JPEG format

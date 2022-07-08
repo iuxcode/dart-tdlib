@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class TestReturnError extends TdFunction {
   /// Returns the specified error and ensures that the Error object is used; for testing only. Can be called synchronously

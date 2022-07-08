@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class BlockMessageSenderFromReplies extends TdFunction {
   /// Blocks an original sender of a message in the Replies chat

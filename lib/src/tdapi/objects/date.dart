@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class Date extends TdObject {
   /// Represents a date according to the Gregorian calendar

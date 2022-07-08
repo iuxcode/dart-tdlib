@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class JsonObjectMember extends TdObject {
   /// Represents one member of a JSON object

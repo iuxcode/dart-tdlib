@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class Video extends TdObject {
   /// Describes a video file

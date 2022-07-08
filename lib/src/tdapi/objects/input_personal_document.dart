@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class InputPersonalDocument extends TdObject {
   /// A personal document to be saved to Telegram Passport

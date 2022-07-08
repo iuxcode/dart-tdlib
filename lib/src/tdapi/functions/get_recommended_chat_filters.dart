@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetRecommendedChatFilters extends TdFunction {
   /// Returns recommended chat filters for the current user

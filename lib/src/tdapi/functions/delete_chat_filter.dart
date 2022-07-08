@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class DeleteChatFilter extends TdFunction {
   /// Deletes existing chat filter

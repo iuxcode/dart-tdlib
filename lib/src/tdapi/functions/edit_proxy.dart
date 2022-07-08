@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class EditProxy extends TdFunction {
   /// Edits an existing proxy server for network requests. Can be called before authorization

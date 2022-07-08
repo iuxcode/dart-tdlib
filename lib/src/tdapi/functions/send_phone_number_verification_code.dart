@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SendPhoneNumberVerificationCode extends TdFunction {
   /// Sends a code to verify a phone number to be added to a user's Telegram Passport

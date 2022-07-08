@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class PageBlock extends TdObject {
   /// Describes a block of an instant view web page

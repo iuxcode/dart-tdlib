@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetUser extends TdFunction {
   /// Returns information about a user by their identifier. This is an offline request if the current user is not a bot

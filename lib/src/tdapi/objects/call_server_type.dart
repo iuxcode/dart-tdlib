@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class CallServerType extends TdObject {
   /// Describes the type of a call server

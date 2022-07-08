@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class PinChatMessage extends TdFunction {
   /// Pins a message in a chat; requires can_pin_messages rights or can_edit_messages rights in the channel

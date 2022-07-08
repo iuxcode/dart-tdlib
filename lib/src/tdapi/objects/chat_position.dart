@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ChatPosition extends TdObject {
   /// Describes a position of a chat in a chat list

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class PassportAuthorizationForm extends TdObject {
   /// Contains information about a Telegram Passport authorization form that was requested

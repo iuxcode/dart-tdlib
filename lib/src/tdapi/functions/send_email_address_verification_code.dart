@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SendEmailAddressVerificationCode extends TdFunction {
   /// Sends a code to verify an email address to be added to a user's Telegram Passport

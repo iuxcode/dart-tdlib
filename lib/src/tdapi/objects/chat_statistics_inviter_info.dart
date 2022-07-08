@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ChatStatisticsInviterInfo extends TdObject {
   /// Contains statistics about number of new members invited by a user

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class TopChatCategory extends TdObject {
   /// Represents the categories of chats for which a list of frequently used chats can be retrieved

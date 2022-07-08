@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class Sessions extends TdObject {
   /// Contains a list of sessions

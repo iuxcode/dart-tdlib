@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetBackgroundUrl extends TdFunction {
   /// Constructs a persistent HTTP URL for a background

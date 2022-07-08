@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetSupportUser extends TdFunction {
   /// Returns a user that can be contacted to get support

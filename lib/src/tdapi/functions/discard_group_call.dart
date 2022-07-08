@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class DiscardGroupCall extends TdFunction {
   /// Discards a group call. Requires can_manage_voice_chats rights in the corresponding chat

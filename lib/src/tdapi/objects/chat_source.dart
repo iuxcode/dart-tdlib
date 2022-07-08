@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ChatSource extends TdObject {
   /// Describes a reason why an external chat is shown in a chat list

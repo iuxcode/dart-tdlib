@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SetAlarm extends TdFunction {
   /// Succeeds after a specified amount of time has passed. Can be called before initialization

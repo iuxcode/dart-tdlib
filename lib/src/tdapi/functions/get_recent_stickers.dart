@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetRecentStickers extends TdFunction {
   /// Returns a list of recently used stickers

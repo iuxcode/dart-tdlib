@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class CreateCall extends TdFunction {
   /// Creates a new call

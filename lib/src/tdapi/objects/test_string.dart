@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class TestString extends TdObject {
   /// A simple object containing a string; for testing only

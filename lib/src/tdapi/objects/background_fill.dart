@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class BackgroundFill extends TdObject {
   /// Describes a fill of a background

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class RemoveRecentHashtag extends TdFunction {
   /// Removes a hashtag from the list of recently used hashtags

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class FilePart extends TdObject {
   /// Contains a part of a file

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ToggleChatDefaultDisableNotification extends TdFunction {
   /// Changes the value of the default disable_notification parameter, used when a message is sent to a chat

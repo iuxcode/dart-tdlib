@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class NetworkStatistics extends TdObject {
   /// A full list of available network statistic entries

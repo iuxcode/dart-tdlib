@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class MessageSender extends TdObject {
   /// Contains information about the sender of a message

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class RemoveSavedAnimation extends TdFunction {
   /// Removes an animation from the list of saved animations

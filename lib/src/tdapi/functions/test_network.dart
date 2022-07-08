@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class TestNetwork extends TdFunction {
   /// Sends a simple network request to the Telegram servers; for testing only. Can be called before authorization

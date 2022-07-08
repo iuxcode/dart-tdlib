@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class RemoveProxy extends TdFunction {
   /// Removes a proxy server. Can be called before authorization

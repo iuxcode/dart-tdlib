@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetUserProfilePhotos extends TdFunction {
   /// Returns the profile photos of a user. The result of this query may be outdated: some photos might have been deleted already

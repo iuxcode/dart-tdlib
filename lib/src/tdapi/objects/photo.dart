@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class Photo extends TdObject {
   /// Describes a photo

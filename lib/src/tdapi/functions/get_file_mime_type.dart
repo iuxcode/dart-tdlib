@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetFileMimeType extends TdFunction {
   /// Returns the MIME type of a file, guessed by its extension. Returns an empty string on failure. Can be called synchronously

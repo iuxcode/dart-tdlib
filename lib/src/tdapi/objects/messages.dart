@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class Messages extends TdObject {
   /// Contains a list of messages

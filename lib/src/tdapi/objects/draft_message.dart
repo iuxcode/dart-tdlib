@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class DraftMessage extends TdObject {
   /// Contains information about a message draft
@@ -27,8 +27,9 @@ class DraftMessage extends TdObject {
       "@type": CONSTRUCTOR,
       "reply_to_message_id": this.replyToMessageId,
       "date": this.date,
-      "input_message_text":
-          this.inputMessageText == null ? null : this.inputMessageText!.toJson(),
+      "input_message_text": this.inputMessageText == null
+          ? null
+          : this.inputMessageText!.toJson(),
     };
   }
 

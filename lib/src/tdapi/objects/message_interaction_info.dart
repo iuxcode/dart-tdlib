@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class MessageInteractionInfo extends TdObject {
   /// Contains information about interactions with a message

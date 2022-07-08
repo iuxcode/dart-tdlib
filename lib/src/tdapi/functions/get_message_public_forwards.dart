@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetMessagePublicForwards extends TdFunction {
   /// Returns forwarded copies of a channel message to different public channels. For optimal performance the number of returned messages is chosen by the library

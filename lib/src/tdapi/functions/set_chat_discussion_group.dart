@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SetChatDiscussionGroup extends TdFunction {
   /// Changes the discussion group of a channel chat; requires can_change_info rights in the channel if it is specified

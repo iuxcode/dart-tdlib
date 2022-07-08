@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SearchChatMembers extends TdFunction {
   /// Searches for a specified query in the first name, last name and username of the members of a specified chat. Requires administrator rights in channels

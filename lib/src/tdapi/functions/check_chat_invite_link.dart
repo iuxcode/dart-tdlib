@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class CheckChatInviteLink extends TdFunction {
   /// Checks the validity of an invite link for a chat and returns information about the corresponding chat

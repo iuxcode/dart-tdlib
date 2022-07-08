@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class CheckChatUsername extends TdFunction {
   /// Checks whether a username can be set for a chat

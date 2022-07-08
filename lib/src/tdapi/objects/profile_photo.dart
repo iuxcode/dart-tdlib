@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ProfilePhoto extends TdObject {
   /// Describes a user profile photo

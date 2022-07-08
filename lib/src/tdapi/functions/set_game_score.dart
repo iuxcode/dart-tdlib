@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SetGameScore extends TdFunction {
   /// Updates the game score of the specified user in the game; for bots only

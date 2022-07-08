@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class Call extends TdObject {
   /// Describes a call

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class MaskPosition extends TdObject {
   /// Position on a photo where a mask should be placed

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class InviteGroupCallParticipants extends TdFunction {
   /// Invites users to a group call. Sends a service message of type messageInviteToGroupCall for voice chats

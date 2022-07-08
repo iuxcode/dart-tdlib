@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetUserFullInfo extends TdFunction {
   /// Returns full information about a user by their identifier

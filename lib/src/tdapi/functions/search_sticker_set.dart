@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SearchStickerSet extends TdFunction {
   /// Searches for a sticker set by its name

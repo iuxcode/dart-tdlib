@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetPassportAuthorizationForm extends TdFunction {
   /// Returns a Telegram Passport authorization form for sharing data with a service

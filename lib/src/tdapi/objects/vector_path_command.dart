@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class VectorPathCommand extends TdObject {
   /// Represents a vector path command

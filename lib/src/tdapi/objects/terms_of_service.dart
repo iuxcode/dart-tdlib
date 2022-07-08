@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class TermsOfService extends TdObject {
   /// Contains Telegram terms of service

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SetProfilePhoto extends TdFunction {
   /// Changes a profile photo for the current user

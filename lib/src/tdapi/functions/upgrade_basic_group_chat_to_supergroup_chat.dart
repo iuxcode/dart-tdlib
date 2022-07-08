@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class UpgradeBasicGroupChatToSupergroupChat extends TdFunction {
   /// Creates a new supergroup from an existing basic group and sends a corresponding messageChatUpgradeTo and messageChatUpgradeFrom; requires creator privileges. Deactivates the original basic group

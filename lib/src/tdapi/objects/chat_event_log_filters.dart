@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ChatEventLogFilters extends TdObject {
   /// Represents a set of filters used to obtain a chat event log

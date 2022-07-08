@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ToggleChatIsMarkedAsUnread extends TdFunction {
   /// Changes the marked as unread state of a chat

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetChatMessageCount extends TdFunction {
   /// Returns approximate number of messages of the specified type in the chat

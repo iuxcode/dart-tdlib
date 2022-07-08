@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class TestCallEmpty extends TdFunction {
   /// Does nothing; for testing only. This is an offline method. Can be called before authorization

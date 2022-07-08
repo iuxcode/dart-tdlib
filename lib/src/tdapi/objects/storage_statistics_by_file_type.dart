@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class StorageStatisticsByFileType extends TdObject {
   /// Contains the storage usage statistics for a specific file type

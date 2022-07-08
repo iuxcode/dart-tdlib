@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetSavedAnimations extends TdFunction {
   /// Returns saved animations

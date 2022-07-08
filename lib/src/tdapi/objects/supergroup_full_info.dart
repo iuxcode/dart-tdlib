@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SupergroupFullInfo extends TdObject {
   /// Contains full information about a supergroup or channel

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class AnswerCustomQuery extends TdFunction {
   /// Answers a custom query; for bots only

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class Animation extends TdObject {
   /// Describes an animation file. The animation must be encoded in GIF or MPEG4 format

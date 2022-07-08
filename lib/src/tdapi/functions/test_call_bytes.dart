@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class TestCallBytes extends TdFunction {
   /// Returns the received bytes; for testing only. This is an offline method. Can be called before authorization

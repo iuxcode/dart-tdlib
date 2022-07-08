@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ImportedContacts extends TdObject {
   /// Represents the result of an ImportContacts request

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class BankCardActionOpenUrl extends TdObject {
   /// Describes an action associated with a bank card number

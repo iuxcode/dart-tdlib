@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class UploadFile extends TdFunction {
   /// Asynchronously uploads a file to the cloud without sending it in a message. updateFile will be used to notify about upload progress and successful completion of the upload. The file will not have a persistent remote identifier until it will be sent in a message

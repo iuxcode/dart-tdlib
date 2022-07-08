@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetSupergroupFullInfo extends TdFunction {
   /// Returns full information about a supergroup or a channel by its identifier, cached for up to 1 minute

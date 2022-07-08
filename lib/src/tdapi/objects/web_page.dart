@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class WebPage extends TdObject {
   /// Describes a web page preview

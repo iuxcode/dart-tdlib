@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SearchMessagesFilter extends TdObject {
   /// Represents a filter for message search results

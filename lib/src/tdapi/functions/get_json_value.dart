@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetJsonValue extends TdFunction {
   /// Converts a JSON-serialized string to corresponding JsonValue object. Can be called synchronously

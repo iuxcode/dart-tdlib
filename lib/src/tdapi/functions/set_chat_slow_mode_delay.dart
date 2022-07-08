@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SetChatSlowModeDelay extends TdFunction {
   /// Changes the slow mode delay of a chat. Available only for supergroups; requires can_restrict_members rights

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class DateRange extends TdObject {
   /// Represents a date range

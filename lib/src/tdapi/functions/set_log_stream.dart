@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SetLogStream extends TdFunction {
   /// Sets new log stream for internal logging of TDLib. Can be called synchronously

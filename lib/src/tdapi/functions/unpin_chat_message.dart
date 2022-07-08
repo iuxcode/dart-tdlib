@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class UnpinChatMessage extends TdFunction {
   /// Removes a pinned message from a chat; requires can_pin_messages rights in the group or can_edit_messages rights in the channel

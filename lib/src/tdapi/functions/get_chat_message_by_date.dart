@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetChatMessageByDate extends TdFunction {
   /// Returns the last message sent in a chat no later than the specified date

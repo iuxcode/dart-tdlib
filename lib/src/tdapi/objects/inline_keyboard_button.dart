@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class InlineKeyboardButton extends TdObject {
   /// Represents a single button in an inline keyboard

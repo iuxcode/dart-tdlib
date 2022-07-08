@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SetDatabaseEncryptionKey extends TdFunction {
   /// Changes the database encryption key. Usually the encryption key is never changed and is stored in some OS keychain

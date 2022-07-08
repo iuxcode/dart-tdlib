@@ -1,8 +1,13 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class BasicGroupFullInfo extends TdObject {
   /// Contains full information about a basic group
-  BasicGroupFullInfo({this.photo, this.description, this.creatorUserId, this.members, this.inviteLink});
+  BasicGroupFullInfo(
+      {this.photo,
+      this.description,
+      this.creatorUserId,
+      this.members,
+      this.inviteLink});
 
   /// [photo] Chat photo; may be null
   ChatPhoto? photo;
@@ -28,9 +33,10 @@ class BasicGroupFullInfo extends TdObject {
     this.description = json['description'];
     this.creatorUserId = json['creator_user_id'];
     this.members = List<ChatMember>.from((json['members'] ?? [])
-      .map((item) => ChatMember.fromJson(item ?? <String, dynamic>{}))
-      .toList());
-    this.inviteLink = ChatInviteLink.fromJson(json['invite_link'] ?? <String, dynamic>{});
+        .map((item) => ChatMember.fromJson(item ?? <String, dynamic>{}))
+        .toList());
+    this.inviteLink =
+        ChatInviteLink.fromJson(json['invite_link'] ?? <String, dynamic>{});
     this.extra = json['@extra'] ?? '';
   }
 
@@ -41,7 +47,9 @@ class BasicGroupFullInfo extends TdObject {
       "photo": this.photo == null ? null : this.photo!.toJson(),
       "description": this.description,
       "creator_user_id": this.creatorUserId,
-      "members": List<ChatMember>.from(this.members ?? []).map((i) => i.toJson()).toList(),
+      "members": List<ChatMember>.from(this.members ?? [])
+          .map((i) => i.toJson())
+          .toList(),
       "invite_link": this.inviteLink == null ? null : this.inviteLink!.toJson(),
     };
   }

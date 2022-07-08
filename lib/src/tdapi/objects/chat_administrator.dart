@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ChatAdministrator extends TdObject {
   /// Contains information about a chat administrator

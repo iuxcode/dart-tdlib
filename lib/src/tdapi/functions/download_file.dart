@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class DownloadFile extends TdFunction {
   /// Downloads a file from the cloud. Download progress and completion of the download will be notified through updateFile updates

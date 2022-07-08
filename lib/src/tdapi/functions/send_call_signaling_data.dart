@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SendCallSignalingData extends TdFunction {
   /// Sends call signaling data

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class CheckDatabaseEncryptionKey extends TdFunction {
   /// Checks the database encryption key for correctness. Works only when the current authorization state is authorizationStateWaitEncryptionKey

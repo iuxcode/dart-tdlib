@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GenerateChatInviteLink extends TdFunction {
   /// Generates a new invite link for a chat; the previously generated link is revoked. Available for basic groups, supergroups, and channels. Requires administrator privileges and can_invite_users right

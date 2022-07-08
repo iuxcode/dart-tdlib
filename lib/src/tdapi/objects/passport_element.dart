@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class PassportElement extends TdObject {
   /// Contains information about a Telegram Passport element
@@ -210,8 +210,9 @@ class PassportElementInternalPassport extends PassportElement {
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "internal_passport":
-          this.internalPassport == null ? null : this.internalPassport!.toJson(),
+      "internal_passport": this.internalPassport == null
+          ? null
+          : this.internalPassport!.toJson(),
     };
   }
 

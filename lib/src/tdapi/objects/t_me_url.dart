@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class TMeUrl extends TdObject {
   /// Represents a URL linking to an internal Telegram entity

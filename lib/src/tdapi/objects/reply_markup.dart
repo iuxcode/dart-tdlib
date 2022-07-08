@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ReplyMarkup extends TdObject {
   /// Contains a description of a custom keyboard and actions that can be done with it to quickly reply to bots

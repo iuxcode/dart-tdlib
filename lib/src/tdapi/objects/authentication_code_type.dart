@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class AuthenticationCodeType extends TdObject {
   /// Provides information about the method by which an authentication code is delivered to the user

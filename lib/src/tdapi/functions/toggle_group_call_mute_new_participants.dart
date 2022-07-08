@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ToggleGroupCallMuteNewParticipants extends TdFunction {
   /// Toggles whether new participants of a group call can be unmuted only by administrators of the group call. Requires can_manage_voice_chats rights in the corresponding chat and allowed_change_mute_mew_participants group call flag

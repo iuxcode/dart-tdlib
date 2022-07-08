@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class AddLogMessage extends TdFunction {
   /// Adds a message to TDLib internal log. Can be called synchronously

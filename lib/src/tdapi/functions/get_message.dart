@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetMessage extends TdFunction {
   /// Returns information about a message

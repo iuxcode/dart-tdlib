@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetChatPinnedMessage extends TdFunction {
   /// Returns information about a newest pinned message in the chat

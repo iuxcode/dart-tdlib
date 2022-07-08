@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class Text extends TdObject {
   /// Contains some text

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class CustomRequestResult extends TdObject {
   /// Contains the result of a custom request

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class InputBackground extends TdObject {
   /// Contains information about background to set

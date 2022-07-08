@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class PageBlockVerticalAlignment extends TdObject {
   /// Describes a Vertical alignment of a table cell content

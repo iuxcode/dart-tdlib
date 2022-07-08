@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ChatEvents extends TdObject {
   /// Contains a list of chat events

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GameHighScore extends TdObject {
   /// Contains one row of the game high score table

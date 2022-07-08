@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetInviteText extends TdFunction {
   /// Returns the default text for invitation messages to be used as a placeholder when the current user invites friends to Telegram

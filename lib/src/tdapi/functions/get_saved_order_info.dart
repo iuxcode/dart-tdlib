@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetSavedOrderInfo extends TdFunction {
   /// Returns saved order info, if any

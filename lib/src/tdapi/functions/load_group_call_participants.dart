@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class LoadGroupCallParticipants extends TdFunction {
   /// Loads more group call participants. The loaded participants will be received through updates. Use the field groupCall.loaded_all_participants to check whether all participants has already been loaded

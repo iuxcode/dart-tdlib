@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetInstalledStickerSets extends TdFunction {
   /// Returns a list of installed sticker sets

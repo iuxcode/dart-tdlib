@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class BotInfo extends TdObject {
   /// Provides information about a bot and its supported commands

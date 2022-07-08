@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ChatStatisticsMessageInteractionInfo extends TdObject {
   /// Contains statistics about interactions with a message

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SendChatScreenshotTakenNotification extends TdFunction {
   /// Sends a notification about a screenshot taken in a chat. Supported only in private and secret chats

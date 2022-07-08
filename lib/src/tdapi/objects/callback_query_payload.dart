@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class CallbackQueryPayload extends TdObject {
   /// Represents a payload of a callback query

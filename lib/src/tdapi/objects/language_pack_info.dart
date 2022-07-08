@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class LanguagePackInfo extends TdObject {
   /// Contains information about a language pack

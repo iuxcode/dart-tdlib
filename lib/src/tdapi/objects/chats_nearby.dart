@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ChatsNearby extends TdObject {
   /// Represents a list of chats located nearby

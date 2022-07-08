@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class EnableProxy extends TdFunction {
   /// Enables a proxy. Only one proxy can be enabled at a time. Can be called before authorization

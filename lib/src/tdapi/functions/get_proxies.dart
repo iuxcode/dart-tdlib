@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetProxies extends TdFunction {
   /// Returns list of proxies that are currently set up. Can be called before authorization

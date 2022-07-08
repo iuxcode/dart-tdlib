@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class AddChatMember extends TdFunction {
   /// Adds a new member to a chat. Members can't be added to private or secret chats. Members will not be added until the chat state has been synchronized with the server

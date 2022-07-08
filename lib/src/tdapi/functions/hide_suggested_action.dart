@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class HideSuggestedAction extends TdFunction {
   /// Hides a suggested action

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class RemoveStickerFromSet extends TdFunction {
   /// Removes a sticker from the set to which it belongs; for bots only. The sticker set must have been created by the bot

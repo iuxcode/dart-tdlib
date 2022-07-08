@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ChatNotificationSettings extends TdObject {
   /// Contains information about notification settings for a chat

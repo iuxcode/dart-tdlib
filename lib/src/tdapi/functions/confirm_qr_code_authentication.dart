@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ConfirmQrCodeAuthentication extends TdFunction {
   /// Confirms QR code authentication on another device. Returns created session on success

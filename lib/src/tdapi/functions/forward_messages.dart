@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ForwardMessages extends TdFunction {
   /// Forwards previously sent messages. Returns the forwarded messages in the same order as the message identifiers passed in message_ids. If a message can't be forwarded, null will be returned instead of the message

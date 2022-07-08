@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class UploadStickerFile extends TdFunction {
   /// Uploads a PNG image with a sticker; for bots only; returns the uploaded file

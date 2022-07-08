@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SetCommands extends TdFunction {
   /// Sets the list of commands supported by the bot; for bots only

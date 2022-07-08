@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetImportedContactCount extends TdFunction {
   /// Returns the total number of imported contacts

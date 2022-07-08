@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class PaymentForm extends TdObject {
   /// Contains information about an invoice payment form
@@ -56,12 +56,14 @@ class PaymentForm extends TdObject {
       "@type": CONSTRUCTOR,
       "invoice": this.invoice == null ? null : this.invoice!.toJson(),
       "url": this.url,
-      "payments_provider":
-          this.paymentsProvider == null ? null : this.paymentsProvider!.toJson(),
+      "payments_provider": this.paymentsProvider == null
+          ? null
+          : this.paymentsProvider!.toJson(),
       "saved_order_info":
           this.savedOrderInfo == null ? null : this.savedOrderInfo!.toJson(),
-      "saved_credentials":
-          this.savedCredentials == null ? null : this.savedCredentials!.toJson(),
+      "saved_credentials": this.savedCredentials == null
+          ? null
+          : this.savedCredentials!.toJson(),
       "can_save_credentials": this.canSaveCredentials,
       "need_password": this.needPassword,
     };

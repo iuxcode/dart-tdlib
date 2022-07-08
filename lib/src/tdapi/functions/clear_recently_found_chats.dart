@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ClearRecentlyFoundChats extends TdFunction {
   /// Clears the list of recently found chats

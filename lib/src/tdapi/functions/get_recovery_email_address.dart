@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetRecoveryEmailAddress extends TdFunction {
   /// Returns a 2-step verification recovery email address that was previously set up. This method can be used to verify a password provided by the user

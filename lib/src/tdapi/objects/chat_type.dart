@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ChatType extends TdObject {
   /// Describes the type of a chat

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetMe extends TdFunction {
   /// Returns the current user

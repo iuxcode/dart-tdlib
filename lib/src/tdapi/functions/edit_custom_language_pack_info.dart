@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class EditCustomLanguagePackInfo extends TdFunction {
   /// Edits information about a custom local language pack in the current localization target. Can be called before authorization

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class AuthenticationCodeInfo extends TdObject {
   /// Information about the authentication code that was sent

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class LocalizationTargetInfo extends TdObject {
   /// Contains information about the current localization target

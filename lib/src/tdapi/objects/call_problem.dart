@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class CallProblem extends TdObject {
   /// Describes the exact type of a problem with a call

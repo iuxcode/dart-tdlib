@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class RemoveNotificationGroup extends TdFunction {
   /// Removes a group of active notifications. Needs to be called only if the notification group is removed by the current user

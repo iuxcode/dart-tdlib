@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class AnswerCallbackQuery extends TdFunction {
   /// Sets the result of a callback query; for bots only

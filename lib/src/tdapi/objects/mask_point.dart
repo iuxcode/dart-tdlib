@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class MaskPoint extends TdObject {
   /// Part of the face, relative to which a mask should be placed

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class CallServer extends TdObject {
   /// Describes a server for relaying call data

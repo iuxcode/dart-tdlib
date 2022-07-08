@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ViewTrendingStickerSets extends TdFunction {
   /// Informs the server that some trending sticker sets have been viewed by the user

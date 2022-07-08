@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class PassportElementType extends TdObject {
   /// Contains the type of a Telegram Passport element

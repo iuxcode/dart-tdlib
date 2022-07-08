@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class StatisticalValue extends TdObject {
   /// A value with information about its recent changes

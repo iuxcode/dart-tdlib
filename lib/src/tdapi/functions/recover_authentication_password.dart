@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class RecoverAuthenticationPassword extends TdFunction {
   /// Recovers the password with a password recovery code sent to an email address that was previously set up. Works only when the current authorization state is authorizationStateWaitPassword

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class MessageLinkInfo extends TdObject {
   /// Contains information about a link to a message in a chat

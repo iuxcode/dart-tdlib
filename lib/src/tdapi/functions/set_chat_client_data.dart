@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SetChatClientData extends TdFunction {
   /// Changes application-specific data associated with a chat

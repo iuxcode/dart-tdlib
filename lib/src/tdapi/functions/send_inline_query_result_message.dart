@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SendInlineQueryResultMessage extends TdFunction {
   /// Sends the result of an inline query as a message. Returns the sent message. Always clears a chat draft message

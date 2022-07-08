@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetMessageLinkInfo extends TdFunction {
   /// Returns information about a public or private message link

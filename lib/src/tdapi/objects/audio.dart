@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class Audio extends TdObject {
   /// Describes an audio file. Audio is usually in MP3 or M4A format

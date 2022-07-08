@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class RecommendedChatFilters extends TdObject {
   /// Contains a list of recommended chat filters

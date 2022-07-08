@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class WebPageInstantView extends TdObject {
   /// Describes an instant view page for a web page

@@ -1,5 +1,4 @@
-part of '../main.dart';
-
+part of '../index.dart';
 
 class Update extends TdObject {
   /// Contains notifications about data changes

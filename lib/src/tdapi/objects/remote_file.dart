@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class RemoteFile extends TdObject {
   /// Represents a remote file

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class BasicGroup extends TdObject {
   /// Represents a basic group of 0-200 users (must be upgraded to a supergroup to accommodate more than 200 users)

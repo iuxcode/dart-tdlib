@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class LanguagePackStringValue extends TdObject {
   /// Represents the value of a string in a language pack

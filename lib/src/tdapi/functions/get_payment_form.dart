@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetPaymentForm extends TdFunction {
   /// Returns an invoice payment form. This method should be called when the user presses inlineKeyboardButtonBuy

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class PersonalDetails extends TdObject {
   /// Contains the user's personal details

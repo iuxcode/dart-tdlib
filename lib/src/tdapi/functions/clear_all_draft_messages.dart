@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class ClearAllDraftMessages extends TdFunction {
   /// Clears draft messages in all chats

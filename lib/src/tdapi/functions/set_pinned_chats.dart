@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SetPinnedChats extends TdFunction {
   /// Changes the order of pinned chats

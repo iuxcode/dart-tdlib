@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SaveApplicationLogEvent extends TdFunction {
   /// Saves application log event on the server. Can be called before authorization

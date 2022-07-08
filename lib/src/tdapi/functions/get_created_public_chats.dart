@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class GetCreatedPublicChats extends TdFunction {
   /// Returns a list of public chats of the specified type, owned by the user

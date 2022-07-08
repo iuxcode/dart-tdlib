@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../index.dart';
 
 class SendCallRating extends TdFunction {
   /// Sends a call rating
