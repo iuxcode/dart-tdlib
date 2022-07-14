@@ -37,11 +37,15 @@ android {
     }
 
     sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
+        // main.java.srcDirs += 'src/main/kotlin'
+        main.jniLibs.srcDirs = ['src/main/libs']
     }
 
     defaultConfig {
         minSdkVersion 16
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86_64', 'x86'
+        }
     }
 }
 

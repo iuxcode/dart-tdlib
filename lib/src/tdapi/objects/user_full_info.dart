@@ -12,7 +12,7 @@ class UserFullInfo extends TdObject {
       this.bio,
       this.shareText,
       this.groupInCommonCount,
-      this.botInfo});
+      this.botInfo,});
 
   /// [photo] User profile photo; may be null
   ChatPhoto? photo;
@@ -56,7 +56,7 @@ class UserFullInfo extends TdObject {
     this.hasPrivateCalls = json['has_private_calls'];
     this.needPhoneNumberPrivacyException =
         json['need_phone_number_privacy_exception'];
-    this.bio = json['bio'];
+    this.bio = FormattedText.fromJson(json['bio']);
     this.shareText = json['share_text'];
     this.groupInCommonCount = json['group_in_common_count'];
     this.botInfo = BotInfo.fromJson(json['bot_info'] ?? <String, dynamic>{});
