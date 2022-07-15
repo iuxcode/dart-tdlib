@@ -130,7 +130,8 @@ class Message extends TdObject {
   /// Parse from a json
   Message.fromJson(Map<String, dynamic> json) {
     this.id = json['id'];
-    this.sender = MessageSender.fromJson(json['sender'] ?? <String, dynamic>{});
+    this.sender =
+        MessageSender.fromJson(json['sender_id'] ?? <String, dynamic>{});
     this.chatId = json['chat_id'];
     this.sendingState = MessageSendingState.fromJson(
         json['sending_state'] ?? <String, dynamic>{});

@@ -2,17 +2,18 @@ part of '../index.dart';
 
 class UserFullInfo extends TdObject {
   /// Contains full information about a user
-  UserFullInfo(
-      {this.photo,
-      this.isBlocked,
-      this.canBeCalled,
-      this.supportsVideoCalls,
-      this.hasPrivateCalls,
-      this.needPhoneNumberPrivacyException,
-      this.bio,
-      this.shareText,
-      this.groupInCommonCount,
-      this.botInfo,});
+  UserFullInfo({
+    this.photo,
+    this.isBlocked,
+    this.canBeCalled,
+    this.supportsVideoCalls,
+    this.hasPrivateCalls,
+    this.needPhoneNumberPrivacyException,
+    this.bio,
+    this.shareText,
+    this.groupInCommonCount,
+    this.botInfo,
+  });
 
   /// [photo] User profile photo; may be null
   ChatPhoto? photo;
@@ -33,7 +34,7 @@ class UserFullInfo extends TdObject {
   bool? needPhoneNumberPrivacyException;
 
   /// [bio] A short user bio
-  String? bio;
+  FormattedText? bio;
 
   /// [shareText] For bots, the text that is included with the link when users share the bot
   String? shareText;
@@ -56,7 +57,7 @@ class UserFullInfo extends TdObject {
     this.hasPrivateCalls = json['has_private_calls'];
     this.needPhoneNumberPrivacyException =
         json['need_phone_number_privacy_exception'];
-    this.bio = FormattedText.fromJson(json['bio']);
+    this.bio = json['bio'] != null ? FormattedText.fromJson(json['bio']) : null;
     this.shareText = json['share_text'];
     this.groupInCommonCount = json['group_in_common_count'];
     this.botInfo = BotInfo.fromJson(json['bot_info'] ?? <String, dynamic>{});
