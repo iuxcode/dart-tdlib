@@ -18,13 +18,11 @@ class TdClientInterface extends DartTdlibPlatform {
   /// Returns client id for the created instance of TDLib.
   /// 0 mean No client instance.
   Future<int> createClient() async {
-    int result;
     try {
-      result = await methodChannel.invokeMethod('clientCreate');
+      return await methodChannel.invokeMethod('clientCreate');
     } on PlatformException {
-      result = 0;
+      return 0;
     }
-    return result;
   }
 
   /// Destroys the TDLib client instance. After this is called the client instance shouldn't be used anymore.
@@ -38,11 +36,7 @@ class TdClientInterface extends DartTdlibPlatform {
 
   /// Events from the incoming updates and request responses from the TDLib client by [clientId] identifier.
   /// Must be call once per client.
-  Stream<TdObject?> clientEvents(int clientId) {
-    return eventChannel.receiveBroadcastStream(clientId).map((event) {
-      return convertToObject(event);
-    });
-  }
+  Stream<TdObject?> clientEvents(int clientId) => eventChannel.receiveBroadcastStream(clientId).map((event) => convertToObject(event));
 
   /// Receives incoming updates and request responses from the TDLib client by [clientId] identifier and [timeout].
   /// May be called from any thread, but shouldn't be called simultaneously from two different threads.
