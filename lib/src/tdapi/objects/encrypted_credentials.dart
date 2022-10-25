@@ -1,24 +1,34 @@
 part of '../index.dart';
 
+/// Contains encrypted Telegram Passport data credentials
 class EncryptedCredentials extends TdObject {
-  /// Contains encrypted Telegram Passport data credentials
-  EncryptedCredentials({this.data, this.hash, this.secret});
-
-  /// [data] The encrypted credentials
-  String? data;
-
-  /// [hash] The decrypted data hash
-  String? hash;
-
-  /// [secret] Secret for data decryption, encrypted with the service's public key
-  String? secret;
+  EncryptedCredentials({
+    required this.data,
+    required this.hash,
+    required this.secret,
+  });
 
   /// Parse from a json
-  EncryptedCredentials.fromJson(Map<String, dynamic> json) {
-    this.data = json['data'];
-    this.hash = json['hash'];
-    this.secret = json['secret'];
-  }
+  factory EncryptedCredentials.fromJson(Map<String, dynamic> json) =>
+      EncryptedCredentials(
+        data: json['data'],
+        hash: json['hash'],
+        secret: json['secret'],
+      );
+
+  static const CONSTRUCTOR = 'encryptedCredentials';
+
+  /// [data] The encrypted credentials
+  String data;
+
+  /// [hash] The decrypted data hash
+  String hash;
+
+  /// [secret] Secret for data decryption, encrypted with the service's public key
+  String secret;
+
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
@@ -29,9 +39,4 @@ class EncryptedCredentials extends TdObject {
       "secret": this.secret,
     };
   }
-
-  static const CONSTRUCTOR = 'encryptedCredentials';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }

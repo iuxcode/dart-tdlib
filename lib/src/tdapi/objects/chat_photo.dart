@@ -1,41 +1,47 @@
 part of '../index.dart';
 
+/// Describes a chat or user profile photo
 class ChatPhoto extends TdObject {
-  /// Describes a chat or user profile photo
-  ChatPhoto(
-      {this.id,
-      this.addedDate,
-      this.minithumbnail,
-      this.sizes,
-      this.animation});
+  ChatPhoto({
+    required this.id,
+    required this.addedDate,
+    this.minithumbnail,
+    required this.sizes,
+    this.animation,
+  });
 
-  /// [id] Unique photo identifier
-  int? id;
+  /// Parse from a json
+  factory ChatPhoto.fromJson(Map<String, dynamic> json) => ChatPhoto(
+        id: int.parse(json['id']),
+        addedDate: json['added_date'],
+        minithumbnail:
+            Minithumbnail.fromJson(json['minithumbnail'] ?? <String, dynamic>{}),
+        sizes: List<PhotoSize>.from((json['sizes'] ?? [])
+            .map((item) => PhotoSize.fromJson(item ?? <String, dynamic>{}))
+            .toList()),
+        animation:
+            AnimatedChatPhoto.fromJson(json['animation'] ?? <String, dynamic>{}),
+      );
+
+  static const CONSTRUCTOR = 'chatPhoto';
 
   /// [addedDate] Point in time (Unix timestamp) when the photo has been added
-  int? addedDate;
+  int addedDate;
+
+  /// [animation] Animated variant of the photo in MPEG4 format; may be null
+  AnimatedChatPhoto? animation;
+
+  /// [id] Unique photo identifier
+  int id;
 
   /// [minithumbnail] Photo minithumbnail; may be null
   Minithumbnail? minithumbnail;
 
   /// [sizes] Available variants of the photo in JPEG format, in different size
-  List<PhotoSize>? sizes;
+  List<PhotoSize> sizes;
 
-  /// [animation] Animated variant of the photo in MPEG4 format; may be null
-  AnimatedChatPhoto? animation;
-
-  /// Parse from a json
-  ChatPhoto.fromJson(Map<String, dynamic> json) {
-    this.id = int.tryParse(json['id'] ?? "");
-    this.addedDate = json['added_date'];
-    this.minithumbnail =
-        Minithumbnail.fromJson(json['minithumbnail'] ?? <String, dynamic>{});
-    this.sizes = List<PhotoSize>.from((json['sizes'] ?? [])
-        .map((item) => PhotoSize.fromJson(item ?? <String, dynamic>{}))
-        .toList());
-    this.animation =
-        AnimatedChatPhoto.fromJson(json['animation'] ?? <String, dynamic>{});
-  }
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
@@ -43,15 +49,9 @@ class ChatPhoto extends TdObject {
       "@type": CONSTRUCTOR,
       "id": this.id,
       "added_date": this.addedDate,
-      "minithumbnail":
-          this.minithumbnail == null ? null : this.minithumbnail!.toJson(),
-      "sizes": this.sizes!.map((i) => i.toJson()).toList(),
+      "minithumbnail": this.minithumbnail?.toJson(),
+      "sizes": this.sizes.map((i) => i.toJson()).toList(),
       "animation": this.animation == null ? null : this.animation!.toJson(),
     };
   }
-
-  static const CONSTRUCTOR = 'chatPhoto';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }

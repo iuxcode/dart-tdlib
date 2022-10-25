@@ -1,36 +1,49 @@
 part of '../index.dart';
 
+/// Represents a file
 class File extends TdObject {
-  /// Represents a file
-  File({this.id, this.size, this.expectedSize, this.local, this.remote});
+  File({
+    required this.id,
+    this.size = 0,
+    required this.expectedSize,
+    required this.local,
+    required this.remote,
+    this.extra,
+  });
 
-  /// [id] Unique file identifier
-  int? id;
+  /// Parse from a json
+  factory File.fromJson(Map<String, dynamic> json) => File(
+        id: json['id'],
+        size: json['size'],
+        expectedSize: json['expected_size'],
+        local: LocalFile.fromJson(json['local'] ?? <String, dynamic>{}),
+        remote: RemoteFile.fromJson(json['remote'] ?? <String, dynamic>{}),
+        extra: json['@extra'],
+      );
 
-  /// [size] File size; 0 if unknown
-  int? size;
+  static const CONSTRUCTOR = 'file';
 
-  /// [expectedSize] Expected file size in case the exact file size is unknown, but an approximate size is known. Can be used to show download/upload progress
-  int? expectedSize;
-
-  /// [local] Information about the local copy of the file
-  LocalFile? local;
-
-  /// [remote] Information about the remote copy of the file
-  RemoteFile? remote;
+  /// [expectedSize] Expected file size in case the exact file size is unknown, but an approximate size is known.
+  /// Can be used to show download/upload progress
+  int expectedSize;
 
   /// callback sign
   dynamic extra;
 
-  /// Parse from a json
-  File.fromJson(Map<String, dynamic> json) {
-    this.id = json['id'];
-    this.size = json['size'];
-    this.expectedSize = json['expected_size'];
-    this.local = LocalFile.fromJson(json['local'] ?? <String, dynamic>{});
-    this.remote = RemoteFile.fromJson(json['remote'] ?? <String, dynamic>{});
-    this.extra = json['@extra'];
-  }
+  /// [id] Unique file identifier
+  int id;
+
+  /// [local] Information about the local copy of the file
+  LocalFile local;
+
+  /// [remote] Information about the remote copy of the file
+  RemoteFile remote;
+
+  /// [size] File size; 0 if unknown
+  int size;
+
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
@@ -39,13 +52,8 @@ class File extends TdObject {
       "id": this.id,
       "size": this.size,
       "expected_size": this.expectedSize,
-      "local": this.local == null ? null : this.local!.toJson(),
-      "remote": this.remote == null ? null : this.remote!.toJson(),
+      "local": this.local.toJson(),
+      "remote": this.remote.toJson(),
     };
   }
-
-  static const CONSTRUCTOR = 'file';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }

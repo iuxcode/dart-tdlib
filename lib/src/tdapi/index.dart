@@ -289,6 +289,7 @@ part 'objects/test_vector_int.dart';
 part 'objects/test_vector_int_object.dart';
 part 'objects/test_vector_string.dart';
 part 'objects/test_vector_string_object.dart';
+part 'objects/animated_emoji.dart';
 part 'functions/get_authorization_state.dart';
 part 'functions/set_tdlib_parameters.dart';
 part 'functions/check_database_encryption_key.dart';
@@ -723,8 +724,7 @@ final Map<String, TdObject Function(Map<String, dynamic>)> allObjects = {
   'authorizationStateWaitPassword': (d) =>
       AuthorizationStateWaitPassword.fromJson(d),
   'authorizationStateReady': (d) => AuthorizationStateReady.fromJson(d),
-  'authorizationStateLoggingOut': (d) =>
-      AuthorizationStateLoggingOut.fromJson(d),
+  'authorizationStateLoggingOut': (d) => AuthorizationStateLoggingOut.fromJson(d),
   'authorizationStateClosing': (d) => AuthorizationStateClosing.fromJson(d),
   'authorizationStateClosed': (d) => AuthorizationStateClosed.fromJson(d),
   'passwordState': (d) => PasswordState.fromJson(d),
@@ -797,8 +797,7 @@ final Map<String, TdObject Function(Map<String, dynamic>)> allObjects = {
   'chatPermissions': (d) => ChatPermissions.fromJson(d),
   'chatMemberStatus': (d) => ChatMemberStatus.fromJson(d),
   'chatMemberStatusCreator': (d) => ChatMemberStatusCreator.fromJson(d),
-  'chatMemberStatusAdministrator': (d) =>
-      ChatMemberStatusAdministrator.fromJson(d),
+  'chatMemberStatusAdministrator': (d) => ChatMemberStatusAdministrator.fromJson(d),
   'chatMemberStatusMember': (d) => ChatMemberStatusMember.fromJson(d),
   'chatMemberStatusRestricted': (d) => ChatMemberStatusRestricted.fromJson(d),
   'chatMemberStatusLeft': (d) => ChatMemberStatusLeft.fromJson(d),
@@ -815,18 +814,15 @@ final Map<String, TdObject Function(Map<String, dynamic>)> allObjects = {
   'chatMembersFilterBanned': (d) => ChatMembersFilterBanned.fromJson(d),
   'chatMembersFilterBots': (d) => ChatMembersFilterBots.fromJson(d),
   'supergroupMembersFilter': (d) => SupergroupMembersFilter.fromJson(d),
-  'supergroupMembersFilterRecent': (d) =>
-      SupergroupMembersFilterRecent.fromJson(d),
+  'supergroupMembersFilterRecent': (d) => SupergroupMembersFilterRecent.fromJson(d),
   'supergroupMembersFilterContacts': (d) =>
       SupergroupMembersFilterContacts.fromJson(d),
   'supergroupMembersFilterAdministrators': (d) =>
       SupergroupMembersFilterAdministrators.fromJson(d),
-  'supergroupMembersFilterSearch': (d) =>
-      SupergroupMembersFilterSearch.fromJson(d),
+  'supergroupMembersFilterSearch': (d) => SupergroupMembersFilterSearch.fromJson(d),
   'supergroupMembersFilterRestricted': (d) =>
       SupergroupMembersFilterRestricted.fromJson(d),
-  'supergroupMembersFilterBanned': (d) =>
-      SupergroupMembersFilterBanned.fromJson(d),
+  'supergroupMembersFilterBanned': (d) => SupergroupMembersFilterBanned.fromJson(d),
   'supergroupMembersFilterMention': (d) =>
       SupergroupMembersFilterMention.fromJson(d),
   'supergroupMembersFilterBots': (d) => SupergroupMembersFilterBots.fromJson(d),
@@ -895,24 +891,21 @@ final Map<String, TdObject Function(Map<String, dynamic>)> allObjects = {
   'chatInviteLinkInfo': (d) => ChatInviteLinkInfo.fromJson(d),
   'publicChatType': (d) => PublicChatType.fromJson(d),
   'publicChatTypeHasUsername': (d) => PublicChatTypeHasUsername.fromJson(d),
-  'publicChatTypeIsLocationBased': (d) =>
-      PublicChatTypeIsLocationBased.fromJson(d),
+  'publicChatTypeIsLocationBased': (d) => PublicChatTypeIsLocationBased.fromJson(d),
   'chatActionBar': (d) => ChatActionBar.fromJson(d),
   'chatActionBarReportSpam': (d) => ChatActionBarReportSpam.fromJson(d),
   'chatActionBarReportUnrelatedLocation': (d) =>
       ChatActionBarReportUnrelatedLocation.fromJson(d),
   'chatActionBarReportAddBlock': (d) => ChatActionBarReportAddBlock.fromJson(d),
   'chatActionBarAddContact': (d) => ChatActionBarAddContact.fromJson(d),
-  'chatActionBarSharePhoneNumber': (d) =>
-      ChatActionBarSharePhoneNumber.fromJson(d),
+  'chatActionBarSharePhoneNumber': (d) => ChatActionBarSharePhoneNumber.fromJson(d),
   'keyboardButtonType': (d) => KeyboardButtonType.fromJson(d),
   'keyboardButtonTypeText': (d) => KeyboardButtonTypeText.fromJson(d),
   'keyboardButtonTypeRequestPhoneNumber': (d) =>
       KeyboardButtonTypeRequestPhoneNumber.fromJson(d),
   'keyboardButtonTypeRequestLocation': (d) =>
       KeyboardButtonTypeRequestLocation.fromJson(d),
-  'keyboardButtonTypeRequestPoll': (d) =>
-      KeyboardButtonTypeRequestPoll.fromJson(d),
+  'keyboardButtonTypeRequestPoll': (d) => KeyboardButtonTypeRequestPoll.fromJson(d),
   'keyboardButton': (d) => KeyboardButton.fromJson(d),
   'inlineKeyboardButtonType': (d) => InlineKeyboardButtonType.fromJson(d),
   'inlineKeyboardButtonTypeUrl': (d) => InlineKeyboardButtonTypeUrl.fromJson(d),
@@ -958,8 +951,7 @@ final Map<String, TdObject Function(Map<String, dynamic>)> allObjects = {
   'richTexts': (d) => RichTexts.fromJson(d),
   'pageBlockCaption': (d) => PageBlockCaption.fromJson(d),
   'pageBlockListItem': (d) => PageBlockListItem.fromJson(d),
-  'pageBlockHorizontalAlignment': (d) =>
-      PageBlockHorizontalAlignment.fromJson(d),
+  'pageBlockHorizontalAlignment': (d) => PageBlockHorizontalAlignment.fromJson(d),
   'pageBlockHorizontalAlignmentLeft': (d) =>
       PageBlockHorizontalAlignmentLeft.fromJson(d),
   'pageBlockHorizontalAlignmentCenter': (d) =>
@@ -967,8 +959,7 @@ final Map<String, TdObject Function(Map<String, dynamic>)> allObjects = {
   'pageBlockHorizontalAlignmentRight': (d) =>
       PageBlockHorizontalAlignmentRight.fromJson(d),
   'pageBlockVerticalAlignment': (d) => PageBlockVerticalAlignment.fromJson(d),
-  'pageBlockVerticalAlignmentTop': (d) =>
-      PageBlockVerticalAlignmentTop.fromJson(d),
+  'pageBlockVerticalAlignmentTop': (d) => PageBlockVerticalAlignmentTop.fromJson(d),
   'pageBlockVerticalAlignmentMiddle': (d) =>
       PageBlockVerticalAlignmentMiddle.fromJson(d),
   'pageBlockVerticalAlignmentBottom': (d) =>
@@ -1064,15 +1055,13 @@ final Map<String, TdObject Function(Map<String, dynamic>)> allObjects = {
   'passportElementPersonalDetails': (d) =>
       PassportElementPersonalDetails.fromJson(d),
   'passportElementPassport': (d) => PassportElementPassport.fromJson(d),
-  'passportElementDriverLicense': (d) =>
-      PassportElementDriverLicense.fromJson(d),
+  'passportElementDriverLicense': (d) => PassportElementDriverLicense.fromJson(d),
   'passportElementIdentityCard': (d) => PassportElementIdentityCard.fromJson(d),
   'passportElementInternalPassport': (d) =>
       PassportElementInternalPassport.fromJson(d),
   'passportElementAddress': (d) => PassportElementAddress.fromJson(d),
   'passportElementUtilityBill': (d) => PassportElementUtilityBill.fromJson(d),
-  'passportElementBankStatement': (d) =>
-      PassportElementBankStatement.fromJson(d),
+  'passportElementBankStatement': (d) => PassportElementBankStatement.fromJson(d),
   'passportElementRentalAgreement': (d) =>
       PassportElementRentalAgreement.fromJson(d),
   'passportElementPassportRegistration': (d) =>
@@ -1084,8 +1073,7 @@ final Map<String, TdObject Function(Map<String, dynamic>)> allObjects = {
   'inputPassportElement': (d) => InputPassportElement.fromJson(d),
   'inputPassportElementPersonalDetails': (d) =>
       InputPassportElementPersonalDetails.fromJson(d),
-  'inputPassportElementPassport': (d) =>
-      InputPassportElementPassport.fromJson(d),
+  'inputPassportElementPassport': (d) => InputPassportElementPassport.fromJson(d),
   'inputPassportElementDriverLicense': (d) =>
       InputPassportElementDriverLicense.fromJson(d),
   'inputPassportElementIdentityCard': (d) =>
@@ -1156,6 +1144,7 @@ final Map<String, TdObject Function(Map<String, dynamic>)> allObjects = {
       InputPassportElementErrorSourceFiles.fromJson(d),
   'inputPassportElementError': (d) => InputPassportElementError.fromJson(d),
   'messageContent': (d) => MessageContent.fromJson(d),
+  'messageAnimatedEmoji': (d) => MessageAnimatedEmoji.fromJson(d),
   'messageText': (d) => MessageText.fromJson(d),
   'messageAnimation': (d) => MessageAnimation.fromJson(d),
   'messageAudio': (d) => MessageAudio.fromJson(d),
@@ -1211,8 +1200,7 @@ final Map<String, TdObject Function(Map<String, dynamic>)> allObjects = {
   'textEntityTypeUrl': (d) => TextEntityTypeUrl.fromJson(d),
   'textEntityTypeEmailAddress': (d) => TextEntityTypeEmailAddress.fromJson(d),
   'textEntityTypePhoneNumber': (d) => TextEntityTypePhoneNumber.fromJson(d),
-  'textEntityTypeBankCardNumber': (d) =>
-      TextEntityTypeBankCardNumber.fromJson(d),
+  'textEntityTypeBankCardNumber': (d) => TextEntityTypeBankCardNumber.fromJson(d),
   'textEntityTypeBold': (d) => TextEntityTypeBold.fromJson(d),
   'textEntityTypeItalic': (d) => TextEntityTypeItalic.fromJson(d),
   'textEntityTypeUnderline': (d) => TextEntityTypeUnderline.fromJson(d),
@@ -1250,25 +1238,20 @@ final Map<String, TdObject Function(Map<String, dynamic>)> allObjects = {
   'inputMessageForwarded': (d) => InputMessageForwarded.fromJson(d),
   'searchMessagesFilter': (d) => SearchMessagesFilter.fromJson(d),
   'searchMessagesFilterEmpty': (d) => SearchMessagesFilterEmpty.fromJson(d),
-  'searchMessagesFilterAnimation': (d) =>
-      SearchMessagesFilterAnimation.fromJson(d),
+  'searchMessagesFilterAnimation': (d) => SearchMessagesFilterAnimation.fromJson(d),
   'searchMessagesFilterAudio': (d) => SearchMessagesFilterAudio.fromJson(d),
-  'searchMessagesFilterDocument': (d) =>
-      SearchMessagesFilterDocument.fromJson(d),
+  'searchMessagesFilterDocument': (d) => SearchMessagesFilterDocument.fromJson(d),
   'searchMessagesFilterPhoto': (d) => SearchMessagesFilterPhoto.fromJson(d),
   'searchMessagesFilterVideo': (d) => SearchMessagesFilterVideo.fromJson(d),
-  'searchMessagesFilterVoiceNote': (d) =>
-      SearchMessagesFilterVoiceNote.fromJson(d),
+  'searchMessagesFilterVoiceNote': (d) => SearchMessagesFilterVoiceNote.fromJson(d),
   'searchMessagesFilterPhotoAndVideo': (d) =>
       SearchMessagesFilterPhotoAndVideo.fromJson(d),
   'searchMessagesFilterUrl': (d) => SearchMessagesFilterUrl.fromJson(d),
-  'searchMessagesFilterChatPhoto': (d) =>
-      SearchMessagesFilterChatPhoto.fromJson(d),
+  'searchMessagesFilterChatPhoto': (d) => SearchMessagesFilterChatPhoto.fromJson(d),
   'searchMessagesFilterCall': (d) => SearchMessagesFilterCall.fromJson(d),
   'searchMessagesFilterMissedCall': (d) =>
       SearchMessagesFilterMissedCall.fromJson(d),
-  'searchMessagesFilterVideoNote': (d) =>
-      SearchMessagesFilterVideoNote.fromJson(d),
+  'searchMessagesFilterVideoNote': (d) => SearchMessagesFilterVideoNote.fromJson(d),
   'searchMessagesFilterVoiceAndVideoNote': (d) =>
       SearchMessagesFilterVoiceAndVideoNote.fromJson(d),
   'searchMessagesFilterMention': (d) => SearchMessagesFilterMention.fromJson(d),
@@ -1281,19 +1264,15 @@ final Map<String, TdObject Function(Map<String, dynamic>)> allObjects = {
   'chatActionTyping': (d) => ChatActionTyping.fromJson(d),
   'chatActionRecordingVideo': (d) => ChatActionRecordingVideo.fromJson(d),
   'chatActionUploadingVideo': (d) => ChatActionUploadingVideo.fromJson(d),
-  'chatActionRecordingVoiceNote': (d) =>
-      ChatActionRecordingVoiceNote.fromJson(d),
-  'chatActionUploadingVoiceNote': (d) =>
-      ChatActionUploadingVoiceNote.fromJson(d),
+  'chatActionRecordingVoiceNote': (d) => ChatActionRecordingVoiceNote.fromJson(d),
+  'chatActionUploadingVoiceNote': (d) => ChatActionUploadingVoiceNote.fromJson(d),
   'chatActionUploadingPhoto': (d) => ChatActionUploadingPhoto.fromJson(d),
   'chatActionUploadingDocument': (d) => ChatActionUploadingDocument.fromJson(d),
   'chatActionChoosingLocation': (d) => ChatActionChoosingLocation.fromJson(d),
   'chatActionChoosingContact': (d) => ChatActionChoosingContact.fromJson(d),
   'chatActionStartPlayingGame': (d) => ChatActionStartPlayingGame.fromJson(d),
-  'chatActionRecordingVideoNote': (d) =>
-      ChatActionRecordingVideoNote.fromJson(d),
-  'chatActionUploadingVideoNote': (d) =>
-      ChatActionUploadingVideoNote.fromJson(d),
+  'chatActionRecordingVideoNote': (d) => ChatActionRecordingVideoNote.fromJson(d),
+  'chatActionUploadingVideoNote': (d) => ChatActionUploadingVideoNote.fromJson(d),
   'chatActionCancel': (d) => ChatActionCancel.fromJson(d),
   'userStatus': (d) => UserStatus.fromJson(d),
   'userStatusEmpty': (d) => UserStatusEmpty.fromJson(d),
@@ -1311,8 +1290,7 @@ final Map<String, TdObject Function(Map<String, dynamic>)> allObjects = {
   'callDiscardReasonEmpty': (d) => CallDiscardReasonEmpty.fromJson(d),
   'callDiscardReasonMissed': (d) => CallDiscardReasonMissed.fromJson(d),
   'callDiscardReasonDeclined': (d) => CallDiscardReasonDeclined.fromJson(d),
-  'callDiscardReasonDisconnected': (d) =>
-      CallDiscardReasonDisconnected.fromJson(d),
+  'callDiscardReasonDisconnected': (d) => CallDiscardReasonDisconnected.fromJson(d),
   'callDiscardReasonHungUp': (d) => CallDiscardReasonHungUp.fromJson(d),
   'callProtocol': (d) => CallProtocol.fromJson(d),
   'callServerType': (d) => CallServerType.fromJson(d),
@@ -1359,19 +1337,16 @@ final Map<String, TdObject Function(Map<String, dynamic>)> allObjects = {
   'inputInlineQueryResult': (d) => InputInlineQueryResult.fromJson(d),
   'inputInlineQueryResultAnimation': (d) =>
       InputInlineQueryResultAnimation.fromJson(d),
-  'inputInlineQueryResultArticle': (d) =>
-      InputInlineQueryResultArticle.fromJson(d),
+  'inputInlineQueryResultArticle': (d) => InputInlineQueryResultArticle.fromJson(d),
   'inputInlineQueryResultAudio': (d) => InputInlineQueryResultAudio.fromJson(d),
-  'inputInlineQueryResultContact': (d) =>
-      InputInlineQueryResultContact.fromJson(d),
+  'inputInlineQueryResultContact': (d) => InputInlineQueryResultContact.fromJson(d),
   'inputInlineQueryResultDocument': (d) =>
       InputInlineQueryResultDocument.fromJson(d),
   'inputInlineQueryResultGame': (d) => InputInlineQueryResultGame.fromJson(d),
   'inputInlineQueryResultLocation': (d) =>
       InputInlineQueryResultLocation.fromJson(d),
   'inputInlineQueryResultPhoto': (d) => InputInlineQueryResultPhoto.fromJson(d),
-  'inputInlineQueryResultSticker': (d) =>
-      InputInlineQueryResultSticker.fromJson(d),
+  'inputInlineQueryResultSticker': (d) => InputInlineQueryResultSticker.fromJson(d),
   'inputInlineQueryResultVenue': (d) => InputInlineQueryResultVenue.fromJson(d),
   'inputInlineQueryResultVideo': (d) => InputInlineQueryResultVideo.fromJson(d),
   'inputInlineQueryResultVoiceNote': (d) =>
@@ -1417,10 +1392,8 @@ final Map<String, TdObject Function(Map<String, dynamic>)> allObjects = {
   'chatEventPhotoChanged': (d) => ChatEventPhotoChanged.fromJson(d),
   'chatEventInvitesToggled': (d) => ChatEventInvitesToggled.fromJson(d),
   'chatEventLinkedChatChanged': (d) => ChatEventLinkedChatChanged.fromJson(d),
-  'chatEventSlowModeDelayChanged': (d) =>
-      ChatEventSlowModeDelayChanged.fromJson(d),
-  'chatEventSignMessagesToggled': (d) =>
-      ChatEventSignMessagesToggled.fromJson(d),
+  'chatEventSlowModeDelayChanged': (d) => ChatEventSlowModeDelayChanged.fromJson(d),
+  'chatEventSignMessagesToggled': (d) => ChatEventSignMessagesToggled.fromJson(d),
   'chatEventStickerSetChanged': (d) => ChatEventStickerSetChanged.fromJson(d),
   'chatEventLocationChanged': (d) => ChatEventLocationChanged.fromJson(d),
   'chatEventIsAllHistoryAvailableToggled': (d) =>
@@ -1452,8 +1425,7 @@ final Map<String, TdObject Function(Map<String, dynamic>)> allObjects = {
   'deviceTokenApplePushVoIP': (d) => DeviceTokenApplePushVoIP.fromJson(d),
   'deviceTokenWindowsPush': (d) => DeviceTokenWindowsPush.fromJson(d),
   'deviceTokenMicrosoftPush': (d) => DeviceTokenMicrosoftPush.fromJson(d),
-  'deviceTokenMicrosoftPushVoIP': (d) =>
-      DeviceTokenMicrosoftPushVoIP.fromJson(d),
+  'deviceTokenMicrosoftPushVoIP': (d) => DeviceTokenMicrosoftPushVoIP.fromJson(d),
   'deviceTokenWebPush': (d) => DeviceTokenWebPush.fromJson(d),
   'deviceTokenSimplePush': (d) => DeviceTokenSimplePush.fromJson(d),
   'deviceTokenUbuntuPush': (d) => DeviceTokenUbuntuPush.fromJson(d),
@@ -1474,8 +1446,7 @@ final Map<String, TdObject Function(Map<String, dynamic>)> allObjects = {
   'inputBackgroundRemote': (d) => InputBackgroundRemote.fromJson(d),
   'hashtags': (d) => Hashtags.fromJson(d),
   'canTransferOwnershipResult': (d) => CanTransferOwnershipResult.fromJson(d),
-  'canTransferOwnershipResultOk': (d) =>
-      CanTransferOwnershipResultOk.fromJson(d),
+  'canTransferOwnershipResultOk': (d) => CanTransferOwnershipResultOk.fromJson(d),
   'canTransferOwnershipResultPasswordNeeded': (d) =>
       CanTransferOwnershipResultPasswordNeeded.fromJson(d),
   'canTransferOwnershipResultPasswordTooFresh': (d) =>
@@ -1527,20 +1498,16 @@ final Map<String, TdObject Function(Map<String, dynamic>)> allObjects = {
       PushMessageContentChatJoinByLink.fromJson(d),
   'pushMessageContentMessageForwards': (d) =>
       PushMessageContentMessageForwards.fromJson(d),
-  'pushMessageContentMediaAlbum': (d) =>
-      PushMessageContentMediaAlbum.fromJson(d),
+  'pushMessageContentMediaAlbum': (d) => PushMessageContentMediaAlbum.fromJson(d),
   'notificationType': (d) => NotificationType.fromJson(d),
   'notificationTypeNewMessage': (d) => NotificationTypeNewMessage.fromJson(d),
-  'notificationTypeNewSecretChat': (d) =>
-      NotificationTypeNewSecretChat.fromJson(d),
+  'notificationTypeNewSecretChat': (d) => NotificationTypeNewSecretChat.fromJson(d),
   'notificationTypeNewCall': (d) => NotificationTypeNewCall.fromJson(d),
   'notificationTypeNewPushMessage': (d) =>
       NotificationTypeNewPushMessage.fromJson(d),
   'notificationGroupType': (d) => NotificationGroupType.fromJson(d),
-  'notificationGroupTypeMessages': (d) =>
-      NotificationGroupTypeMessages.fromJson(d),
-  'notificationGroupTypeMentions': (d) =>
-      NotificationGroupTypeMentions.fromJson(d),
+  'notificationGroupTypeMessages': (d) => NotificationGroupTypeMessages.fromJson(d),
+  'notificationGroupTypeMentions': (d) => NotificationGroupTypeMentions.fromJson(d),
   'notificationGroupTypeSecretChat': (d) =>
       NotificationGroupTypeSecretChat.fromJson(d),
   'notificationGroupTypeCalls': (d) => NotificationGroupTypeCalls.fromJson(d),
@@ -1578,8 +1545,7 @@ final Map<String, TdObject Function(Map<String, dynamic>)> allObjects = {
       UserPrivacySettingRuleRestrictChatMembers.fromJson(d),
   'userPrivacySettingRules': (d) => UserPrivacySettingRules.fromJson(d),
   'userPrivacySetting': (d) => UserPrivacySetting.fromJson(d),
-  'userPrivacySettingShowStatus': (d) =>
-      UserPrivacySettingShowStatus.fromJson(d),
+  'userPrivacySettingShowStatus': (d) => UserPrivacySettingShowStatus.fromJson(d),
   'userPrivacySettingShowProfilePhoto': (d) =>
       UserPrivacySettingShowProfilePhoto.fromJson(d),
   'userPrivacySettingShowLinkInForwardedMessages': (d) =>
@@ -1588,8 +1554,7 @@ final Map<String, TdObject Function(Map<String, dynamic>)> allObjects = {
       UserPrivacySettingShowPhoneNumber.fromJson(d),
   'userPrivacySettingAllowChatInvites': (d) =>
       UserPrivacySettingAllowChatInvites.fromJson(d),
-  'userPrivacySettingAllowCalls': (d) =>
-      UserPrivacySettingAllowCalls.fromJson(d),
+  'userPrivacySettingAllowCalls': (d) => UserPrivacySettingAllowCalls.fromJson(d),
   'userPrivacySettingAllowPeerToPeerCalls': (d) =>
       UserPrivacySettingAllowPeerToPeerCalls.fromJson(d),
   'userPrivacySettingAllowFindingByPhoneNumber': (d) =>
@@ -1714,15 +1679,13 @@ final Map<String, TdObject Function(Map<String, dynamic>)> allObjects = {
   'update': (d) => Update.fromJson(d),
   'updateAuthorizationState': (d) => UpdateAuthorizationState.fromJson(d),
   'updateNewMessage': (d) => UpdateNewMessage.fromJson(d),
-  'updateMessageSendAcknowledged': (d) =>
-      UpdateMessageSendAcknowledged.fromJson(d),
+  'updateMessageSendAcknowledged': (d) => UpdateMessageSendAcknowledged.fromJson(d),
   'updateMessageSendSucceeded': (d) => UpdateMessageSendSucceeded.fromJson(d),
   'updateMessageSendFailed': (d) => UpdateMessageSendFailed.fromJson(d),
   'updateMessageContent': (d) => UpdateMessageContent.fromJson(d),
   'updateMessageEdited': (d) => UpdateMessageEdited.fromJson(d),
   'updateMessageIsPinned': (d) => UpdateMessageIsPinned.fromJson(d),
-  'updateMessageInteractionInfo': (d) =>
-      UpdateMessageInteractionInfo.fromJson(d),
+  'updateMessageInteractionInfo': (d) => UpdateMessageInteractionInfo.fromJson(d),
   'updateMessageContentOpened': (d) => UpdateMessageContentOpened.fromJson(d),
   'updateMessageMentionRead': (d) => UpdateMessageMentionRead.fromJson(d),
   'updateMessageLiveLocationViewed': (d) =>
@@ -1742,8 +1705,7 @@ final Map<String, TdObject Function(Map<String, dynamic>)> allObjects = {
       UpdateChatDefaultDisableNotification.fromJson(d),
   'updateChatReadInbox': (d) => UpdateChatReadInbox.fromJson(d),
   'updateChatReadOutbox': (d) => UpdateChatReadOutbox.fromJson(d),
-  'updateChatUnreadMentionCount': (d) =>
-      UpdateChatUnreadMentionCount.fromJson(d),
+  'updateChatUnreadMentionCount': (d) => UpdateChatUnreadMentionCount.fromJson(d),
   'updateChatNotificationSettings': (d) =>
       UpdateChatNotificationSettings.fromJson(d),
   'updateScopeNotificationSettings': (d) =>
@@ -1776,8 +1738,7 @@ final Map<String, TdObject Function(Map<String, dynamic>)> allObjects = {
   'updateGroupCall': (d) => UpdateGroupCall.fromJson(d),
   'updateGroupCallParticipant': (d) => UpdateGroupCallParticipant.fromJson(d),
   'updateNewCallSignalingData': (d) => UpdateNewCallSignalingData.fromJson(d),
-  'updateUserPrivacySettingRules': (d) =>
-      UpdateUserPrivacySettingRules.fromJson(d),
+  'updateUserPrivacySettingRules': (d) => UpdateUserPrivacySettingRules.fromJson(d),
   'updateUnreadMessageCount': (d) => UpdateUnreadMessageCount.fromJson(d),
   'updateUnreadChatCount': (d) => UpdateUnreadChatCount.fromJson(d),
   'updateOption': (d) => UpdateOption.fromJson(d),
@@ -1799,8 +1760,7 @@ final Map<String, TdObject Function(Map<String, dynamic>)> allObjects = {
   'updateNewInlineQuery': (d) => UpdateNewInlineQuery.fromJson(d),
   'updateNewChosenInlineResult': (d) => UpdateNewChosenInlineResult.fromJson(d),
   'updateNewCallbackQuery': (d) => UpdateNewCallbackQuery.fromJson(d),
-  'updateNewInlineCallbackQuery': (d) =>
-      UpdateNewInlineCallbackQuery.fromJson(d),
+  'updateNewInlineCallbackQuery': (d) => UpdateNewInlineCallbackQuery.fromJson(d),
   'updateNewShippingQuery': (d) => UpdateNewShippingQuery.fromJson(d),
   'updateNewPreCheckoutQuery': (d) => UpdateNewPreCheckoutQuery.fromJson(d),
   'updateNewCustomEvent': (d) => UpdateNewCustomEvent.fromJson(d),
@@ -1821,4 +1781,5 @@ final Map<String, TdObject Function(Map<String, dynamic>)> allObjects = {
   'testVectorIntObject': (d) => TestVectorIntObject.fromJson(d),
   'testVectorString': (d) => TestVectorString.fromJson(d),
   'testVectorStringObject': (d) => TestVectorStringObject.fromJson(d),
+  'animatedEmoji': (d) => AnimatedEmoji.fromJson(d),
 };

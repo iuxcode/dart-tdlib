@@ -2,37 +2,40 @@ part of '../index.dart';
 
 class FormattedText extends TdObject {
   /// A text with some entities
-  FormattedText({this.text, this.entities});
+  FormattedText({required this.text, required this.entities, this.extra});
 
-  /// [text] The text
-  String? text;
+  /// Parse from a json
+  factory FormattedText.fromJson(Map<String, dynamic> json) => FormattedText(
+    text : json['text'],
+    entities : List<TextEntity>.from((json['entities'] ?? [])
+        .map((item) => TextEntity.fromJson(item ?? <String, dynamic>{}))
+        .toList()),
+    extra : json['@extra'],
+  );
 
-  /// [entities] Entities contained in the text. Entities can be nested, but must not mutually intersect with each other.. Pre, Code and PreCode entities can't contain other entities. Bold, Italic, Underline and Strikethrough entities can contain and to be contained in all other entities. All other entities can't contain each other
-  List<TextEntity>? entities;
+  static const CONSTRUCTOR = 'formattedText';
+
+  /// [entities] Entities contained in the text. Entities can be nested, but must not mutually intersect with each other..
+  /// Pre, Code and PreCode entities can't contain other entities.
+  /// Bold, Italic, Underline and Strikethrough entities can contain and to be contained in all other entities.
+  /// All other entities can't contain each other
+  List<TextEntity> entities;
 
   /// callback sign
   dynamic extra;
 
-  /// Parse from a json
-  FormattedText.fromJson(Map<String, dynamic> json) {
-    this.text = json['text'];
-    this.entities = List<TextEntity>.from((json['entities'] ?? [])
-        .map((item) => TextEntity.fromJson(item ?? <String, dynamic>{}))
-        .toList());
-    this.extra = json['@extra'];
-  }
+  /// [text] The text
+  String text;
+
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
       "text": this.text,
-      "entities": this.entities!.map((i) => i.toJson()).toList(),
+      "entities": this.entities.map((i) => i.toJson()).toList(),
     };
   }
-
-  static const CONSTRUCTOR = 'formattedText';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }

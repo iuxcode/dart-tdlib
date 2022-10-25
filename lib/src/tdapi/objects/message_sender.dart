@@ -1,7 +1,7 @@
 part of '../index.dart';
 
+/// Contains information about the sender of a message
 class MessageSender extends TdObject {
-  /// Contains information about the sender of a message
   MessageSender();
 
   /// a MessageSender return type can be :
@@ -18,28 +18,32 @@ class MessageSender extends TdObject {
     }
   }
 
-  @override
-  Map<String, dynamic> toJson() {
-    return {};
-  }
-
   static const CONSTRUCTOR = 'messageSender';
 
   @override
   String getConstructor() => CONSTRUCTOR;
+
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 }
 
+/// The message was sent by a known user
 class MessageSenderUser extends MessageSender {
-  /// The message was sent by a known user
-  MessageSenderUser({this.userId});
-
-  /// [userId] Identifier of the user that sent the message
-  int? userId;
+  MessageSenderUser({required this.userId});
 
   /// Parse from a json
-  MessageSenderUser.fromJson(Map<String, dynamic> json) {
-    this.userId = json['user_id'];
-  }
+  factory MessageSenderUser.fromJson(Map<String, dynamic> json) =>
+      MessageSenderUser(userId: json['user_id']);
+
+  static const CONSTRUCTOR = 'messageSenderUser';
+
+  /// [userId] Identifier of the user that sent the message
+  int userId;
+
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
@@ -48,24 +52,23 @@ class MessageSenderUser extends MessageSender {
       "user_id": this.userId,
     };
   }
+}
 
-  static const CONSTRUCTOR = 'messageSenderUser';
+/// The message was sent on behalf of a chat
+class MessageSenderChat extends MessageSender {
+  MessageSenderChat({required this.chatId});
+
+  /// Parse from a json
+  factory MessageSenderChat.fromJson(Map<String, dynamic> json) =>
+      MessageSenderChat(chatId: json['chat_id']);
+
+  static const CONSTRUCTOR = 'messageSenderChat';
+
+  /// [chatId] Identifier of the chat that sent the message
+  int chatId;
 
   @override
   String getConstructor() => CONSTRUCTOR;
-}
-
-class MessageSenderChat extends MessageSender {
-  /// The message was sent on behalf of a chat
-  MessageSenderChat({this.chatId});
-
-  /// [chatId] Identifier of the chat that sent the message
-  int? chatId;
-
-  /// Parse from a json
-  MessageSenderChat.fromJson(Map<String, dynamic> json) {
-    this.chatId = json['chat_id'];
-  }
 
   @override
   Map<String, dynamic> toJson() {
@@ -74,9 +77,4 @@ class MessageSenderChat extends MessageSender {
       "chat_id": this.chatId,
     };
   }
-
-  static const CONSTRUCTOR = 'messageSenderChat';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }

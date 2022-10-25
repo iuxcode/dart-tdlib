@@ -1,35 +1,54 @@
 part of '../index.dart';
 
+/// Describes an animation file. The animation must be encoded in GIF or MPEG4 format
 class Animation extends TdObject {
-  /// Describes an animation file. The animation must be encoded in GIF or MPEG4 format
-  Animation(
-      {this.duration,
-      this.width,
-      this.height,
-      this.fileName,
-      this.mimeType,
-      this.hasStickers,
-      this.minithumbnail,
-      this.thumbnail,
-      this.animation});
+  Animation({
+    required this.duration,
+    required this.width,
+    required this.height,
+    required this.fileName,
+    required this.mimeType,
+    required this.hasStickers,
+    this.minithumbnail,
+    this.thumbnail,
+    required this.animation,
+  });
+
+  /// Parse from a json
+  factory Animation.fromJson(Map<String, dynamic> json) => Animation(
+        duration: json['duration'],
+        width: json['width'],
+        height: json['height'],
+        fileName: json['file_name'],
+        mimeType: json['mime_type'],
+        hasStickers: json['has_stickers'],
+        minithumbnail: json['minithumbnail'] != null
+            ? Minithumbnail.fromJson(json['minithumbnail'])
+            : null,
+        thumbnail:
+            json['thumbnail'] != null ? Thumbnail.fromJson(json['thumbnail']) : null,
+        animation: File.fromJson(json['animation']),
+      );
+
+  static const CONSTRUCTOR = 'animation';
+
+  /// [animation] File containing the animation
+  File animation;
 
   /// [duration] Duration of the animation, in seconds; as defined by the sender
-  int? duration;
-
-  /// [width] Width of the animation
-  int? width;
-
-  /// [height] Height of the animation
-  int? height;
+  int duration;
 
   /// [fileName] Original name of the file; as defined by the sender
-  String? fileName;
-
-  /// [mimeType] MIME type of the file, usually "image/gif" or "video/mp4"
-  String? mimeType;
+  String fileName;
 
   /// [hasStickers] True, if stickers were added to the animation. The list of corresponding sticker set can be received using getAttachedStickerSets
-  bool? hasStickers;
+  bool hasStickers;
+
+  /// [height] Height of the animation
+  int height;
+
+  /// [mimeType] MIME type of the file, usually "image/gif" or "video/mp4"
+  String mimeType;
 
   /// [minithumbnail] Animation minithumbnail; may be null
   Minithumbnail? minithumbnail;
@@ -37,23 +56,11 @@ class Animation extends TdObject {
   /// [thumbnail] Animation thumbnail in JPEG or MPEG4 format; may be null
   Thumbnail? thumbnail;
 
-  /// [animation] File containing the animation
-  File? animation;
+  /// [width] Width of the animation
+  int width;
 
-  /// Parse from a json
-  Animation.fromJson(Map<String, dynamic> json) {
-    this.duration = json['duration'];
-    this.width = json['width'];
-    this.height = json['height'];
-    this.fileName = json['file_name'];
-    this.mimeType = json['mime_type'];
-    this.hasStickers = json['has_stickers'];
-    this.minithumbnail =
-        Minithumbnail.fromJson(json['minithumbnail'] ?? <String, dynamic>{});
-    this.thumbnail =
-        Thumbnail.fromJson(json['thumbnail'] ?? <String, dynamic>{});
-    this.animation = File.fromJson(json['animation'] ?? <String, dynamic>{});
-  }
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
@@ -65,15 +72,9 @@ class Animation extends TdObject {
       "file_name": this.fileName,
       "mime_type": this.mimeType,
       "has_stickers": this.hasStickers,
-      "minithumbnail":
-          this.minithumbnail == null ? null : this.minithumbnail!.toJson(),
-      "thumbnail": this.thumbnail == null ? null : this.thumbnail!.toJson(),
-      "animation": this.animation == null ? null : this.animation!.toJson(),
+      "minithumbnail": this.minithumbnail?.toJson(),
+      "thumbnail": this.thumbnail?.toJson(),
+      "animation": this.animation.toJson(),
     };
   }
-
-  static const CONSTRUCTOR = 'animation';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }

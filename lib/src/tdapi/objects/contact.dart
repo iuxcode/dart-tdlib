@@ -1,37 +1,43 @@
 part of '../index.dart';
 
+/// Describes a user contact
 class Contact extends TdObject {
-  /// Describes a user contact
-  Contact(
-      {this.phoneNumber,
-      this.firstName,
-      this.lastName,
-      this.vcard,
-      this.userId});
-
-  /// [phoneNumber] Phone number of the user
-  String? phoneNumber;
-
-  /// [firstName] First name of the user; 1-255 characters in length
-  String? firstName;
-
-  /// [lastName] Last name of the user
-  String? lastName;
-
-  /// [vcard] Additional data about the user in a form of vCard; 0-2048 bytes in length
-  String? vcard;
-
-  /// [userId] Identifier of the user, if known; otherwise 0
-  int? userId;
+  Contact({
+    required this.phoneNumber,
+    required this.firstName,
+    required this.lastName,
+    required this.vcard,
+    this.userId = 0,
+  });
 
   /// Parse from a json
-  Contact.fromJson(Map<String, dynamic> json) {
-    this.phoneNumber = json['phone_number'];
-    this.firstName = json['first_name'];
-    this.lastName = json['last_name'];
-    this.vcard = json['vcard'];
-    this.userId = json['user_id'];
-  }
+  factory Contact.fromJson(Map<String, dynamic> json) => Contact(
+        phoneNumber: json['phone_number'],
+        firstName: json['first_name'],
+        lastName: json['last_name'],
+        vcard: json['vcard'],
+        userId: json['user_id'],
+      );
+
+  static const CONSTRUCTOR = 'contact';
+
+  /// [firstName] First name of the user; 1-255 characters in length
+  String firstName;
+
+  /// [lastName] Last name of the user
+  String lastName;
+
+  /// [phoneNumber] Phone number of the user
+  String phoneNumber;
+
+  /// [userId] Identifier of the user, if known; otherwise 0
+  int userId;
+
+  /// [vcard] Additional data about the user in a form of vCard; 0-2048 bytes in length
+  String vcard;
+
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
@@ -44,9 +50,4 @@ class Contact extends TdObject {
       "user_id": this.userId,
     };
   }
-
-  static const CONSTRUCTOR = 'contact';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }

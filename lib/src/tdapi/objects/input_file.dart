@@ -35,8 +35,8 @@ class InputFile extends TdObject {
   String getConstructor() => CONSTRUCTOR;
 }
 
+/// A file defined by its unique inputFileId
 class InputFileId extends InputFile {
-  /// A file defined by its unique inputFileId
   InputFileId({this.id});
 
   /// [id] Unique file identifier

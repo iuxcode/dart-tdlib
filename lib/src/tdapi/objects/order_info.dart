@@ -1,34 +1,45 @@
 part of '../index.dart';
 
+/// Order information
 class OrderInfo extends TdObject {
-  /// Order information
-  OrderInfo(
-      {this.name, this.phoneNumber, this.emailAddress, this.shippingAddress});
+  OrderInfo({
+    required this.name,
+    required this.phoneNumber,
+    required this.emailAddress,
+    this.shippingAddress,
+    this.extra,
+  });
 
-  /// [name] Name of the user
-  String? name;
+  /// Parse from a json
+  factory OrderInfo.fromJson(Map<String, dynamic> json) => OrderInfo(
+        name: json['name'],
+        phoneNumber: json['phone_number'],
+        emailAddress: json['email_address'],
+        shippingAddress: json['shipping_address'] != null
+            ? Address.fromJson(json['shipping_address'])
+            : null,
+        extra: json['@extra'],
+      );
 
-  /// [phoneNumber] Phone number of the user
-  String? phoneNumber;
+  static const CONSTRUCTOR = 'orderInfo';
 
   /// [emailAddress] Email address of the user
-  String? emailAddress;
-
-  /// [shippingAddress] Shipping address for this order; may be null
-  Address? shippingAddress;
+  String emailAddress;
 
   /// callback sign
   dynamic extra;
 
-  /// Parse from a json
-  OrderInfo.fromJson(Map<String, dynamic> json) {
-    this.name = json['name'];
-    this.phoneNumber = json['phone_number'];
-    this.emailAddress = json['email_address'];
-    this.shippingAddress =
-        Address.fromJson(json['shipping_address'] ?? <String, dynamic>{});
-    this.extra = json['@extra'];
-  }
+  /// [name] Name of the user
+  String name;
+
+  /// [phoneNumber] Phone number of the user
+  String phoneNumber;
+
+  /// [shippingAddress] Shipping address for this order; may be null
+  Address? shippingAddress;
+
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
@@ -37,13 +48,7 @@ class OrderInfo extends TdObject {
       "name": this.name,
       "phone_number": this.phoneNumber,
       "email_address": this.emailAddress,
-      "shipping_address":
-          this.shippingAddress == null ? null : this.shippingAddress!.toJson(),
+      "shipping_address": this.shippingAddress?.toJson(),
     };
   }
-
-  static const CONSTRUCTOR = 'orderInfo';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }

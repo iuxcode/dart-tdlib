@@ -1,64 +1,69 @@
 part of '../index.dart';
 
+/// Describes a video file
 class Video extends TdObject {
-  /// Describes a video file
-  Video(
-      {this.duration,
-      this.width,
-      this.height,
-      this.fileName,
-      this.mimeType,
-      this.hasStickers,
-      this.supportsStreaming,
-      this.minithumbnail,
-      this.thumbnail,
-      this.video});
+  Video({
+    required this.duration,
+    required this.width,
+    required this.height,
+    required this.fileName,
+    required this.mimeType,
+    required this.hasStickers,
+    required this.supportsStreaming,
+    this.minithumbnail,
+    this.thumbnail,
+    required this.video,
+  });
+
+  /// Parse from a json
+  factory Video.fromJson(Map<String, dynamic> json) => Video(
+        duration: json['duration'],
+        width: json['width'],
+        height: json['height'],
+        fileName: json['file_name'],
+        mimeType: json['mime_type'],
+        hasStickers: json['has_stickers'],
+        supportsStreaming: json['supports_streaming'],
+        minithumbnail:
+            Minithumbnail.fromJson(json['minithumbnail'] ?? <String, dynamic>{}),
+        thumbnail: Thumbnail.fromJson(json['thumbnail'] ?? <String, dynamic>{}),
+        video: File.fromJson(json['video'] ?? <String, dynamic>{}),
+      );
+
+  static const CONSTRUCTOR = 'video';
 
   /// [duration] Duration of the video, in seconds; as defined by the sender
-  int? duration;
-
-  /// [width] Video width; as defined by the sender
-  int? width;
-
-  /// [height] Video height; as defined by the sender
-  int? height;
+  int duration;
 
   /// [fileName] Original name of the file; as defined by the sender
-  String? fileName;
-
-  /// [mimeType] MIME type of the file; as defined by the sender
-  String? mimeType;
+  String fileName;
 
   /// [hasStickers] True, if stickers were added to the video. The list of corresponding sticker sets can be received using getAttachedStickerSets
-  bool? hasStickers;
+  bool hasStickers;
 
-  /// [supportsStreaming] True, if the video should be tried to be streamed
-  bool? supportsStreaming;
+  /// [height] Video height; as defined by the sender
+  int height;
+
+  /// [mimeType] MIME type of the file; as defined by the sender
+  String mimeType;
 
   /// [minithumbnail] Video minithumbnail; may be null
   Minithumbnail? minithumbnail;
+
+  /// [supportsStreaming] True, if the video should be tried to be streamed
+  bool supportsStreaming;
 
   /// [thumbnail] Video thumbnail in JPEG or MPEG4 format; as defined by the sender; may be null
   Thumbnail? thumbnail;
 
   /// [video] File containing the video
-  File? video;
+  File video;
 
-  /// Parse from a json
-  Video.fromJson(Map<String, dynamic> json) {
-    this.duration = json['duration'];
-    this.width = json['width'];
-    this.height = json['height'];
-    this.fileName = json['file_name'];
-    this.mimeType = json['mime_type'];
-    this.hasStickers = json['has_stickers'];
-    this.supportsStreaming = json['supports_streaming'];
-    this.minithumbnail =
-        Minithumbnail.fromJson(json['minithumbnail'] ?? <String, dynamic>{});
-    this.thumbnail =
-        Thumbnail.fromJson(json['thumbnail'] ?? <String, dynamic>{});
-    this.video = File.fromJson(json['video'] ?? <String, dynamic>{});
-  }
+  /// [width] Video width; as defined by the sender
+  int width;
+
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
@@ -71,15 +76,9 @@ class Video extends TdObject {
       "mime_type": this.mimeType,
       "has_stickers": this.hasStickers,
       "supports_streaming": this.supportsStreaming,
-      "minithumbnail":
-          this.minithumbnail == null ? null : this.minithumbnail!.toJson(),
-      "thumbnail": this.thumbnail == null ? null : this.thumbnail!.toJson(),
-      "video": this.video == null ? null : this.video!.toJson(),
+      "minithumbnail": this.minithumbnail?.toJson(),
+      "thumbnail": this.thumbnail?.toJson(),
+      "video": this.video.toJson(),
     };
   }
-
-  static const CONSTRUCTOR = 'video';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }

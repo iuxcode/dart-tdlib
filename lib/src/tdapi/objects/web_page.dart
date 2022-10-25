@@ -1,68 +1,59 @@
 part of '../index.dart';
 
+/// Describes a web page preview
 class WebPage extends TdObject {
-  /// Describes a web page preview
-  WebPage(
-      {this.url,
-      this.displayUrl,
-      this.type,
-      this.siteName,
-      this.title,
-      this.description,
-      this.photo,
-      this.embedUrl,
-      this.embedType,
-      this.embedWidth,
-      this.embedHeight,
-      this.duration,
-      this.author,
-      this.animation,
-      this.audio,
-      this.document,
-      this.sticker,
-      this.video,
-      this.videoNote,
-      this.voiceNote,
-      this.instantViewVersion});
+  WebPage({
+    required this.url,
+    required this.displayUrl,
+    required this.type,
+    required this.siteName,
+    required this.title,
+    required this.description,
+    this.photo,
+    required this.embedUrl,
+    required this.embedType,
+    required this.embedWidth,
+    required this.embedHeight,
+    required this.duration,
+    required this.author,
+    this.animation,
+    this.audio,
+    this.document,
+    this.sticker,
+    this.video,
+    this.videoNote,
+    this.voiceNote,
+    required this.instantViewVersion,
+    this.extra,
+  });
 
-  /// [url] Original URL of the link
-  String? url;
+  /// Parse from a json
+  factory WebPage.fromJson(Map<String, dynamic> json) => WebPage(
+        url: json['url'],
+        displayUrl: json['display_url'],
+        type: json['type'],
+        siteName: json['site_name'],
+        title: json['title'],
+        description: FormattedText.fromJson(json['description']),
+        photo: Photo.fromJson(json['photo']),
+        embedUrl: json['embed_url'],
+        embedType: json['embed_type'],
+        embedWidth: json['embed_width'],
+        embedHeight: json['embed_height'],
+        duration: json['duration'],
+        author: json['author'],
+        animation: Animation.fromJson(json['animation']),
+        audio: Audio.fromJson(json['audio']),
+        document: Document.fromJson(json['document']),
+        sticker: Sticker.fromJson(json['sticker']),
+        video: Video.fromJson(json['video']),
+        videoNote: VideoNote.fromJson(json['video_note']),
+        voiceNote: VoiceNote.fromJson(json['voice_note']),
+        instantViewVersion: json['instant_view_version'],
+        extra: json['@extra'],
+      );
 
-  /// [displayUrl] URL to display
-  String? displayUrl;
-
-  /// [type] Type of the web page. Can be: article, photo, audio, video, document, profile, app, or something else
-  String? type;
-
-  /// [siteName] Short name of the site (e.g., Google Docs, App Store)
-  String? siteName;
-
-  /// [title] Title of the content
-  String? title;
-
-  /// [description] Description of the content
-  FormattedText? description;
-
-  /// [photo] Image representing the content; may be null
-  Photo? photo;
-
-  /// [embedUrl] URL to show in the embedded preview
-  String? embedUrl;
-
-  /// [embedType] MIME type of the embedded preview, (e.g., text/html or video/mp4)
-  String? embedType;
-
-  /// [embedWidth] Width of the embedded preview
-  int? embedWidth;
-
-  /// [embedHeight] Height of the embedded preview
-  int? embedHeight;
-
-  /// [duration] Duration of the content, in seconds
-  int? duration;
-
-  /// [author] Author of the content
-  String? author;
+  static const CONSTRUCTOR = 'webPage';
 
   /// [animation] Preview of the content as an animation, if available; may be null
   Animation? animation;
@@ -70,11 +61,56 @@ class WebPage extends TdObject {
   /// [audio] Preview of the content as an audio file, if available; may be null
   Audio? audio;
 
+  /// [author] Author of the content
+  String author;
+
+  /// [description] Description of the content
+  FormattedText description;
+
+  /// [displayUrl] URL to display
+  String displayUrl;
+
   /// [document] Preview of the content as a document, if available (currently only available for small PDF files and ZIP archives); may be null
   Document? document;
 
+  /// [duration] Duration of the content, in seconds
+  int duration;
+
+  /// [embedHeight] Height of the embedded preview
+  int embedHeight;
+
+  /// [embedType] MIME type of the embedded preview, (e.g., text/html or video/mp4)
+  String embedType;
+
+  /// [embedUrl] URL to show in the embedded preview
+  String embedUrl;
+
+  /// [embedWidth] Width of the embedded preview
+  int embedWidth;
+
+  /// callback sign
+  dynamic extra;
+
+  /// [instantViewVersion] Version of instant view, available for the web page (currently can be 1 or 2), 0 if none
+  int instantViewVersion;
+
+  /// [photo] Image representing the content; may be null
+  Photo? photo;
+
+  /// [siteName] Short name of the site (e.g., Google Docs, App Store)
+  String siteName;
+
   /// [sticker] Preview of the content as a sticker for small WEBP files, if available; may be null
   Sticker? sticker;
+
+  /// [title] Title of the content
+  String title;
+
+  /// [type] Type of the web page. Can be: article, photo, audio, video, document, profile, app, or something else
+  String type;
+
+  /// [url] Original URL of the link
+  String url;
 
   /// [video] Preview of the content as a video, if available; may be null
   Video? video;
@@ -85,41 +121,8 @@ class WebPage extends TdObject {
   /// [voiceNote] Preview of the content as a voice note, if available; may be null
   VoiceNote? voiceNote;
 
-  /// [instantViewVersion] Version of instant view, available for the web page (currently can be 1 or 2), 0 if none
-  int? instantViewVersion;
-
-  /// callback sign
-  dynamic extra;
-
-  /// Parse from a json
-  WebPage.fromJson(Map<String, dynamic> json) {
-    this.url = json['url'];
-    this.displayUrl = json['display_url'];
-    this.type = json['type'];
-    this.siteName = json['site_name'];
-    this.title = json['title'];
-    this.description =
-        FormattedText.fromJson(json['description'] ?? <String, dynamic>{});
-    this.photo = Photo.fromJson(json['photo'] ?? <String, dynamic>{});
-    this.embedUrl = json['embed_url'];
-    this.embedType = json['embed_type'];
-    this.embedWidth = json['embed_width'];
-    this.embedHeight = json['embed_height'];
-    this.duration = json['duration'];
-    this.author = json['author'];
-    this.animation =
-        Animation.fromJson(json['animation'] ?? <String, dynamic>{});
-    this.audio = Audio.fromJson(json['audio'] ?? <String, dynamic>{});
-    this.document = Document.fromJson(json['document'] ?? <String, dynamic>{});
-    this.sticker = Sticker.fromJson(json['sticker'] ?? <String, dynamic>{});
-    this.video = Video.fromJson(json['video'] ?? <String, dynamic>{});
-    this.videoNote =
-        VideoNote.fromJson(json['video_note'] ?? <String, dynamic>{});
-    this.voiceNote =
-        VoiceNote.fromJson(json['voice_note'] ?? <String, dynamic>{});
-    this.instantViewVersion = json['instant_view_version'];
-    this.extra = json['@extra'];
-  }
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
@@ -130,28 +133,23 @@ class WebPage extends TdObject {
       "type": this.type,
       "site_name": this.siteName,
       "title": this.title,
-      "description":
-          this.description == null ? null : this.description!.toJson(),
-      "photo": this.photo == null ? null : this.photo!.toJson(),
+      "description": this.description.toJson(),
+      "photo": this.photo?.toJson(),
       "embed_url": this.embedUrl,
       "embed_type": this.embedType,
       "embed_width": this.embedWidth,
       "embed_height": this.embedHeight,
       "duration": this.duration,
       "author": this.author,
-      "animation": this.animation == null ? null : this.animation!.toJson(),
-      "audio": this.audio == null ? null : this.audio!.toJson(),
-      "document": this.document == null ? null : this.document!.toJson(),
-      "sticker": this.sticker == null ? null : this.sticker!.toJson(),
-      "video": this.video == null ? null : this.video!.toJson(),
-      "video_note": this.videoNote == null ? null : this.videoNote!.toJson(),
-      "voice_note": this.voiceNote == null ? null : this.voiceNote!.toJson(),
+      "animation": this.animation?.toJson(),
+      "audio": this.audio?.toJson(),
+      "document": this.document?.toJson(),
+      "sticker": this.sticker?.toJson(),
+      "video": this.video?.toJson(),
+      "video_note": this.videoNote?.toJson(),
+      "voice_note": this.voiceNote?.toJson(),
       "instant_view_version": this.instantViewVersion,
+      "extra": this.extra,
     };
   }
-
-  static const CONSTRUCTOR = 'webPage';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }
