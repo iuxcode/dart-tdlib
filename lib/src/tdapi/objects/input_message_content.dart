@@ -74,33 +74,39 @@ class InputMessageContent extends TdObject {
   String getConstructor() => CONSTRUCTOR;
 }
 
+/// A text message
 class InputMessageText extends InputMessageContent {
-  /// A text message
-  InputMessageText({this.text, this.disableWebPagePreview, this.clearDraft});
+  InputMessageText(
+      {required this.text,
+      this.disableWebPagePreview = true,
+      this.clearDraft = true});
 
-  /// [text] Formatted text to be sent; 1-GetOption("message_text_length_max") characters. Only Bold, Italic, Underline, Strikethrough, Code, Pre, PreCode, TextUrl and MentionName entities are allowed to be specified manually
-  FormattedText? text;
+  /// [text] Formatted text to be sent; 1-GetOption("message_text_length_max") characters.
+  /// Only Bold, Italic, Underline, Strikethrough, Code, Pre, PreCode, TextUrl and MentionName entities are allowed to be specified manually
+  FormattedText text;
 
   /// [disableWebPagePreview] True, if rich web page previews for URLs in the message text should be disabled
-  bool? disableWebPagePreview;
+  bool disableWebPagePreview;
 
   /// [clearDraft] True, if a chat message draft should be deleted
-  bool? clearDraft;
+  bool clearDraft;
 
   /// Parse from a json
-  InputMessageText.fromJson(Map<String, dynamic> json) {
-    this.text = FormattedText.fromJson(json['text']);
-    this.disableWebPagePreview = json['disable_web_page_preview'];
-    this.clearDraft = json['clear_draft'];
+  factory InputMessageText.fromJson(Map<String, dynamic> json) {
+    return InputMessageText(
+      text: FormattedText.fromJson(json['text']),
+      disableWebPagePreview: json['disable_web_page_preview'],
+      clearDraft: json['clear_draft'],
+    );
   }
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "text": this.text == null ? null : this.text!.toJson(),
-      "disable_web_page_preview": this.disableWebPagePreview,
-      "clear_draft": this.clearDraft,
+      "text": text.toJson(),
+      "disable_web_page_preview": disableWebPagePreview,
+      "clear_draft": clearDraft,
     };
   }
 
@@ -110,19 +116,19 @@ class InputMessageText extends InputMessageContent {
   String getConstructor() => CONSTRUCTOR;
 }
 
+/// An animation message (GIF-style).
 class InputMessageAnimation extends InputMessageContent {
-  /// An animation message (GIF-style).
   InputMessageAnimation(
-      {this.animation,
+      {required this.animation,
       this.thumbnail,
       this.addedStickerFileIds,
-      this.duration,
-      this.width,
-      this.height,
+      required this.duration,
+      required this.width,
+      required this.height,
       this.caption});
 
   /// [animation] Animation file to be sent
-  InputFile? animation;
+  InputFile animation;
 
   /// [thumbnail] Animation thumbnail, if available
   InputThumbnail? thumbnail;
@@ -131,41 +137,42 @@ class InputMessageAnimation extends InputMessageContent {
   List<int>? addedStickerFileIds;
 
   /// [duration] Duration of the animation, in seconds
-  int? duration;
+  int duration;
 
   /// [width] Width of the animation; may be replaced by the server
-  int? width;
+  int width;
 
   /// [height] Height of the animation; may be replaced by the server
-  int? height;
+  int height;
 
   /// [caption] Animation caption; 0-GetOption("message_caption_length_max") characters
   FormattedText? caption;
 
   /// Parse from a json
-  InputMessageAnimation.fromJson(Map<String, dynamic> json) {
-    this.animation = InputFile.fromJson(json['animation']);
-    this.thumbnail = InputThumbnail.fromJson(json['thumbnail']);
-    this.addedStickerFileIds = List<int>.from(
-        (json['added_sticker_file_ids'] ?? []).map((item) => item).toList());
-    this.duration = json['duration'];
-    this.width = json['width'];
-    this.height = json['height'];
-    this.caption = FormattedText.fromJson(json['caption']);
+  factory InputMessageAnimation.fromJson(Map<String, dynamic> json) {
+    return InputMessageAnimation(
+      animation: InputFile.fromJson(json['animation']),
+      thumbnail: InputThumbnail.fromJson(json['thumbnail']),
+      addedStickerFileIds: List<int>.from(
+          (json['added_sticker_file_ids'] ?? []).map((item) => item).toList()),
+      duration: json['duration'],
+      width: json['width'],
+      height: json['height'],
+      caption: FormattedText.fromJson(json['caption']),
+    );
   }
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "animation": this.animation == null ? null : this.animation!.toJson(),
-      "thumbnail": this.thumbnail == null ? null : this.thumbnail!.toJson(),
-      "added_sticker_file_ids":
-          this.addedStickerFileIds!.map((i) => i).toList(),
-      "duration": this.duration,
-      "width": this.width,
-      "height": this.height,
-      "caption": this.caption == null ? null : this.caption!.toJson(),
+      "animation": animation.toJson(),
+      "thumbnail": thumbnail?.toJson(),
+      "added_sticker_file_ids": addedStickerFileIds?.map((i) => i).toList(),
+      "duration": duration,
+      "width": width,
+      "height": height,
+      "caption": caption?.toJson(),
     };
   }
 
@@ -175,57 +182,57 @@ class InputMessageAnimation extends InputMessageContent {
   String getConstructor() => CONSTRUCTOR;
 }
 
+/// An audio message
 class InputMessageAudio extends InputMessageContent {
-  /// An audio message
   InputMessageAudio(
-      {this.audio,
+      {required this.audio,
       this.albumCoverThumbnail,
-      this.duration,
-      this.title,
-      this.performer,
+      required this.duration,
+      required this.title,
+      required this.performer,
       this.caption});
 
   /// [audio] Audio file to be sent
-  InputFile? audio;
+  InputFile audio;
 
   /// [albumCoverThumbnail] Thumbnail of the cover for the album, if available
   InputThumbnail? albumCoverThumbnail;
 
   /// [duration] Duration of the audio, in seconds; may be replaced by the server
-  int? duration;
+  int duration;
 
   /// [title] Title of the audio; 0-64 characters; may be replaced by the server
-  String? title;
+  String title;
 
   /// [performer] Performer of the audio; 0-64 characters, may be replaced by the server
-  String? performer;
+  String performer;
 
   /// [caption] Audio caption; 0-GetOption("message_caption_length_max") characters
   FormattedText? caption;
 
   /// Parse from a json
-  InputMessageAudio.fromJson(Map<String, dynamic> json) {
-    this.audio = InputFile.fromJson(json['audio']);
-    this.albumCoverThumbnail =
-        InputThumbnail.fromJson(json['album_cover_thumbnail']);
-    this.duration = json['duration'];
-    this.title = json['title'];
-    this.performer = json['performer'];
-    this.caption = FormattedText.fromJson(json['caption']);
+  factory InputMessageAudio.fromJson(Map<String, dynamic> json) {
+    return InputMessageAudio(
+      audio: InputFile.fromJson(json['audio']),
+      albumCoverThumbnail:
+          InputThumbnail.fromJson(json['album_cover_thumbnail']),
+      duration: json['duration'],
+      title: json['title'],
+      performer: json['performer'],
+      caption: FormattedText.fromJson(json['caption']),
+    );
   }
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "audio": this.audio == null ? null : this.audio!.toJson(),
-      "album_cover_thumbnail": this.albumCoverThumbnail == null
-          ? null
-          : this.albumCoverThumbnail!.toJson(),
-      "duration": this.duration,
-      "title": this.title,
-      "performer": this.performer,
-      "caption": this.caption == null ? null : this.caption!.toJson(),
+      "audio": audio.toJson(),
+      "album_cover_thumbnail": albumCoverThumbnail?.toJson(),
+      "duration": duration,
+      "title": title,
+      "performer": performer,
+      "caption": caption?.toJson(),
     };
   }
 
@@ -235,42 +242,44 @@ class InputMessageAudio extends InputMessageContent {
   String getConstructor() => CONSTRUCTOR;
 }
 
+/// A document message (general file)
 class InputMessageDocument extends InputMessageContent {
-  /// A document message (general file)
   InputMessageDocument(
-      {this.document,
+      {required this.document,
       this.thumbnail,
-      this.disableContentTypeDetection,
+      this.disableContentTypeDetection = false,
       this.caption});
 
   /// [document] Document to be sent
-  InputFile? document;
+  InputFile document;
 
   /// [thumbnail] Document thumbnail, if available
   InputThumbnail? thumbnail;
 
   /// [disableContentTypeDetection] If true, automatic file type detection will be disabled and the document will be always sent as file. Always true for files sent to secret chats
-  bool? disableContentTypeDetection;
+  bool disableContentTypeDetection;
 
   /// [caption] Document caption; 0-GetOption("message_caption_length_max") characters
   FormattedText? caption;
 
   /// Parse from a json
-  InputMessageDocument.fromJson(Map<String, dynamic> json) {
-    this.document = InputFile.fromJson(json['document']);
-    this.thumbnail = InputThumbnail.fromJson(json['thumbnail']);
-    this.disableContentTypeDetection = json['disable_content_type_detection'];
-    this.caption = FormattedText.fromJson(json['caption']);
+  factory InputMessageDocument.fromJson(Map<String, dynamic> json) {
+    return InputMessageDocument(
+      document: InputFile.fromJson(json['document']),
+      thumbnail: InputThumbnail.fromJson(json['thumbnail']),
+      disableContentTypeDetection: json['disable_content_type_detection'],
+      caption: FormattedText.fromJson(json['caption']),
+    );
   }
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "document": this.document == null ? null : this.document!.toJson(),
-      "thumbnail": this.thumbnail == null ? null : this.thumbnail!.toJson(),
-      "disable_content_type_detection": this.disableContentTypeDetection,
-      "caption": this.caption == null ? null : this.caption!.toJson(),
+      "document": document.toJson(),
+      "thumbnail": thumbnail?.toJson(),
+      "disable_content_type_detection": disableContentTypeDetection,
+      "caption": caption?.toJson(),
     };
   }
 
@@ -280,19 +289,19 @@ class InputMessageDocument extends InputMessageContent {
   String getConstructor() => CONSTRUCTOR;
 }
 
+/// A photo message
 class InputMessagePhoto extends InputMessageContent {
-  /// A photo message
   InputMessagePhoto(
-      {this.photo,
+      {required this.photo,
       this.thumbnail,
       this.addedStickerFileIds,
-      this.width,
-      this.height,
+      required this.width,
+      required this.height,
       this.caption,
-      this.ttl});
+      this.ttl = 0});
 
   /// [photo] Photo to send
-  InputFile? photo;
+  InputFile photo;
 
   /// [thumbnail] Photo thumbnail to be sent, this is sent to the other party in secret chats only
   InputThumbnail? thumbnail;
@@ -301,41 +310,42 @@ class InputMessagePhoto extends InputMessageContent {
   List<int>? addedStickerFileIds;
 
   /// [width] Photo width
-  int? width;
+  int width;
 
   /// [height] Photo height
-  int? height;
+  int height;
 
   /// [caption] Photo caption; 0-GetOption("message_caption_length_max") characters
   FormattedText? caption;
 
   /// [ttl] Photo TTL (Time To Live), in seconds (0-60). A non-zero TTL can be specified only in private chats
-  int? ttl;
+  int ttl;
 
   /// Parse from a json
-  InputMessagePhoto.fromJson(Map<String, dynamic> json) {
-    this.photo = InputFile.fromJson(json['photo']);
-    this.thumbnail = InputThumbnail.fromJson(json['thumbnail']);
-    this.addedStickerFileIds = List<int>.from(
-        (json['added_sticker_file_ids'] ?? []).map((item) => item).toList());
-    this.width = json['width'];
-    this.height = json['height'];
-    this.caption = FormattedText.fromJson(json['caption']);
-    this.ttl = json['ttl'];
+  factory InputMessagePhoto.fromJson(Map<String, dynamic> json) {
+    return InputMessagePhoto(
+      photo: InputFile.fromJson(json['photo']),
+      thumbnail: InputThumbnail.fromJson(json['thumbnail']),
+      addedStickerFileIds: List<int>.from(
+          (json['added_sticker_file_ids'] ?? []).map((item) => item).toList()),
+      width: json['width'],
+      height: json['height'],
+      caption: FormattedText.fromJson(json['caption']),
+      ttl: json['ttl'],
+    );
   }
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "photo": this.photo == null ? null : this.photo!.toJson(),
-      "thumbnail": this.thumbnail == null ? null : this.thumbnail!.toJson(),
-      "added_sticker_file_ids":
-          this.addedStickerFileIds!.map((i) => i).toList(),
-      "width": this.width,
-      "height": this.height,
-      "caption": this.caption == null ? null : this.caption!.toJson(),
-      "ttl": this.ttl,
+      "photo": photo.toJson(),
+      "thumbnail": thumbnail?.toJson(),
+      "added_sticker_file_ids": addedStickerFileIds!.map((i) => i).toList(),
+      "width": width,
+      "height": height,
+      "caption": caption == null ? null : caption!.toJson(),
+      "ttl": ttl,
     };
   }
 
@@ -348,41 +358,49 @@ class InputMessagePhoto extends InputMessageContent {
 class InputMessageSticker extends InputMessageContent {
   /// A sticker message
   InputMessageSticker(
-      {this.sticker, this.thumbnail, this.width, this.height, this.emoji});
+      {required this.sticker,
+      this.thumbnail,
+      required this.width,
+      required this.height,
+      required this.emoji});
 
   /// [sticker] Sticker to be sent
-  InputFile? sticker;
+  InputFile sticker;
 
   /// [thumbnail] Sticker thumbnail, if available
   InputThumbnail? thumbnail;
 
   /// [width] Sticker width
-  int? width;
+  int width;
 
   /// [height] Sticker height
-  int? height;
+  int height;
 
   /// [emoji] Emoji used to choose the sticker
-  String? emoji;
+  String emoji;
 
   /// Parse from a json
-  InputMessageSticker.fromJson(Map<String, dynamic> json) {
-    this.sticker = InputFile.fromJson(json['sticker']);
-    this.thumbnail = InputThumbnail.fromJson(json['thumbnail']);
-    this.width = json['width'];
-    this.height = json['height'];
-    this.emoji = json['emoji'];
+  factory InputMessageSticker.fromJson(Map<String, dynamic> json) {
+    return InputMessageSticker(
+      sticker: InputFile.fromJson(json['sticker']),
+      thumbnail: json['thumbnail'] != null
+          ? InputThumbnail.fromJson(json['thumbnail'])
+          : null,
+      width: json['width'],
+      height: json['height'],
+      emoji: json['emoji'],
+    );
   }
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "sticker": this.sticker == null ? null : this.sticker!.toJson(),
-      "thumbnail": this.thumbnail == null ? null : this.thumbnail!.toJson(),
-      "width": this.width,
-      "height": this.height,
-      "emoji": this.emoji,
+      "sticker": sticker.toJson(),
+      "thumbnail": thumbnail?.toJson(),
+      "width": width,
+      "height": height,
+      "emoji": emoji,
     };
   }
 
@@ -434,32 +452,31 @@ class InputMessageVideo extends InputMessageContent {
 
   /// Parse from a json
   InputMessageVideo.fromJson(Map<String, dynamic> json) {
-    this.video = InputFile.fromJson(json['video']);
-    this.thumbnail = InputThumbnail.fromJson(json['thumbnail']);
-    this.addedStickerFileIds = List<int>.from(
+    video = InputFile.fromJson(json['video']);
+    thumbnail = InputThumbnail.fromJson(json['thumbnail']);
+    addedStickerFileIds = List<int>.from(
         (json['added_sticker_file_ids'] ?? []).map((item) => item).toList());
-    this.duration = json['duration'];
-    this.width = json['width'];
-    this.height = json['height'];
-    this.supportsStreaming = json['supports_streaming'];
-    this.caption = FormattedText.fromJson(json['caption']);
-    this.ttl = json['ttl'];
+    duration = json['duration'];
+    width = json['width'];
+    height = json['height'];
+    supportsStreaming = json['supports_streaming'];
+    caption = FormattedText.fromJson(json['caption']);
+    ttl = json['ttl'];
   }
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "video": this.video == null ? null : this.video!.toJson(),
-      "thumbnail": this.thumbnail == null ? null : this.thumbnail!.toJson(),
-      "added_sticker_file_ids":
-          this.addedStickerFileIds!.map((i) => i).toList(),
-      "duration": this.duration,
-      "width": this.width,
-      "height": this.height,
-      "supports_streaming": this.supportsStreaming,
-      "caption": this.caption == null ? null : this.caption!.toJson(),
-      "ttl": this.ttl,
+      "video": video == null ? null : video!.toJson(),
+      "thumbnail": thumbnail == null ? null : thumbnail!.toJson(),
+      "added_sticker_file_ids": addedStickerFileIds!.map((i) => i).toList(),
+      "duration": duration,
+      "width": width,
+      "height": height,
+      "supports_streaming": supportsStreaming,
+      "caption": caption == null ? null : caption!.toJson(),
+      "ttl": ttl,
     };
   }
 
@@ -488,20 +505,20 @@ class InputMessageVideoNote extends InputMessageContent {
 
   /// Parse from a json
   InputMessageVideoNote.fromJson(Map<String, dynamic> json) {
-    this.videoNote = InputFile.fromJson(json['video_note']);
-    this.thumbnail = InputThumbnail.fromJson(json['thumbnail']);
-    this.duration = json['duration'];
-    this.length = json['length'];
+    videoNote = InputFile.fromJson(json['video_note']);
+    thumbnail = InputThumbnail.fromJson(json['thumbnail']);
+    duration = json['duration'];
+    length = json['length'];
   }
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "video_note": this.videoNote == null ? null : this.videoNote!.toJson(),
-      "thumbnail": this.thumbnail == null ? null : this.thumbnail!.toJson(),
-      "duration": this.duration,
-      "length": this.length,
+      "video_note": videoNote == null ? null : videoNote!.toJson(),
+      "thumbnail": thumbnail == null ? null : thumbnail!.toJson(),
+      "duration": duration,
+      "length": length,
     };
   }
 
@@ -530,20 +547,20 @@ class InputMessageVoiceNote extends InputMessageContent {
 
   /// Parse from a json
   InputMessageVoiceNote.fromJson(Map<String, dynamic> json) {
-    this.voiceNote = InputFile.fromJson(json['voice_note']);
-    this.duration = json['duration'];
-    this.waveform = json['waveform'];
-    this.caption = FormattedText.fromJson(json['caption']);
+    voiceNote = InputFile.fromJson(json['voice_note']);
+    duration = json['duration'];
+    waveform = json['waveform'];
+    caption = FormattedText.fromJson(json['caption']);
   }
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "voice_note": this.voiceNote == null ? null : this.voiceNote!.toJson(),
-      "duration": this.duration,
-      "waveform": this.waveform,
-      "caption": this.caption == null ? null : this.caption!.toJson(),
+      "voice_note": voiceNote == null ? null : voiceNote!.toJson(),
+      "duration": duration,
+      "waveform": waveform,
+      "caption": caption == null ? null : caption!.toJson(),
     };
   }
 
@@ -575,20 +592,20 @@ class InputMessageLocation extends InputMessageContent {
 
   /// Parse from a json
   InputMessageLocation.fromJson(Map<String, dynamic> json) {
-    this.location = Location.fromJson(json['location']);
-    this.livePeriod = json['live_period'];
-    this.heading = json['heading'];
-    this.proximityAlertRadius = json['proximity_alert_radius'];
+    location = Location.fromJson(json['location']);
+    livePeriod = json['live_period'];
+    heading = json['heading'];
+    proximityAlertRadius = json['proximity_alert_radius'];
   }
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "location": this.location == null ? null : this.location!.toJson(),
-      "live_period": this.livePeriod,
-      "heading": this.heading,
-      "proximity_alert_radius": this.proximityAlertRadius,
+      "location": location == null ? null : location!.toJson(),
+      "live_period": livePeriod,
+      "heading": heading,
+      "proximity_alert_radius": proximityAlertRadius,
     };
   }
 
@@ -607,14 +624,14 @@ class InputMessageVenue extends InputMessageContent {
 
   /// Parse from a json
   InputMessageVenue.fromJson(Map<String, dynamic> json) {
-    this.venue = Venue.fromJson(json['venue']);
+    venue = Venue.fromJson(json['venue']);
   }
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "venue": this.venue == null ? null : this.venue!.toJson(),
+      "venue": venue == null ? null : venue!.toJson(),
     };
   }
 
@@ -633,14 +650,14 @@ class InputMessageContact extends InputMessageContent {
 
   /// Parse from a json
   InputMessageContact.fromJson(Map<String, dynamic> json) {
-    this.contact = Contact.fromJson(json['contact']);
+    contact = Contact.fromJson(json['contact']);
   }
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "contact": this.contact == null ? null : this.contact!.toJson(),
+      "contact": contact == null ? null : contact!.toJson(),
     };
   }
 
@@ -662,16 +679,16 @@ class InputMessageDice extends InputMessageContent {
 
   /// Parse from a json
   InputMessageDice.fromJson(Map<String, dynamic> json) {
-    this.emoji = json['emoji'];
-    this.clearDraft = json['clear_draft'];
+    emoji = json['emoji'];
+    clearDraft = json['clear_draft'];
   }
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "emoji": this.emoji,
-      "clear_draft": this.clearDraft,
+      "emoji": emoji,
+      "clear_draft": clearDraft,
     };
   }
 
@@ -693,16 +710,16 @@ class InputMessageGame extends InputMessageContent {
 
   /// Parse from a json
   InputMessageGame.fromJson(Map<String, dynamic> json) {
-    this.botUserId = json['bot_user_id'];
-    this.gameShortName = json['game_short_name'];
+    botUserId = json['bot_user_id'];
+    gameShortName = json['game_short_name'];
   }
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "bot_user_id": this.botUserId,
-      "game_short_name": this.gameShortName,
+      "bot_user_id": botUserId,
+      "game_short_name": gameShortName,
     };
   }
 
@@ -762,34 +779,34 @@ class InputMessageInvoice extends InputMessageContent {
 
   /// Parse from a json
   InputMessageInvoice.fromJson(Map<String, dynamic> json) {
-    this.invoice = Invoice.fromJson(json['invoice']);
-    this.title = json['title'];
-    this.description = json['description'];
-    this.photoUrl = json['photo_url'];
-    this.photoSize = json['photo_size'];
-    this.photoWidth = json['photo_width'];
-    this.photoHeight = json['photo_height'];
-    this.payload = json['payload'];
-    this.providerToken = json['provider_token'];
-    this.providerData = json['provider_data'];
-    this.startParameter = json['start_parameter'];
+    invoice = Invoice.fromJson(json['invoice']);
+    title = json['title'];
+    description = json['description'];
+    photoUrl = json['photo_url'];
+    photoSize = json['photo_size'];
+    photoWidth = json['photo_width'];
+    photoHeight = json['photo_height'];
+    payload = json['payload'];
+    providerToken = json['provider_token'];
+    providerData = json['provider_data'];
+    startParameter = json['start_parameter'];
   }
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "invoice": this.invoice == null ? null : this.invoice!.toJson(),
-      "title": this.title,
-      "description": this.description,
-      "photo_url": this.photoUrl,
-      "photo_size": this.photoSize,
-      "photo_width": this.photoWidth,
-      "photo_height": this.photoHeight,
-      "payload": this.payload,
-      "provider_token": this.providerToken,
-      "provider_data": this.providerData,
-      "start_parameter": this.startParameter,
+      "invoice": invoice == null ? null : invoice!.toJson(),
+      "title": title,
+      "description": description,
+      "photo_url": photoUrl,
+      "photo_size": photoSize,
+      "photo_width": photoWidth,
+      "photo_height": photoHeight,
+      "payload": payload,
+      "provider_token": providerToken,
+      "provider_data": providerData,
+      "start_parameter": startParameter,
     };
   }
 
@@ -833,27 +850,27 @@ class InputMessagePoll extends InputMessageContent {
 
   /// Parse from a json
   InputMessagePoll.fromJson(Map<String, dynamic> json) {
-    this.question = json['question'];
-    this.options =
+    question = json['question'];
+    options =
         List<String>.from((json['options'] ?? []).map((item) => item).toList());
-    this.isAnonymous = json['is_anonymous'];
-    this.type = PollType.fromJson(json['type']);
-    this.openPeriod = json['open_period'];
-    this.closeDate = json['close_date'];
-    this.isClosed = json['is_closed'];
+    isAnonymous = json['is_anonymous'];
+    type = PollType.fromJson(json['type']);
+    openPeriod = json['open_period'];
+    closeDate = json['close_date'];
+    isClosed = json['is_closed'];
   }
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "question": this.question,
-      "options": this.options!.map((i) => i).toList(),
-      "is_anonymous": this.isAnonymous,
-      "type": this.type == null ? null : this.type!.toJson(),
-      "open_period": this.openPeriod,
-      "close_date": this.closeDate,
-      "is_closed": this.isClosed,
+      "question": question,
+      "options": options!.map((i) => i).toList(),
+      "is_anonymous": isAnonymous,
+      "type": type == null ? null : type!.toJson(),
+      "open_period": openPeriod,
+      "close_date": closeDate,
+      "is_closed": isClosed,
     };
   }
 
@@ -866,37 +883,41 @@ class InputMessagePoll extends InputMessageContent {
 class InputMessageForwarded extends InputMessageContent {
   /// A forwarded message
   InputMessageForwarded(
-      {this.fromChatId, this.messageId, this.inGameShare, this.copyOptions});
+      {required this.fromChatId,
+      required this.messageId,
+      this.inGameShare = false,
+      required this.copyOptions});
 
   /// [fromChatId] Identifier for the chat this forwarded message came from
-  int? fromChatId;
+  int fromChatId;
 
   /// [messageId] Identifier of the message to forward
-  int? messageId;
+  int messageId;
 
   /// [inGameShare] True, if a game message should be shared within a launched game; applies only to game messages
-  bool? inGameShare;
+  bool inGameShare;
 
   /// [copyOptions] Options to be used to copy content of the message without a link to the original message
-  MessageCopyOptions? copyOptions;
+  MessageCopyOptions copyOptions;
 
   /// Parse from a json
-  InputMessageForwarded.fromJson(Map<String, dynamic> json) {
-    this.fromChatId = json['from_chat_id'];
-    this.messageId = json['message_id'];
-    this.inGameShare = json['in_game_share'];
-    this.copyOptions = MessageCopyOptions.fromJson(json['copy_options']);
+  factory InputMessageForwarded.fromJson(Map<String, dynamic> json) {
+    return InputMessageForwarded(
+      fromChatId: json['from_chat_id'],
+      messageId: json['message_id'],
+      inGameShare: json['in_game_share'],
+      copyOptions: MessageCopyOptions.fromJson(json['copy_options']),
+    );
   }
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "from_chat_id": this.fromChatId,
-      "message_id": this.messageId,
-      "in_game_share": this.inGameShare,
-      "copy_options":
-          this.copyOptions == null ? null : this.copyOptions!.toJson(),
+      "from_chat_id": fromChatId,
+      "message_id": messageId,
+      "in_game_share": inGameShare,
+      "copy_options": copyOptions.toJson(),
     };
   }
 

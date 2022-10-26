@@ -1531,28 +1531,34 @@ class UpdateChatReplyMarkup extends Update {
   }
 }
 
-/// TODO Null safety
-
 /// A chat draft has changed.
 /// Be aware that the update may come in the currently opened chat but with old content of the draft.
 /// If the user has changed the content of the draft, this update shouldn't be applied
 class UpdateChatDraftMessage extends Update {
-  UpdateChatDraftMessage({this.chatId, this.draftMessage, this.positions});
+  UpdateChatDraftMessage(
+      {required this.chatId,
+      this.draftMessage,
+      required this.positions,
+      this.extra});
 
   /// Parse from a json
-  UpdateChatDraftMessage.fromJson(Map<String, dynamic> json) {
-    chatId = json['chat_id'];
-    draftMessage = DraftMessage.fromJson(json['draft_message']);
-    positions = List<ChatPosition>.from((json['positions'] ?? [])
-        .map((item) => ChatPosition.fromJson(item))
-        .toList());
-    extra = json['@extra'];
+  factory UpdateChatDraftMessage.fromJson(Map<String, dynamic> json) {
+    return UpdateChatDraftMessage(
+      chatId: json['chat_id'],
+      draftMessage: json['draft_message'] != null
+          ? DraftMessage.fromJson(json['draft_message'])
+          : null,
+      positions: List<ChatPosition>.from((json['positions'] ?? [])
+          .map((item) => ChatPosition.fromJson(item))
+          .toList()),
+      extra: json['@extra'],
+    );
   }
 
   static const CONSTRUCTOR = 'updateChatDraftMessage';
 
   /// [chatId] Chat identifier
-  int? chatId;
+  int chatId;
 
   /// [draftMessage] The new draft message; may be null
   DraftMessage? draftMessage;
@@ -1561,7 +1567,7 @@ class UpdateChatDraftMessage extends Update {
   dynamic extra;
 
   /// [positions] The new chat positions in the chat lists
-  List<ChatPosition>? positions;
+  List<ChatPosition> positions;
 
   @override
   String getConstructor() => CONSTRUCTOR;
@@ -1572,7 +1578,7 @@ class UpdateChatDraftMessage extends Update {
       "@type": CONSTRUCTOR,
       "chat_id": chatId,
       "draft_message": draftMessage == null ? null : draftMessage!.toJson(),
-      "positions": positions!.map((i) => i.toJson()).toList(),
+      "positions": positions.map((i) => i.toJson()).toList(),
     };
   }
 }
