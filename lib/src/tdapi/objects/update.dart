@@ -2833,13 +2833,21 @@ class UpdateSavedAnimations extends Update {
 
 class UpdateSelectedBackground extends Update {
   /// The selected background has changed
-  UpdateSelectedBackground({this.forDarkTheme, this.background});
+  UpdateSelectedBackground({
+    this.forDarkTheme = false,
+    this.background,
+    this.extra,
+  });
 
   /// Parse from a json
-  UpdateSelectedBackground.fromJson(Map<String, dynamic> json) {
-    forDarkTheme = json['for_dark_theme'];
-    background = Background.fromJson(json['background']);
-    extra = json['@extra'];
+  factory UpdateSelectedBackground.fromJson(Map<String, dynamic> json) {
+    return UpdateSelectedBackground(
+      forDarkTheme: json['for_dark_theme'],
+      background: json['background'] != null
+          ? Background.fromJson(json['background'])
+          : null,
+      extra: json['@extra'],
+    );
   }
 
   static const CONSTRUCTOR = 'updateSelectedBackground';
@@ -2851,7 +2859,7 @@ class UpdateSelectedBackground extends Update {
   dynamic extra;
 
   /// [forDarkTheme] True, if background for dark theme has changed
-  bool? forDarkTheme;
+  bool forDarkTheme;
 
   @override
   String getConstructor() => CONSTRUCTOR;

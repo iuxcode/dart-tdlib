@@ -30,7 +30,9 @@ class User extends TdObject {
         username: json['username'],
         phoneNumber: json['phone_number'],
         status: UserStatus.fromJson(json['status']),
-        profilePhoto: ProfilePhoto.fromJson(json['profile_photo']),
+        profilePhoto: json['profile_photo'] != null
+            ? ProfilePhoto.fromJson(json['profile_photo'])
+            : null,
         isContact: json['is_contact'],
         isMutualContact: json['is_mutual_contact'],
         isVerified: json['is_verified'],

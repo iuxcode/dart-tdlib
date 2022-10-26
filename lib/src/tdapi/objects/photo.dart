@@ -11,9 +11,12 @@ class Photo extends TdObject {
   /// Parse from a json
   factory Photo.fromJson(Map<String, dynamic> json) => Photo(
         hasStickers: json['has_stickers'],
-        minithumbnail: Minithumbnail.fromJson(json['minithumbnail']),
-        sizes: List<PhotoSize>.from(
-            (json['sizes'] ?? []).map((item) => PhotoSize.fromJson(item)).toList()),
+        minithumbnail: json['minithumbnail'] != null
+            ? Minithumbnail.fromJson(json['minithumbnail'])
+            : null,
+        sizes: List<PhotoSize>.from((json['sizes'] ?? [])
+            .map((item) => PhotoSize.fromJson(item))
+            .toList()),
       );
 
   static const CONSTRUCTOR = 'photo';

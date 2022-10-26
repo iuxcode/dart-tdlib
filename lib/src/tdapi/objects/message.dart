@@ -41,9 +41,12 @@ class Message extends TdObject {
         id: json['id'],
         sender: MessageSender.fromJson(json['sender_id']),
         chatId: json['chat_id'],
-        sendingState: MessageSendingState.fromJson(json['sending_state']),
-        schedulingState:
-            MessageSchedulingState.fromJson(json['scheduling_state']),
+        sendingState: json['sending_state'] != null
+            ? MessageSendingState.fromJson(json['sending_state'])
+            : null,
+        schedulingState: json['scheduling_state'] != null
+            ? MessageSchedulingState.fromJson(json['scheduling_state'])
+            : null,
         isOutgoing: json['is_outgoing'],
         isPinned: json['is_pinned'],
         canBeEdited: json['can_be_edited'],
@@ -56,9 +59,12 @@ class Message extends TdObject {
         containsUnreadMention: json['contains_unread_mention'],
         date: json['date'],
         editDate: json['edit_date'],
-        forwardInfo: MessageForwardInfo.fromJson(json['forward_info']),
-        interactionInfo:
-            MessageInteractionInfo.fromJson(json['interaction_info']),
+        forwardInfo: json['forward_info'] != null
+            ? MessageForwardInfo.fromJson(json['forward_info'])
+            : null,
+        interactionInfo: json['interaction_info'] != null
+            ? MessageInteractionInfo.fromJson(json['interaction_info'])
+            : null,
         replyInChatId: json['reply_in_chat_id'],
         replyToMessageId: json['reply_to_message_id'],
         messageThreadId: json['message_thread_id'],
@@ -69,7 +75,9 @@ class Message extends TdObject {
         mediaAlbumId: int.parse(json['media_album_id']),
         restrictionReason: json['restriction_reason'],
         content: MessageContent.fromJson(json['content']),
-        replyMarkup: ReplyMarkup.fromJson(json['reply_markup']),
+        replyMarkup: json['reply_markup'] != null
+            ? ReplyMarkup.fromJson(json['reply_markup'])
+            : null,
         extra: json['@extra'],
       );
 

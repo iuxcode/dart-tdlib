@@ -165,22 +165,24 @@ class MessageContent extends TdObject {
 
 /// A message with an animated emoji
 class MessageAnimatedEmoji extends MessageContent {
-  MessageAnimatedEmoji({required this.emoji, required this.animatedEmoji});
+  MessageAnimatedEmoji({this.emoji, this.animatedEmoji});
 
   /// Parse from a json
   factory MessageAnimatedEmoji.fromJson(Map<String, dynamic> json) =>
       MessageAnimatedEmoji(
-        emoji: json['text'],
-        animatedEmoji: AnimatedEmoji.fromJson(json['animatedEmoji']),
+        emoji: json['emoji'],
+        animatedEmoji: json['animatedEmoji'] != null
+            ? AnimatedEmoji.fromJson(json['animatedEmoji'])
+            : null,
       );
 
   static const CONSTRUCTOR = 'messageAnimatedEmoji';
 
   /// The animated emoji
-  AnimatedEmoji animatedEmoji;
+  AnimatedEmoji? animatedEmoji;
 
   /// The corresponding emoji
-  String emoji;
+  String? emoji;
 
   @override
   String getConstructor() => CONSTRUCTOR;
@@ -190,7 +192,7 @@ class MessageAnimatedEmoji extends MessageContent {
     return {
       "@type": CONSTRUCTOR,
       "emoji": emoji,
-      "animatedEmoji": animatedEmoji.toJson(),
+      "animatedEmoji": animatedEmoji?.toJson(),
     };
   }
 }

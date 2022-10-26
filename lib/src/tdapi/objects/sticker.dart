@@ -21,13 +21,17 @@ class Sticker extends TdObject {
         width: json['width'],
         height: json['height'],
         emoji: json['emoji'],
-        isAnimated: json['is_animated'],
-        isMask: json['is_mask'],
-        maskPosition: MaskPosition.fromJson(json['mask_position']),
+        isAnimated: json['is_animated'] ?? false,
+        isMask: json['is_mask'] ?? false,
+        maskPosition: json['mask_position'] != null
+            ? MaskPosition.fromJson(json['mask_position'])
+            : null,
         outline: List<ClosedVectorPath>.from((json['outline'] ?? [])
             .map((item) => ClosedVectorPath.fromJson(item))
             .toList()),
-        thumbnail: Thumbnail.fromJson(json['thumbnail']),
+        thumbnail: json['thumbnail'] != null
+            ? Thumbnail.fromJson(json['thumbnail'])
+            : null,
         sticker: File.fromJson(json['sticker']),
       );
 
@@ -77,8 +81,7 @@ class Sticker extends TdObject {
       "emoji": this.emoji,
       "is_animated": this.isAnimated,
       "is_mask": this.isMask,
-      "mask_position":
-          this.maskPosition == null ? null : this.maskPosition!.toJson(),
+      "mask_position": this.maskPosition?.toJson(),
       "outline": this.outline.map((i) => i.toJson()).toList(),
       "thumbnail": this.thumbnail?.toJson(),
       "sticker": this.sticker.toJson(),

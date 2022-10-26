@@ -33,7 +33,8 @@ class ChatMember extends TdObject {
     this.inviterUserId = json['inviter_user_id'];
     this.joinedChatDate = json['joined_chat_date'];
     this.status = ChatMemberStatus.fromJson(json['status']);
-    this.botInfo = BotInfo.fromJson(json['bot_info']);
+    this.botInfo =
+        json['bot_info'] != null ? BotInfo.fromJson(json['bot_info']) : null;
     this.extra = json['@extra'];
   }
 

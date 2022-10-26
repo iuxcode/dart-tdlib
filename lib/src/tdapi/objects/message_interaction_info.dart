@@ -13,7 +13,9 @@ class MessageInteractionInfo extends TdObject {
       MessageInteractionInfo(
         viewCount: json['view_count'],
         forwardCount: json['forward_count'],
-        replyInfo: MessageReplyInfo.fromJson(json['reply_info']),
+        replyInfo: json['reply_info'] != null
+            ? MessageReplyInfo.fromJson(json['reply_info'])
+            : null,
       );
 
   // ignore: constant_identifier_names

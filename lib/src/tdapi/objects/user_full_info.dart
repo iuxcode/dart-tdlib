@@ -10,7 +10,7 @@ class UserFullInfo extends TdObject {
     this.hasPrivateCalls = false,
     this.needPhoneNumberPrivacyException = false,
     required this.bio,
-    required this.shareText,
+    this.shareText,
     this.groupInCommonCount = 0,
     this.botInfo,
     this.extra,
@@ -65,7 +65,7 @@ class UserFullInfo extends TdObject {
   ChatPhoto? photo;
 
   /// [shareText] For bots, the text that is included with the link when users share the bot
-  String shareText;
+  String? shareText;
 
   /// [supportsVideoCalls] True, if a video call can be created with the user
   bool supportsVideoCalls;

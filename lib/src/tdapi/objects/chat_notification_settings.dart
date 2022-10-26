@@ -6,7 +6,7 @@ class ChatNotificationSettings extends TdObject {
     this.useDefaultMuteFor = false,
     required this.muteFor,
     this.useDefaultSound = false,
-    required this.sound,
+    this.sound,
     this.useDefaultShowPreview = false,
     this.showPreview = false,
     this.useDefaultDisablePinnedMessageNotifications = false,
@@ -49,7 +49,7 @@ class ChatNotificationSettings extends TdObject {
   bool showPreview;
 
   /// [sound] The name of an audio file to be used for notification sounds; only applies to iOS applications
-  String sound;
+  String? sound;
 
   /// [useDefaultDisableMentionNotifications] If true, disable_mention_notifications is ignored and the value for the relevant type of chat is used instead
   bool useDefaultDisableMentionNotifications;

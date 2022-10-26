@@ -4,7 +4,7 @@ class ScopeNotificationSettings extends TdObject {
   /// Contains information about notification settings for several chats
   ScopeNotificationSettings({
     required this.muteFor,
-    required this.sound,
+    this.sound,
     this.showPreview = false,
     this.disablePinnedMessageNotifications = false,
     this.disableMentionNotifications = false,
@@ -15,7 +15,7 @@ class ScopeNotificationSettings extends TdObject {
   int muteFor;
 
   /// [sound] The name of an audio file to be used for notification sounds; only applies to iOS applications
-  String sound;
+  String? sound;
 
   /// [showPreview] True, if message content should be displayed in notifications
   bool showPreview;

@@ -35,20 +35,29 @@ class WebPage extends TdObject {
         siteName: json['site_name'],
         title: json['title'],
         description: FormattedText.fromJson(json['description']),
-        photo: Photo.fromJson(json['photo']),
+        photo: json['photo'] != null ? Photo.fromJson(json['photo']) : null,
         embedUrl: json['embed_url'],
         embedType: json['embed_type'],
         embedWidth: json['embed_width'],
         embedHeight: json['embed_height'],
         duration: json['duration'],
         author: json['author'],
-        animation: Animation.fromJson(json['animation']),
-        audio: Audio.fromJson(json['audio']),
-        document: Document.fromJson(json['document']),
-        sticker: Sticker.fromJson(json['sticker']),
-        video: Video.fromJson(json['video']),
-        videoNote: VideoNote.fromJson(json['video_note']),
-        voiceNote: VoiceNote.fromJson(json['voice_note']),
+        animation: json['animation'] != null
+            ? Animation.fromJson(json['animation'])
+            : null,
+        audio: json['audio'] != null ? Audio.fromJson(json['audio']) : null,
+        document: json['document'] != null
+            ? Document.fromJson(json['document'])
+            : null,
+        sticker:
+            json['sticker'] != null ? Sticker.fromJson(json['sticker']) : null,
+        video: json['video'] != null ? Video.fromJson(json['video']) : null,
+        videoNote: json['video_note'] != null
+            ? VideoNote.fromJson(json['video_note'])
+            : null,
+        voiceNote: json['voice_note'] != null
+            ? VoiceNote.fromJson(json['voice_note'])
+            : null,
         instantViewVersion: json['instant_view_version'],
         extra: json['@extra'],
       );

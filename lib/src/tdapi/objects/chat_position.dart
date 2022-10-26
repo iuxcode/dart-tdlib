@@ -15,7 +15,8 @@ class ChatPosition extends TdObject {
       list: ChatList.fromJson(json['list']),
       order: int.parse(json['order']),
       isPinned: json['is_pinned'],
-      source: ChatSource.fromJson(json['source']),
+      source:
+          json['source'] != null ? ChatSource.fromJson(json['source']) : null,
     );
   }
 

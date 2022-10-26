@@ -14,11 +14,15 @@ class ChatPhoto extends TdObject {
   factory ChatPhoto.fromJson(Map<String, dynamic> json) => ChatPhoto(
         id: int.parse(json['id']),
         addedDate: json['added_date'],
-        minithumbnail: Minithumbnail.fromJson(json['minithumbnail']),
+        minithumbnail: json['minithumbnail'] != null
+            ? Minithumbnail.fromJson(json['minithumbnail'])
+            : null,
         sizes: List<PhotoSize>.from((json['sizes'] ?? [])
             .map((item) => PhotoSize.fromJson(item))
             .toList()),
-        animation: AnimatedChatPhoto.fromJson(json['animation']),
+        animation: json['animation'] != null
+            ? AnimatedChatPhoto.fromJson(json['animation'])
+            : null,
       );
 
   // ignore: constant_identifier_names

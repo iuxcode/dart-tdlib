@@ -37,9 +37,12 @@ class Chat extends TdObject {
       id: json['id'],
       type: ChatType.fromJson(json['type']),
       title: json['title'],
-      photo: ChatPhotoInfo.fromJson(json['photo']),
+      photo:
+          json['photo'] != null ? ChatPhotoInfo.fromJson(json['photo']) : null,
       permissions: ChatPermissions.fromJson(json['permissions']),
-      lastMessage: Message.fromJson(json['last_message']),
+      lastMessage: json['last_message'] != null
+          ? Message.fromJson(json['last_message'])
+          : null,
       positions: List<ChatPosition>.from((json['positions'] ?? [])
           .map((item) => ChatPosition.fromJson(item))
           .toList()),
@@ -56,11 +59,15 @@ class Chat extends TdObject {
       unreadMentionCount: json['unread_mention_count'],
       notificationSettings:
           ChatNotificationSettings.fromJson(json['notification_settings']),
-      actionBar: ChatActionBar.fromJson(json['action_bar']),
-      voiceChatGroupCallId: json['voice_chat_group_call_id'],
-      isVoiceChatEmpty: json['is_voice_chat_empty'],
+      actionBar: json['action_bar'] != null
+          ? ChatActionBar.fromJson(json['action_bar'])
+          : null,
+      voiceChatGroupCallId: json['voice_chat_group_call_id'] ?? 0,
+      isVoiceChatEmpty: json['is_voice_chat_empty'] ?? false,
       replyMarkupMessageId: json['reply_markup_message_id'],
-      draftMessage: DraftMessage.fromJson(json['draft_message']),
+      draftMessage: json['draft_message'] != null
+          ? DraftMessage.fromJson(json['draft_message'])
+          : null,
       clientData: json['client_data'],
       extra: json['@extra'],
     );

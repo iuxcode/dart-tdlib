@@ -20,9 +20,12 @@ class Audio extends TdObject {
         performer: json['performer'],
         fileName: json['file_name'],
         mimeType: json['mime_type'],
-        albumCoverMinithumbnail:
-            Minithumbnail.fromJson(json['album_cover_minithumbnail']),
-        albumCoverThumbnail: Thumbnail.fromJson(json['album_cover_thumbnail']),
+        albumCoverMinithumbnail: json['album_cover_minithumbnail'] != null
+            ? Minithumbnail.fromJson(json['album_cover_minithumbnail'])
+            : null,
+        albumCoverThumbnail: json['album_cover_thumbnail'] != null
+            ? Thumbnail.fromJson(json['album_cover_thumbnail'])
+            : null,
         audio: File.fromJson(json['audio']),
       );
 
