@@ -1925,15 +1925,17 @@ class UpdateUserChatAction extends Update {
   }
 }
 
+/// The user went online or offline
 class UpdateUserStatus extends Update {
-  /// The user went online or offline
-  UpdateUserStatus({this.userId, this.status});
+  UpdateUserStatus({required this.userId, required this.status, this.extra});
 
   /// Parse from a json
-  UpdateUserStatus.fromJson(Map<String, dynamic> json) {
-    userId = json['user_id'];
-    status = UserStatus.fromJson(json['status']);
-    extra = json['@extra'];
+  factory UpdateUserStatus.fromJson(Map<String, dynamic> json) {
+    return UpdateUserStatus(
+      userId: json['user_id'],
+      status: UserStatus.fromJson(json['status']),
+      extra: json['@extra'],
+    );
   }
 
   static const CONSTRUCTOR = 'updateUserStatus';
@@ -1942,10 +1944,10 @@ class UpdateUserStatus extends Update {
   dynamic extra;
 
   /// [status] New status of the user
-  UserStatus? status;
+  UserStatus status;
 
   /// [userId] User identifier
-  int? userId;
+  int userId;
 
   @override
   String getConstructor() => CONSTRUCTOR;
@@ -1955,7 +1957,7 @@ class UpdateUserStatus extends Update {
     return {
       "@type": CONSTRUCTOR,
       "user_id": userId,
-      "status": status == null ? null : status!.toJson(),
+      "status": status.toJson(),
     };
   }
 }
