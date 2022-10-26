@@ -109,7 +109,7 @@ class RichTextBold extends RichText {
 
   /// Parse from a json
   RichTextBold.fromJson(Map<String, dynamic> json) {
-    this.text = RichText.fromJson(json['text'] ?? <String, dynamic>{});
+    this.text = RichText.fromJson(json['text']);
   }
 
   @override
@@ -135,7 +135,7 @@ class RichTextItalic extends RichText {
 
   /// Parse from a json
   RichTextItalic.fromJson(Map<String, dynamic> json) {
-    this.text = RichText.fromJson(json['text'] ?? <String, dynamic>{});
+    this.text = RichText.fromJson(json['text']);
   }
 
   @override
@@ -161,7 +161,7 @@ class RichTextUnderline extends RichText {
 
   /// Parse from a json
   RichTextUnderline.fromJson(Map<String, dynamic> json) {
-    this.text = RichText.fromJson(json['text'] ?? <String, dynamic>{});
+    this.text = RichText.fromJson(json['text']);
   }
 
   @override
@@ -187,7 +187,7 @@ class RichTextStrikethrough extends RichText {
 
   /// Parse from a json
   RichTextStrikethrough.fromJson(Map<String, dynamic> json) {
-    this.text = RichText.fromJson(json['text'] ?? <String, dynamic>{});
+    this.text = RichText.fromJson(json['text']);
   }
 
   @override
@@ -213,7 +213,7 @@ class RichTextFixed extends RichText {
 
   /// Parse from a json
   RichTextFixed.fromJson(Map<String, dynamic> json) {
-    this.text = RichText.fromJson(json['text'] ?? <String, dynamic>{});
+    this.text = RichText.fromJson(json['text']);
   }
 
   @override
@@ -245,7 +245,7 @@ class RichTextUrl extends RichText {
 
   /// Parse from a json
   RichTextUrl.fromJson(Map<String, dynamic> json) {
-    this.text = RichText.fromJson(json['text'] ?? <String, dynamic>{});
+    this.text = RichText.fromJson(json['text']);
     this.url = json['url'];
     this.isCached = json['is_cached'];
   }
@@ -278,7 +278,7 @@ class RichTextEmailAddress extends RichText {
 
   /// Parse from a json
   RichTextEmailAddress.fromJson(Map<String, dynamic> json) {
-    this.text = RichText.fromJson(json['text'] ?? <String, dynamic>{});
+    this.text = RichText.fromJson(json['text']);
     this.emailAddress = json['email_address'];
   }
 
@@ -306,7 +306,7 @@ class RichTextSubscript extends RichText {
 
   /// Parse from a json
   RichTextSubscript.fromJson(Map<String, dynamic> json) {
-    this.text = RichText.fromJson(json['text'] ?? <String, dynamic>{});
+    this.text = RichText.fromJson(json['text']);
   }
 
   @override
@@ -332,7 +332,7 @@ class RichTextSuperscript extends RichText {
 
   /// Parse from a json
   RichTextSuperscript.fromJson(Map<String, dynamic> json) {
-    this.text = RichText.fromJson(json['text'] ?? <String, dynamic>{});
+    this.text = RichText.fromJson(json['text']);
   }
 
   @override
@@ -358,7 +358,7 @@ class RichTextMarked extends RichText {
 
   /// Parse from a json
   RichTextMarked.fromJson(Map<String, dynamic> json) {
-    this.text = RichText.fromJson(json['text'] ?? <String, dynamic>{});
+    this.text = RichText.fromJson(json['text']);
   }
 
   @override
@@ -387,7 +387,7 @@ class RichTextPhoneNumber extends RichText {
 
   /// Parse from a json
   RichTextPhoneNumber.fromJson(Map<String, dynamic> json) {
-    this.text = RichText.fromJson(json['text'] ?? <String, dynamic>{});
+    this.text = RichText.fromJson(json['text']);
     this.phoneNumber = json['phone_number'];
   }
 
@@ -421,7 +421,7 @@ class RichTextIcon extends RichText {
 
   /// Parse from a json
   RichTextIcon.fromJson(Map<String, dynamic> json) {
-    this.document = Document.fromJson(json['document'] ?? <String, dynamic>{});
+    this.document = Document.fromJson(json['document']);
     this.width = json['width'];
     this.height = json['height'];
   }
@@ -457,7 +457,7 @@ class RichTextReference extends RichText {
 
   /// Parse from a json
   RichTextReference.fromJson(Map<String, dynamic> json) {
-    this.text = RichText.fromJson(json['text'] ?? <String, dynamic>{});
+    this.text = RichText.fromJson(json['text']);
     this.anchorName = json['anchor_name'];
     this.url = json['url'];
   }
@@ -519,7 +519,7 @@ class RichTextAnchorLink extends RichText {
 
   /// Parse from a json
   RichTextAnchorLink.fromJson(Map<String, dynamic> json) {
-    this.text = RichText.fromJson(json['text'] ?? <String, dynamic>{});
+    this.text = RichText.fromJson(json['text']);
     this.anchorName = json['anchor_name'];
     this.url = json['url'];
   }
@@ -549,9 +549,8 @@ class RichTexts extends RichText {
 
   /// Parse from a json
   RichTexts.fromJson(Map<String, dynamic> json) {
-    this.texts = List<RichText>.from((json['texts'] ?? [])
-        .map((item) => RichText.fromJson(item ?? <String, dynamic>{}))
-        .toList());
+    this.texts = List<RichText>.from(
+        (json['texts'] ?? []).map((item) => RichText.fromJson(item)).toList());
   }
 
   @override

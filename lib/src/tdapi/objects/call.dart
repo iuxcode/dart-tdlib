@@ -25,7 +25,7 @@ class Call extends TdObject {
     this.userId = json['user_id'];
     this.isOutgoing = json['is_outgoing'];
     this.isVideo = json['is_video'];
-    this.state = CallState.fromJson(json['state'] ?? <String, dynamic>{});
+    this.state = CallState.fromJson(json['state']);
   }
 
   @override

@@ -2,13 +2,14 @@ part of 'index.dart';
 
 TdObject? convertToObject(String? query) {
   if (query != null) {
-    final newJson = json.decode(query);
+    final Map<String, dynamic> newJson = json.decode(query);
 
-    return (allObjects.containsKey(newJson['@type']) &&
-            allObjects[newJson['@type']] != null)
-        ? allObjects[newJson['@type']]!(newJson)
-        : null;
-  } else {
-    return null;
+    if (newJson.containsKey('@type') &&
+        allObjects.containsKey(newJson['@type']) &&
+        allObjects[newJson['@type']] != null) {
+      return allObjects[newJson['@type']]!(newJson);
+    }
   }
+
+  return null;
 }

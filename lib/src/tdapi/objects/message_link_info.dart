@@ -31,7 +31,7 @@ class MessageLinkInfo extends TdObject {
   MessageLinkInfo.fromJson(Map<String, dynamic> json) {
     this.isPublic = json['is_public'];
     this.chatId = json['chat_id'];
-    this.message = Message.fromJson(json['message'] ?? <String, dynamic>{});
+    this.message = Message.fromJson(json['message']);
     this.forAlbum = json['for_album'];
     this.forComment = json['for_comment'];
     this.extra = json['@extra'];

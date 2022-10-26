@@ -12,7 +12,7 @@ class ChatLocation extends TdObject {
 
   /// Parse from a json
   ChatLocation.fromJson(Map<String, dynamic> json) {
-    this.location = Location.fromJson(json['location'] ?? <String, dynamic>{});
+    this.location = Location.fromJson(json['location']);
     this.address = json['address'];
   }
 

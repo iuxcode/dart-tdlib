@@ -1,18 +1,19 @@
 part of '../index.dart';
 
+/// A text with some entities
 class FormattedText extends TdObject {
-  /// A text with some entities
   FormattedText({required this.text, required this.entities, this.extra});
 
   /// Parse from a json
   factory FormattedText.fromJson(Map<String, dynamic> json) => FormattedText(
-    text : json['text'],
-    entities : List<TextEntity>.from((json['entities'] ?? [])
-        .map((item) => TextEntity.fromJson(item ?? <String, dynamic>{}))
-        .toList()),
-    extra : json['@extra'],
-  );
+        text: json['text'],
+        entities: List<TextEntity>.from((json['entities'] ?? [])
+            .map((item) => TextEntity.fromJson(item))
+            .toList()),
+        extra: json['@extra'],
+      );
 
+  // ignore: constant_identifier_names
   static const CONSTRUCTOR = 'formattedText';
 
   /// [entities] Entities contained in the text. Entities can be nested, but must not mutually intersect with each other..
@@ -34,8 +35,8 @@ class FormattedText extends TdObject {
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "text": this.text,
-      "entities": this.entities.map((i) => i.toJson()).toList(),
+      "text": text,
+      "entities": entities.map((i) => i.toJson()).toList(),
     };
   }
 }

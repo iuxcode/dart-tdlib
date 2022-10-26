@@ -37,8 +37,8 @@ class Background extends TdObject {
     this.isDefault = json['is_default'];
     this.isDark = json['is_dark'];
     this.name = json['name'];
-    this.document = Document.fromJson(json['document'] ?? <String, dynamic>{});
-    this.type = BackgroundType.fromJson(json['type'] ?? <String, dynamic>{});
+    this.document = Document.fromJson(json['document']);
+    this.type = BackgroundType.fromJson(json['type']);
     this.extra = json['@extra'];
   }
 

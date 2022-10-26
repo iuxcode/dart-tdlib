@@ -48,9 +48,8 @@ class NetworkStatisticsEntryFile extends NetworkStatisticsEntry {
 
   /// Parse from a json
   NetworkStatisticsEntryFile.fromJson(Map<String, dynamic> json) {
-    this.fileType = FileType.fromJson(json['file_type'] ?? <String, dynamic>{});
-    this.networkType =
-        NetworkType.fromJson(json['network_type'] ?? <String, dynamic>{});
+    this.fileType = FileType.fromJson(json['file_type']);
+    this.networkType = NetworkType.fromJson(json['network_type']);
     this.sentBytes = json['sent_bytes'];
     this.receivedBytes = json['received_bytes'];
   }
@@ -92,8 +91,7 @@ class NetworkStatisticsEntryCall extends NetworkStatisticsEntry {
 
   /// Parse from a json
   NetworkStatisticsEntryCall.fromJson(Map<String, dynamic> json) {
-    this.networkType =
-        NetworkType.fromJson(json['network_type'] ?? <String, dynamic>{});
+    this.networkType = NetworkType.fromJson(json['network_type']);
     this.sentBytes = json['sent_bytes'];
     this.receivedBytes = json['received_bytes'];
     this.duration = json['duration'];

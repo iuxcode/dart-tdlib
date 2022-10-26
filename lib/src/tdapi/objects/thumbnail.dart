@@ -18,11 +18,10 @@ class Thumbnail extends TdObject {
 
   /// Parse from a json
   Thumbnail.fromJson(Map<String, dynamic> json) {
-    this.format =
-        ThumbnailFormat.fromJson(json['format'] ?? <String, dynamic>{});
+    this.format = ThumbnailFormat.fromJson(json['format']);
     this.width = json['width'];
     this.height = json['height'];
-    this.file = File.fromJson(json['file'] ?? <String, dynamic>{});
+    this.file = File.fromJson(json['file']);
   }
 
   @override

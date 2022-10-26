@@ -89,7 +89,7 @@ class InputMessageText extends InputMessageContent {
 
   /// Parse from a json
   InputMessageText.fromJson(Map<String, dynamic> json) {
-    this.text = FormattedText.fromJson(json['text'] ?? <String, dynamic>{});
+    this.text = FormattedText.fromJson(json['text']);
     this.disableWebPagePreview = json['disable_web_page_preview'];
     this.clearDraft = json['clear_draft'];
   }
@@ -144,17 +144,14 @@ class InputMessageAnimation extends InputMessageContent {
 
   /// Parse from a json
   InputMessageAnimation.fromJson(Map<String, dynamic> json) {
-    this.animation =
-        InputFile.fromJson(json['animation'] ?? <String, dynamic>{});
-    this.thumbnail =
-        InputThumbnail.fromJson(json['thumbnail'] ?? <String, dynamic>{});
+    this.animation = InputFile.fromJson(json['animation']);
+    this.thumbnail = InputThumbnail.fromJson(json['thumbnail']);
     this.addedStickerFileIds = List<int>.from(
         (json['added_sticker_file_ids'] ?? []).map((item) => item).toList());
     this.duration = json['duration'];
     this.width = json['width'];
     this.height = json['height'];
-    this.caption =
-        FormattedText.fromJson(json['caption'] ?? <String, dynamic>{});
+    this.caption = FormattedText.fromJson(json['caption']);
   }
 
   @override
@@ -208,14 +205,13 @@ class InputMessageAudio extends InputMessageContent {
 
   /// Parse from a json
   InputMessageAudio.fromJson(Map<String, dynamic> json) {
-    this.audio = InputFile.fromJson(json['audio'] ?? <String, dynamic>{});
-    this.albumCoverThumbnail = InputThumbnail.fromJson(
-        json['album_cover_thumbnail'] ?? <String, dynamic>{});
+    this.audio = InputFile.fromJson(json['audio']);
+    this.albumCoverThumbnail =
+        InputThumbnail.fromJson(json['album_cover_thumbnail']);
     this.duration = json['duration'];
     this.title = json['title'];
     this.performer = json['performer'];
-    this.caption =
-        FormattedText.fromJson(json['caption'] ?? <String, dynamic>{});
+    this.caption = FormattedText.fromJson(json['caption']);
   }
 
   @override
@@ -261,12 +257,10 @@ class InputMessageDocument extends InputMessageContent {
 
   /// Parse from a json
   InputMessageDocument.fromJson(Map<String, dynamic> json) {
-    this.document = InputFile.fromJson(json['document'] ?? <String, dynamic>{});
-    this.thumbnail =
-        InputThumbnail.fromJson(json['thumbnail'] ?? <String, dynamic>{});
+    this.document = InputFile.fromJson(json['document']);
+    this.thumbnail = InputThumbnail.fromJson(json['thumbnail']);
     this.disableContentTypeDetection = json['disable_content_type_detection'];
-    this.caption =
-        FormattedText.fromJson(json['caption'] ?? <String, dynamic>{});
+    this.caption = FormattedText.fromJson(json['caption']);
   }
 
   @override
@@ -320,15 +314,13 @@ class InputMessagePhoto extends InputMessageContent {
 
   /// Parse from a json
   InputMessagePhoto.fromJson(Map<String, dynamic> json) {
-    this.photo = InputFile.fromJson(json['photo'] ?? <String, dynamic>{});
-    this.thumbnail =
-        InputThumbnail.fromJson(json['thumbnail'] ?? <String, dynamic>{});
+    this.photo = InputFile.fromJson(json['photo']);
+    this.thumbnail = InputThumbnail.fromJson(json['thumbnail']);
     this.addedStickerFileIds = List<int>.from(
         (json['added_sticker_file_ids'] ?? []).map((item) => item).toList());
     this.width = json['width'];
     this.height = json['height'];
-    this.caption =
-        FormattedText.fromJson(json['caption'] ?? <String, dynamic>{});
+    this.caption = FormattedText.fromJson(json['caption']);
     this.ttl = json['ttl'];
   }
 
@@ -375,9 +367,8 @@ class InputMessageSticker extends InputMessageContent {
 
   /// Parse from a json
   InputMessageSticker.fromJson(Map<String, dynamic> json) {
-    this.sticker = InputFile.fromJson(json['sticker'] ?? <String, dynamic>{});
-    this.thumbnail =
-        InputThumbnail.fromJson(json['thumbnail'] ?? <String, dynamic>{});
+    this.sticker = InputFile.fromJson(json['sticker']);
+    this.thumbnail = InputThumbnail.fromJson(json['thumbnail']);
     this.width = json['width'];
     this.height = json['height'];
     this.emoji = json['emoji'];
@@ -443,17 +434,15 @@ class InputMessageVideo extends InputMessageContent {
 
   /// Parse from a json
   InputMessageVideo.fromJson(Map<String, dynamic> json) {
-    this.video = InputFile.fromJson(json['video'] ?? <String, dynamic>{});
-    this.thumbnail =
-        InputThumbnail.fromJson(json['thumbnail'] ?? <String, dynamic>{});
+    this.video = InputFile.fromJson(json['video']);
+    this.thumbnail = InputThumbnail.fromJson(json['thumbnail']);
     this.addedStickerFileIds = List<int>.from(
         (json['added_sticker_file_ids'] ?? []).map((item) => item).toList());
     this.duration = json['duration'];
     this.width = json['width'];
     this.height = json['height'];
     this.supportsStreaming = json['supports_streaming'];
-    this.caption =
-        FormattedText.fromJson(json['caption'] ?? <String, dynamic>{});
+    this.caption = FormattedText.fromJson(json['caption']);
     this.ttl = json['ttl'];
   }
 
@@ -499,10 +488,8 @@ class InputMessageVideoNote extends InputMessageContent {
 
   /// Parse from a json
   InputMessageVideoNote.fromJson(Map<String, dynamic> json) {
-    this.videoNote =
-        InputFile.fromJson(json['video_note'] ?? <String, dynamic>{});
-    this.thumbnail =
-        InputThumbnail.fromJson(json['thumbnail'] ?? <String, dynamic>{});
+    this.videoNote = InputFile.fromJson(json['video_note']);
+    this.thumbnail = InputThumbnail.fromJson(json['thumbnail']);
     this.duration = json['duration'];
     this.length = json['length'];
   }
@@ -543,12 +530,10 @@ class InputMessageVoiceNote extends InputMessageContent {
 
   /// Parse from a json
   InputMessageVoiceNote.fromJson(Map<String, dynamic> json) {
-    this.voiceNote =
-        InputFile.fromJson(json['voice_note'] ?? <String, dynamic>{});
+    this.voiceNote = InputFile.fromJson(json['voice_note']);
     this.duration = json['duration'];
     this.waveform = json['waveform'];
-    this.caption =
-        FormattedText.fromJson(json['caption'] ?? <String, dynamic>{});
+    this.caption = FormattedText.fromJson(json['caption']);
   }
 
   @override
@@ -590,7 +575,7 @@ class InputMessageLocation extends InputMessageContent {
 
   /// Parse from a json
   InputMessageLocation.fromJson(Map<String, dynamic> json) {
-    this.location = Location.fromJson(json['location'] ?? <String, dynamic>{});
+    this.location = Location.fromJson(json['location']);
     this.livePeriod = json['live_period'];
     this.heading = json['heading'];
     this.proximityAlertRadius = json['proximity_alert_radius'];
@@ -622,7 +607,7 @@ class InputMessageVenue extends InputMessageContent {
 
   /// Parse from a json
   InputMessageVenue.fromJson(Map<String, dynamic> json) {
-    this.venue = Venue.fromJson(json['venue'] ?? <String, dynamic>{});
+    this.venue = Venue.fromJson(json['venue']);
   }
 
   @override
@@ -648,7 +633,7 @@ class InputMessageContact extends InputMessageContent {
 
   /// Parse from a json
   InputMessageContact.fromJson(Map<String, dynamic> json) {
-    this.contact = Contact.fromJson(json['contact'] ?? <String, dynamic>{});
+    this.contact = Contact.fromJson(json['contact']);
   }
 
   @override
@@ -777,7 +762,7 @@ class InputMessageInvoice extends InputMessageContent {
 
   /// Parse from a json
   InputMessageInvoice.fromJson(Map<String, dynamic> json) {
-    this.invoice = Invoice.fromJson(json['invoice'] ?? <String, dynamic>{});
+    this.invoice = Invoice.fromJson(json['invoice']);
     this.title = json['title'];
     this.description = json['description'];
     this.photoUrl = json['photo_url'];
@@ -852,7 +837,7 @@ class InputMessagePoll extends InputMessageContent {
     this.options =
         List<String>.from((json['options'] ?? []).map((item) => item).toList());
     this.isAnonymous = json['is_anonymous'];
-    this.type = PollType.fromJson(json['type'] ?? <String, dynamic>{});
+    this.type = PollType.fromJson(json['type']);
     this.openPeriod = json['open_period'];
     this.closeDate = json['close_date'];
     this.isClosed = json['is_closed'];
@@ -900,8 +885,7 @@ class InputMessageForwarded extends InputMessageContent {
     this.fromChatId = json['from_chat_id'];
     this.messageId = json['message_id'];
     this.inGameShare = json['in_game_share'];
-    this.copyOptions = MessageCopyOptions.fromJson(
-        json['copy_options'] ?? <String, dynamic>{});
+    this.copyOptions = MessageCopyOptions.fromJson(json['copy_options']);
   }
 
   @override

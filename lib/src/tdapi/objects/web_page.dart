@@ -53,6 +53,7 @@ class WebPage extends TdObject {
         extra: json['@extra'],
       );
 
+  // ignore: constant_identifier_names
   static const CONSTRUCTOR = 'webPage';
 
   /// [animation] Preview of the content as an animation, if available; may be null
@@ -128,28 +129,28 @@ class WebPage extends TdObject {
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "url": this.url,
-      "display_url": this.displayUrl,
-      "type": this.type,
-      "site_name": this.siteName,
-      "title": this.title,
-      "description": this.description.toJson(),
-      "photo": this.photo?.toJson(),
-      "embed_url": this.embedUrl,
-      "embed_type": this.embedType,
-      "embed_width": this.embedWidth,
-      "embed_height": this.embedHeight,
-      "duration": this.duration,
-      "author": this.author,
-      "animation": this.animation?.toJson(),
-      "audio": this.audio?.toJson(),
-      "document": this.document?.toJson(),
-      "sticker": this.sticker?.toJson(),
-      "video": this.video?.toJson(),
-      "video_note": this.videoNote?.toJson(),
-      "voice_note": this.voiceNote?.toJson(),
-      "instant_view_version": this.instantViewVersion,
-      "extra": this.extra,
+      "url": url,
+      "display_url": displayUrl,
+      "type": type,
+      "site_name": siteName,
+      "title": title,
+      "description": description.toJson(),
+      "photo": photo?.toJson(),
+      "embed_url": embedUrl,
+      "embed_type": embedType,
+      "embed_width": embedWidth,
+      "embed_height": embedHeight,
+      "duration": duration,
+      "author": author,
+      "animation": animation?.toJson(),
+      "audio": audio?.toJson(),
+      "document": document?.toJson(),
+      "sticker": sticker?.toJson(),
+      "video": video?.toJson(),
+      "video_note": videoNote?.toJson(),
+      "voice_note": voiceNote?.toJson(),
+      "instant_view_version": instantViewVersion,
+      "extra": extra,
     };
   }
 }

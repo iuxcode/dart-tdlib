@@ -35,11 +35,9 @@ class PaymentReceipt extends TdObject {
   PaymentReceipt.fromJson(Map<String, dynamic> json) {
     this.date = json['date'];
     this.paymentsProviderUserId = json['payments_provider_user_id'];
-    this.invoice = Invoice.fromJson(json['invoice'] ?? <String, dynamic>{});
-    this.orderInfo =
-        OrderInfo.fromJson(json['order_info'] ?? <String, dynamic>{});
-    this.shippingOption =
-        ShippingOption.fromJson(json['shipping_option'] ?? <String, dynamic>{});
+    this.invoice = Invoice.fromJson(json['invoice']);
+    this.orderInfo = OrderInfo.fromJson(json['order_info']);
+    this.shippingOption = ShippingOption.fromJson(json['shipping_option']);
     this.credentialsTitle = json['credentials_title'];
     this.extra = json['@extra'];
   }

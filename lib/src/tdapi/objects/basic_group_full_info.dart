@@ -29,14 +29,13 @@ class BasicGroupFullInfo extends TdObject {
 
   /// Parse from a json
   BasicGroupFullInfo.fromJson(Map<String, dynamic> json) {
-    this.photo = ChatPhoto.fromJson(json['photo'] ?? <String, dynamic>{});
+    this.photo = ChatPhoto.fromJson(json['photo']);
     this.description = json['description'];
     this.creatorUserId = json['creator_user_id'];
     this.members = List<ChatMember>.from((json['members'] ?? [])
-        .map((item) => ChatMember.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => ChatMember.fromJson(item))
         .toList());
-    this.inviteLink =
-        ChatInviteLink.fromJson(json['invite_link'] ?? <String, dynamic>{});
+    this.inviteLink = ChatInviteLink.fromJson(json['invite_link']);
     this.extra = json['@extra'] ?? '';
   }
 

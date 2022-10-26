@@ -208,8 +208,7 @@ class ChatMemberStatusRestricted extends ChatMemberStatus {
   ChatMemberStatusRestricted.fromJson(Map<String, dynamic> json) {
     this.isMember = json['is_member'];
     this.restrictedUntilDate = json['restricted_until_date'];
-    this.permissions =
-        ChatPermissions.fromJson(json['permissions'] ?? <String, dynamic>{});
+    this.permissions = ChatPermissions.fromJson(json['permissions']);
   }
 
   @override

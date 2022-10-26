@@ -61,12 +61,10 @@ class StickerSetInfo extends TdObject {
     this.id = int.tryParse(json['id'] ?? "");
     this.title = json['title'];
     this.name = json['name'];
-    this.thumbnail =
-        Thumbnail.fromJson(json['thumbnail'] ?? <String, dynamic>{});
+    this.thumbnail = Thumbnail.fromJson(json['thumbnail']);
     this.thumbnailOutline = List<ClosedVectorPath>.from(
         (json['thumbnail_outline'] ?? [])
-            .map((item) =>
-                ClosedVectorPath.fromJson(item ?? <String, dynamic>{}))
+            .map((item) => ClosedVectorPath.fromJson(item))
             .toList());
     this.isInstalled = json['is_installed'];
     this.isArchived = json['is_archived'];
@@ -75,9 +73,8 @@ class StickerSetInfo extends TdObject {
     this.isMasks = json['is_masks'];
     this.isViewed = json['is_viewed'];
     this.size = json['size'];
-    this.covers = List<Sticker>.from((json['covers'] ?? [])
-        .map((item) => Sticker.fromJson(item ?? <String, dynamic>{}))
-        .toList());
+    this.covers = List<Sticker>.from(
+        (json['covers'] ?? []).map((item) => Sticker.fromJson(item)).toList());
   }
 
   @override

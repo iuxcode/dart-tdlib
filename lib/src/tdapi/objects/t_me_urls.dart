@@ -12,9 +12,8 @@ class TMeUrls extends TdObject {
 
   /// Parse from a json
   TMeUrls.fromJson(Map<String, dynamic> json) {
-    this.urls = List<TMeUrl>.from((json['urls'] ?? [])
-        .map((item) => TMeUrl.fromJson(item ?? <String, dynamic>{}))
-        .toList());
+    this.urls = List<TMeUrl>.from(
+        (json['urls'] ?? []).map((item) => TMeUrl.fromJson(item)).toList());
     this.extra = json['@extra'];
   }
 

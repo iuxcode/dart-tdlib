@@ -32,7 +32,7 @@ class InlineQueryResults extends TdObject {
     this.inlineQueryId = int.tryParse(json['inline_query_id'] ?? "");
     this.nextOffset = json['next_offset'];
     this.results = List<InlineQueryResult>.from((json['results'] ?? [])
-        .map((item) => InlineQueryResult.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => InlineQueryResult.fromJson(item))
         .toList());
     this.switchPmText = json['switch_pm_text'];
     this.switchPmParameter = json['switch_pm_parameter'];

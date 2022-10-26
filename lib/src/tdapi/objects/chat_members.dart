@@ -17,7 +17,7 @@ class ChatMembers extends TdObject {
   ChatMembers.fromJson(Map<String, dynamic> json) {
     this.totalCount = json['total_count'];
     this.members = List<ChatMember>.from((json['members'] ?? [])
-        .map((item) => ChatMember.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => ChatMember.fromJson(item))
         .toList());
     this.extra = json['@extra'];
   }

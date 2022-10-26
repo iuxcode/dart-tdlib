@@ -1,34 +1,34 @@
 part of '../index.dart';
 
+/// Provides information about a bot and its supported commands
 class BotInfo extends TdObject {
-  /// Provides information about a bot and its supported commands
-  BotInfo({this.description, this.commands});
-
-  /// [description] Long description shown on the user info page
-  String? description;
-
-  /// [commands] A list of commands supported by the bot
-  List<BotCommand>? commands;
+  BotInfo({required this.description, required this.commands});
 
   /// Parse from a json
-  BotInfo.fromJson(Map<String, dynamic> json) {
-    this.description = json['description'];
-    this.commands = List<BotCommand>.from((json['commands'] ?? [])
-        .map((item) => BotCommand.fromJson(item ?? <String, dynamic>{}))
-        .toList());
-  }
+  factory BotInfo.fromJson(Map<String, dynamic> json) => BotInfo(
+        description: json['description'],
+        commands: List<BotCommand>.from((json['commands'] ?? [])
+            .map((item) => BotCommand.fromJson(item))
+            .toList()),
+      );
+
+  static const CONSTRUCTOR = 'botInfo';
+
+  /// [commands] A list of commands supported by the bot
+  List<BotCommand> commands;
+
+  /// [description] Long description shown on the user info page
+  String description;
+
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "description": this.description,
-      "commands": this.commands!.map((i) => i.toJson()).toList(),
+      "description": description,
+      "commands": commands.map((i) => i.toJson()).toList(),
     };
   }
-
-  static const CONSTRUCTOR = 'botInfo';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }

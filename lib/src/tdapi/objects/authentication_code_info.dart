@@ -1,49 +1,55 @@
 part of '../index.dart';
 
+/// Information about the authentication code that was sent
 class AuthenticationCodeInfo extends TdObject {
-  /// Information about the authentication code that was sent
-  AuthenticationCodeInfo(
-      {this.phoneNumber, this.type, this.nextType, this.timeout});
+  AuthenticationCodeInfo({
+    required this.phoneNumber,
+    required this.type,
+    this.nextType,
+    required this.timeout,
+    this.extra,
+  });
 
-  /// [phoneNumber] A phone number that is being authenticated
-  String? phoneNumber;
+  /// Parse from a json
+  factory AuthenticationCodeInfo.fromJson(Map<String, dynamic> json) =>
+      AuthenticationCodeInfo(
+        phoneNumber: json['phone_number'],
+        type: AuthenticationCodeType.fromJson(json['type']),
+        nextType: json['next_type'] != null
+            ? AuthenticationCodeType.fromJson(json['next_type'])
+            : null,
+        timeout: json['timeout'],
+        extra: json['@extra'],
+      );
 
-  /// [type] Describes the way the code was sent to the user
-  AuthenticationCodeType? type;
-
-  /// [nextType] Describes the way the next code will be sent to the user; may be null
-  AuthenticationCodeType? nextType;
-
-  /// [timeout] Timeout before the code should be re-sent, in seconds
-  int? timeout;
+  static const CONSTRUCTOR = 'authenticationCodeInfo';
 
   /// callback sign
   dynamic extra;
 
-  /// Parse from a json
-  AuthenticationCodeInfo.fromJson(Map<String, dynamic> json) {
-    this.phoneNumber = json['phone_number'];
-    this.type =
-        AuthenticationCodeType.fromJson(json['type'] ?? <String, dynamic>{});
-    this.nextType = AuthenticationCodeType.fromJson(
-        json['next_type'] ?? <String, dynamic>{});
-    this.timeout = json['timeout'];
-    this.extra = json['@extra'];
-  }
+  /// [nextType] Describes the way the next code will be sent to the user; may be null
+  AuthenticationCodeType? nextType;
+
+  /// [phoneNumber] A phone number that is being authenticated
+  String phoneNumber;
+
+  /// [timeout] Timeout before the code should be re-sent, in seconds
+  int timeout;
+
+  /// [type] Describes the way the code was sent to the user
+  AuthenticationCodeType type;
+
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "phone_number": this.phoneNumber,
-      "type": this.type == null ? null : this.type!.toJson(),
-      "next_type": this.nextType == null ? null : this.nextType!.toJson(),
-      "timeout": this.timeout,
+      "phone_number": phoneNumber,
+      "type": type.toJson(),
+      "next_type": nextType?.toJson(),
+      "timeout": timeout,
     };
   }
-
-  static const CONSTRUCTOR = 'authenticationCodeInfo';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }

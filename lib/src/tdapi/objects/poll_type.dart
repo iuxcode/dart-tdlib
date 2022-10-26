@@ -68,8 +68,7 @@ class PollTypeQuiz extends PollType {
   /// Parse from a json
   PollTypeQuiz.fromJson(Map<String, dynamic> json) {
     this.correctOptionId = json['correct_option_id'];
-    this.explanation =
-        FormattedText.fromJson(json['explanation'] ?? <String, dynamic>{});
+    this.explanation = FormattedText.fromJson(json['explanation']);
   }
 
   @override

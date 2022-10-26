@@ -118,10 +118,9 @@ class InputInlineQueryResultAnimation extends InputInlineQueryResult {
     this.videoDuration = json['video_duration'];
     this.videoWidth = json['video_width'];
     this.videoHeight = json['video_height'];
-    this.replyMarkup =
-        ReplyMarkup.fromJson(json['reply_markup'] ?? <String, dynamic>{});
-    this.inputMessageContent = InputMessageContent.fromJson(
-        json['input_message_content'] ?? <String, dynamic>{});
+    this.replyMarkup = ReplyMarkup.fromJson(json['reply_markup']);
+    this.inputMessageContent =
+        InputMessageContent.fromJson(json['input_message_content']);
   }
 
   @override
@@ -205,10 +204,9 @@ class InputInlineQueryResultArticle extends InputInlineQueryResult {
     this.thumbnailUrl = json['thumbnail_url'];
     this.thumbnailWidth = json['thumbnail_width'];
     this.thumbnailHeight = json['thumbnail_height'];
-    this.replyMarkup =
-        ReplyMarkup.fromJson(json['reply_markup'] ?? <String, dynamic>{});
-    this.inputMessageContent = InputMessageContent.fromJson(
-        json['input_message_content'] ?? <String, dynamic>{});
+    this.replyMarkup = ReplyMarkup.fromJson(json['reply_markup']);
+    this.inputMessageContent =
+        InputMessageContent.fromJson(json['input_message_content']);
   }
 
   @override
@@ -276,10 +274,9 @@ class InputInlineQueryResultAudio extends InputInlineQueryResult {
     this.performer = json['performer'];
     this.audioUrl = json['audio_url'];
     this.audioDuration = json['audio_duration'];
-    this.replyMarkup =
-        ReplyMarkup.fromJson(json['reply_markup'] ?? <String, dynamic>{});
-    this.inputMessageContent = InputMessageContent.fromJson(
-        json['input_message_content'] ?? <String, dynamic>{});
+    this.replyMarkup = ReplyMarkup.fromJson(json['reply_markup']);
+    this.inputMessageContent =
+        InputMessageContent.fromJson(json['input_message_content']);
   }
 
   @override
@@ -340,14 +337,13 @@ class InputInlineQueryResultContact extends InputInlineQueryResult {
   /// Parse from a json
   InputInlineQueryResultContact.fromJson(Map<String, dynamic> json) {
     this.id = json['id'];
-    this.contact = Contact.fromJson(json['contact'] ?? <String, dynamic>{});
+    this.contact = Contact.fromJson(json['contact']);
     this.thumbnailUrl = json['thumbnail_url'];
     this.thumbnailWidth = json['thumbnail_width'];
     this.thumbnailHeight = json['thumbnail_height'];
-    this.replyMarkup =
-        ReplyMarkup.fromJson(json['reply_markup'] ?? <String, dynamic>{});
-    this.inputMessageContent = InputMessageContent.fromJson(
-        json['input_message_content'] ?? <String, dynamic>{});
+    this.replyMarkup = ReplyMarkup.fromJson(json['reply_markup']);
+    this.inputMessageContent =
+        InputMessageContent.fromJson(json['input_message_content']);
   }
 
   @override
@@ -427,10 +423,9 @@ class InputInlineQueryResultDocument extends InputInlineQueryResult {
     this.thumbnailUrl = json['thumbnail_url'];
     this.thumbnailWidth = json['thumbnail_width'];
     this.thumbnailHeight = json['thumbnail_height'];
-    this.replyMarkup =
-        ReplyMarkup.fromJson(json['reply_markup'] ?? <String, dynamic>{});
-    this.inputMessageContent = InputMessageContent.fromJson(
-        json['input_message_content'] ?? <String, dynamic>{});
+    this.replyMarkup = ReplyMarkup.fromJson(json['reply_markup']);
+    this.inputMessageContent =
+        InputMessageContent.fromJson(json['input_message_content']);
   }
 
   @override
@@ -476,8 +471,7 @@ class InputInlineQueryResultGame extends InputInlineQueryResult {
   InputInlineQueryResultGame.fromJson(Map<String, dynamic> json) {
     this.id = json['id'];
     this.gameShortName = json['game_short_name'];
-    this.replyMarkup =
-        ReplyMarkup.fromJson(json['reply_markup'] ?? <String, dynamic>{});
+    this.replyMarkup = ReplyMarkup.fromJson(json['reply_markup']);
   }
 
   @override
@@ -540,16 +534,15 @@ class InputInlineQueryResultLocation extends InputInlineQueryResult {
   /// Parse from a json
   InputInlineQueryResultLocation.fromJson(Map<String, dynamic> json) {
     this.id = json['id'];
-    this.location = Location.fromJson(json['location'] ?? <String, dynamic>{});
+    this.location = Location.fromJson(json['location']);
     this.livePeriod = json['live_period'];
     this.title = json['title'];
     this.thumbnailUrl = json['thumbnail_url'];
     this.thumbnailWidth = json['thumbnail_width'];
     this.thumbnailHeight = json['thumbnail_height'];
-    this.replyMarkup =
-        ReplyMarkup.fromJson(json['reply_markup'] ?? <String, dynamic>{});
-    this.inputMessageContent = InputMessageContent.fromJson(
-        json['input_message_content'] ?? <String, dynamic>{});
+    this.replyMarkup = ReplyMarkup.fromJson(json['reply_markup']);
+    this.inputMessageContent =
+        InputMessageContent.fromJson(json['input_message_content']);
   }
 
   @override
@@ -626,10 +619,9 @@ class InputInlineQueryResultPhoto extends InputInlineQueryResult {
     this.photoUrl = json['photo_url'];
     this.photoWidth = json['photo_width'];
     this.photoHeight = json['photo_height'];
-    this.replyMarkup =
-        ReplyMarkup.fromJson(json['reply_markup'] ?? <String, dynamic>{});
-    this.inputMessageContent = InputMessageContent.fromJson(
-        json['input_message_content'] ?? <String, dynamic>{});
+    this.replyMarkup = ReplyMarkup.fromJson(json['reply_markup']);
+    this.inputMessageContent =
+        InputMessageContent.fromJson(json['input_message_content']);
   }
 
   @override
@@ -696,10 +688,9 @@ class InputInlineQueryResultSticker extends InputInlineQueryResult {
     this.stickerUrl = json['sticker_url'];
     this.stickerWidth = json['sticker_width'];
     this.stickerHeight = json['sticker_height'];
-    this.replyMarkup =
-        ReplyMarkup.fromJson(json['reply_markup'] ?? <String, dynamic>{});
-    this.inputMessageContent = InputMessageContent.fromJson(
-        json['input_message_content'] ?? <String, dynamic>{});
+    this.replyMarkup = ReplyMarkup.fromJson(json['reply_markup']);
+    this.inputMessageContent =
+        InputMessageContent.fromJson(json['input_message_content']);
   }
 
   @override
@@ -760,14 +751,13 @@ class InputInlineQueryResultVenue extends InputInlineQueryResult {
   /// Parse from a json
   InputInlineQueryResultVenue.fromJson(Map<String, dynamic> json) {
     this.id = json['id'];
-    this.venue = Venue.fromJson(json['venue'] ?? <String, dynamic>{});
+    this.venue = Venue.fromJson(json['venue']);
     this.thumbnailUrl = json['thumbnail_url'];
     this.thumbnailWidth = json['thumbnail_width'];
     this.thumbnailHeight = json['thumbnail_height'];
-    this.replyMarkup =
-        ReplyMarkup.fromJson(json['reply_markup'] ?? <String, dynamic>{});
-    this.inputMessageContent = InputMessageContent.fromJson(
-        json['input_message_content'] ?? <String, dynamic>{});
+    this.replyMarkup = ReplyMarkup.fromJson(json['reply_markup']);
+    this.inputMessageContent =
+        InputMessageContent.fromJson(json['input_message_content']);
   }
 
   @override
@@ -852,10 +842,9 @@ class InputInlineQueryResultVideo extends InputInlineQueryResult {
     this.videoWidth = json['video_width'];
     this.videoHeight = json['video_height'];
     this.videoDuration = json['video_duration'];
-    this.replyMarkup =
-        ReplyMarkup.fromJson(json['reply_markup'] ?? <String, dynamic>{});
-    this.inputMessageContent = InputMessageContent.fromJson(
-        json['input_message_content'] ?? <String, dynamic>{});
+    this.replyMarkup = ReplyMarkup.fromJson(json['reply_markup']);
+    this.inputMessageContent =
+        InputMessageContent.fromJson(json['input_message_content']);
   }
 
   @override
@@ -919,10 +908,9 @@ class InputInlineQueryResultVoiceNote extends InputInlineQueryResult {
     this.title = json['title'];
     this.voiceNoteUrl = json['voice_note_url'];
     this.voiceNoteDuration = json['voice_note_duration'];
-    this.replyMarkup =
-        ReplyMarkup.fromJson(json['reply_markup'] ?? <String, dynamic>{});
-    this.inputMessageContent = InputMessageContent.fromJson(
-        json['input_message_content'] ?? <String, dynamic>{});
+    this.replyMarkup = ReplyMarkup.fromJson(json['reply_markup']);
+    this.inputMessageContent =
+        InputMessageContent.fromJson(json['input_message_content']);
   }
 
   @override

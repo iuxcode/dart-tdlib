@@ -17,7 +17,7 @@ class ChatPhotos extends TdObject {
   ChatPhotos.fromJson(Map<String, dynamic> json) {
     this.totalCount = json['total_count'];
     this.photos = List<ChatPhoto>.from((json['photos'] ?? [])
-        .map((item) => ChatPhoto.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => ChatPhoto.fromJson(item))
         .toList());
     this.extra = json['@extra'];
   }

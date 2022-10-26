@@ -169,7 +169,7 @@ class JsonValueArray extends JsonValue {
   /// Parse from a json
   JsonValueArray.fromJson(Map<String, dynamic> json) {
     this.values = List<JsonValue>.from((json['values'] ?? [])
-        .map((item) => JsonValue.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => JsonValue.fromJson(item))
         .toList());
     this.extra = json['@extra'];
   }
@@ -201,7 +201,7 @@ class JsonValueObject extends JsonValue {
   /// Parse from a json
   JsonValueObject.fromJson(Map<String, dynamic> json) {
     this.members = List<JsonObjectMember>.from((json['members'] ?? [])
-        .map((item) => JsonObjectMember.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => JsonObjectMember.fromJson(item))
         .toList());
     this.extra = json['@extra'];
   }

@@ -35,7 +35,7 @@ class PasswordState extends TdObject {
     this.hasPassportData = json['has_passport_data'];
     this.recoveryEmailAddressCodeInfo =
         EmailAddressAuthenticationCodeInfo.fromJson(
-            json['recovery_email_address_code_info'] ?? <String, dynamic>{});
+            json['recovery_email_address_code_info']);
     this.extra = json['@extra'];
   }
 

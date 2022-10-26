@@ -1,27 +1,28 @@
 part of '../index.dart';
 
+/// Portion of the price of a product (e.g., "delivery cost", "tax amount")
 class LabeledPricePart extends TdObject {
-  /// Portion of the price of a product (e.g., "delivery cost", "tax amount")
-  LabeledPricePart({this.label, this.amount});
+  LabeledPricePart({required this.label, required this.amount});
 
   /// [label] Label for this portion of the product price
-  String? label;
+  String label;
 
   /// [amount] Currency amount in minimal quantity of the currency
-  int? amount;
+  int amount;
 
   /// Parse from a json
-  LabeledPricePart.fromJson(Map<String, dynamic> json) {
-    this.label = json['label'];
-    this.amount = json['amount'];
-  }
+  factory LabeledPricePart.fromJson(Map<String, dynamic> json) =>
+      LabeledPricePart(
+        label: json['label'],
+        amount: json['amount'],
+      );
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "label": this.label,
-      "amount": this.amount,
+      "label": label,
+      "amount": amount,
     };
   }
 

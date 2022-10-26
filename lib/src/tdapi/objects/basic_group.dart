@@ -31,8 +31,7 @@ class BasicGroup extends TdObject {
   BasicGroup.fromJson(Map<String, dynamic> json) {
     this.id = json['id'];
     this.memberCount = json['member_count'];
-    this.status =
-        ChatMemberStatus.fromJson(json['status'] ?? <String, dynamic>{});
+    this.status = ChatMemberStatus.fromJson(json['status']);
     this.isActive = json['is_active'];
     this.upgradedToSupergroupId = json['upgraded_to_supergroup_id'];
     this.extra = json['@extra'];

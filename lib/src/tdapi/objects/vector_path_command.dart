@@ -1,7 +1,9 @@
+// ignore_for_file: constant_identifier_names
+
 part of '../index.dart';
 
+/// Represents a vector path command
 class VectorPathCommand extends TdObject {
-  /// Represents a vector path command
   VectorPathCommand();
 
   /// a VectorPathCommand return type can be :
@@ -18,41 +20,40 @@ class VectorPathCommand extends TdObject {
     }
   }
 
-  @override
-  Map<String, dynamic> toJson() {
-    return {};
-  }
-
   static const CONSTRUCTOR = 'vectorPathCommand';
 
   @override
   String getConstructor() => CONSTRUCTOR;
+
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 }
 
+/// A straight line to a given point
 class VectorPathCommandLine extends VectorPathCommand {
-  /// A straight line to a given point
-  VectorPathCommandLine({this.endPoint});
-
-  /// [endPoint] The end point of the straight line
-  Point? endPoint;
+  VectorPathCommandLine({required this.endPoint});
 
   /// Parse from a json
-  VectorPathCommandLine.fromJson(Map<String, dynamic> json) {
-    this.endPoint = Point.fromJson(json['end_point'] ?? <String, dynamic>{});
-  }
+  factory VectorPathCommandLine.fromJson(Map<String, dynamic> json) =>
+      VectorPathCommandLine(endPoint: Point.fromJson(json['end_point']));
+
+  static const CONSTRUCTOR = 'vectorPathCommandLine';
+
+  /// [endPoint] The end point of the straight line
+  Point endPoint;
+
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "end_point": this.endPoint == null ? null : this.endPoint!.toJson(),
+      "end_point": endPoint.toJson(),
     };
   }
-
-  static const CONSTRUCTOR = 'vectorPathCommandLine';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }
 
 class VectorPathCommandCubicBezierCurve extends VectorPathCommand {
@@ -62,15 +63,15 @@ class VectorPathCommandCubicBezierCurve extends VectorPathCommand {
   /// Parse from a json
   VectorPathCommandCubicBezierCurve.fromJson(Map<String, dynamic> json);
 
+  static const CONSTRUCTOR = 'vectorPathCommandCubicBezierCurve';
+
+  @override
+  String getConstructor() => CONSTRUCTOR;
+
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
     };
   }
-
-  static const CONSTRUCTOR = 'vectorPathCommandCubicBezierCurve';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }

@@ -16,11 +16,10 @@ class PassportElementsWithErrors extends TdObject {
   /// Parse from a json
   PassportElementsWithErrors.fromJson(Map<String, dynamic> json) {
     this.elements = List<PassportElement>.from((json['elements'] ?? [])
-        .map((item) => PassportElement.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => PassportElement.fromJson(item))
         .toList());
     this.errors = List<PassportElementError>.from((json['errors'] ?? [])
-        .map((item) =>
-            PassportElementError.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => PassportElementError.fromJson(item))
         .toList());
     this.extra = json['@extra'];
   }

@@ -13,7 +13,7 @@ class Sessions extends TdObject {
   /// Parse from a json
   Sessions.fromJson(Map<String, dynamic> json) {
     this.sessions = List<Session>.from((json['sessions'] ?? [])
-        .map((item) => Session.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => Session.fromJson(item))
         .toList());
     this.extra = json['@extra'];
   }

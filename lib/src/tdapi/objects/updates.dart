@@ -1,33 +1,35 @@
 part of '../index.dart';
 
+/// Contains a list of updates
 class Updates extends TdObject {
-  /// Contains a list of updates
-  Updates({this.updates});
+  Updates({
+    required this.updates,
+    this.extra,
+  });
 
-  /// [updates] List of updates
-  List<Update>? updates;
+  /// Parse from a json
+  factory Updates.fromJson(Map<String, dynamic> json) => Updates(
+      updates: List<Update>.from((json['updates'] ?? [])
+          .map((item) => Update.fromJson(item))
+          .toList()),
+      extra: json['@extra']);
+
+  static const CONSTRUCTOR = 'updates';
 
   /// callback sign
   dynamic extra;
 
-  /// Parse from a json
-  Updates.fromJson(Map<String, dynamic> json) {
-    this.updates = List<Update>.from((json['updates'] ?? [])
-        .map((item) => Update.fromJson(item ?? <String, dynamic>{}))
-        .toList());
-    this.extra = json['@extra'];
-  }
+  /// [updates] List of updates
+  List<Update> updates;
+
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "updates": this.updates!.map((i) => i.toJson()).toList(),
+      "updates": updates.map((i) => i.toJson()).toList(),
     };
   }
-
-  static const CONSTRUCTOR = 'updates';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }

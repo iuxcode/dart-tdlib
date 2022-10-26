@@ -38,8 +38,7 @@ class InputBackgroundLocal extends InputBackground {
 
   /// Parse from a json
   InputBackgroundLocal.fromJson(Map<String, dynamic> json) {
-    this.background =
-        InputFile.fromJson(json['background'] ?? <String, dynamic>{});
+    this.background = InputFile.fromJson(json['background']);
   }
 
   @override

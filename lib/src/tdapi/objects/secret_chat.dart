@@ -39,7 +39,7 @@ class SecretChat extends TdObject {
   SecretChat.fromJson(Map<String, dynamic> json) {
     this.id = json['id'];
     this.userId = json['user_id'];
-    this.state = SecretChatState.fromJson(json['state'] ?? <String, dynamic>{});
+    this.state = SecretChatState.fromJson(json['state']);
     this.isOutbound = json['is_outbound'];
     this.ttl = json['ttl'];
     this.keyHash = json['key_hash'];

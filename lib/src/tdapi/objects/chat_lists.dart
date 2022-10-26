@@ -13,7 +13,7 @@ class ChatLists extends TdObject {
   /// Parse from a json
   ChatLists.fromJson(Map<String, dynamic> json) {
     this.chatLists = List<ChatList>.from((json['chat_lists'] ?? [])
-        .map((item) => ChatList.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => ChatList.fromJson(item))
         .toList());
     this.extra = json['@extra'];
   }

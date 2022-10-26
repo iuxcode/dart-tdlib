@@ -13,7 +13,7 @@ class JsonObjectMember extends TdObject {
   /// Parse from a json
   JsonObjectMember.fromJson(Map<String, dynamic> json) {
     this.key = json['key'];
-    this.value = JsonValue.fromJson(json['value'] ?? <String, dynamic>{});
+    this.value = JsonValue.fromJson(json['value']);
   }
 
   @override

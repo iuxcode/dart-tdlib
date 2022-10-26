@@ -37,14 +37,13 @@ class PaymentForm extends TdObject {
 
   /// Parse from a json
   PaymentForm.fromJson(Map<String, dynamic> json) {
-    this.invoice = Invoice.fromJson(json['invoice'] ?? <String, dynamic>{});
+    this.invoice = Invoice.fromJson(json['invoice']);
     this.url = json['url'];
-    this.paymentsProvider = PaymentsProviderStripe.fromJson(
-        json['payments_provider'] ?? <String, dynamic>{});
-    this.savedOrderInfo =
-        OrderInfo.fromJson(json['saved_order_info'] ?? <String, dynamic>{});
-    this.savedCredentials = SavedCredentials.fromJson(
-        json['saved_credentials'] ?? <String, dynamic>{});
+    this.paymentsProvider =
+        PaymentsProviderStripe.fromJson(json['payments_provider']);
+    this.savedOrderInfo = OrderInfo.fromJson(json['saved_order_info']);
+    this.savedCredentials =
+        SavedCredentials.fromJson(json['saved_credentials']);
     this.canSaveCredentials = json['can_save_credentials'];
     this.needPassword = json['need_password'];
     this.extra = json['@extra'];

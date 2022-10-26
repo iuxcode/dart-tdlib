@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 part of '../index.dart';
 
 /// Contains information about the sender of a message
@@ -49,7 +51,7 @@ class MessageSenderUser extends MessageSender {
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "user_id": this.userId,
+      "user_id": userId,
     };
   }
 }
@@ -74,7 +76,7 @@ class MessageSenderChat extends MessageSender {
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "chat_id": this.chatId,
+      "chat_id": chatId,
     };
   }
 }

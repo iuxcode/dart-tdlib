@@ -38,7 +38,7 @@ class Proxy extends TdObject {
     this.port = json['port'];
     this.lastUsedDate = json['last_used_date'];
     this.isEnabled = json['is_enabled'];
-    this.type = ProxyType.fromJson(json['type'] ?? <String, dynamic>{});
+    this.type = ProxyType.fromJson(json['type']);
     this.extra = json['@extra'];
   }
 

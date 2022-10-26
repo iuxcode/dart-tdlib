@@ -24,10 +24,9 @@ class Video extends TdObject {
         mimeType: json['mime_type'],
         hasStickers: json['has_stickers'],
         supportsStreaming: json['supports_streaming'],
-        minithumbnail:
-            Minithumbnail.fromJson(json['minithumbnail'] ?? <String, dynamic>{}),
-        thumbnail: Thumbnail.fromJson(json['thumbnail'] ?? <String, dynamic>{}),
-        video: File.fromJson(json['video'] ?? <String, dynamic>{}),
+        minithumbnail: Minithumbnail.fromJson(json['minithumbnail']),
+        thumbnail: Thumbnail.fromJson(json['thumbnail']),
+        video: File.fromJson(json['video']),
       );
 
   static const CONSTRUCTOR = 'video';

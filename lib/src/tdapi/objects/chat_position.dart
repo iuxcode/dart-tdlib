@@ -1,42 +1,49 @@
 part of '../index.dart';
 
+/// Describes a position of a chat in a chat list
 class ChatPosition extends TdObject {
-  /// Describes a position of a chat in a chat list
-  ChatPosition({this.list, this.order, this.isPinned, this.source});
+  ChatPosition({
+    required this.list,
+    required this.order,
+    this.isPinned = false,
+    this.source,
+  });
 
-  /// [list] The chat list
-  ChatList? list;
+  /// Parse from a json
+  factory ChatPosition.fromJson(Map<String, dynamic> json) {
+    return ChatPosition(
+      list: ChatList.fromJson(json['list']),
+      order: int.parse(json['order']),
+      isPinned: json['is_pinned'],
+      source: ChatSource.fromJson(json['source']),
+    );
+  }
 
-  /// [order] A parameter used to determine order of the chat in the chat list. Chats must be sorted by the pair (order, chat.id) in descending order
-  int? order;
+  static const CONSTRUCTOR = 'chatPosition';
 
   /// [isPinned] True, if the chat is pinned in the chat list
-  bool? isPinned;
+  bool isPinned;
+
+  /// [list] The chat list
+  ChatList list;
+
+  /// [order] A parameter used to determine order of the chat in the chat list. Chats must be sorted by the pair (order, chat.id) in descending order
+  int order;
 
   /// [source] Source of the chat in the chat list; may be null
   ChatSource? source;
 
-  /// Parse from a json
-  ChatPosition.fromJson(Map<String, dynamic> json) {
-    this.list = ChatList.fromJson(json['list'] ?? <String, dynamic>{});
-    this.order = int.tryParse(json['order'] ?? "");
-    this.isPinned = json['is_pinned'];
-    this.source = ChatSource.fromJson(json['source'] ?? <String, dynamic>{});
-  }
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "list": this.list == null ? null : this.list!.toJson(),
-      "order": this.order,
-      "is_pinned": this.isPinned,
-      "source": this.source == null ? null : this.source!.toJson(),
+      "list": list.toJson(),
+      "order": order,
+      "is_pinned": isPinned,
+      "source": source?.toJson(),
     };
   }
-
-  static const CONSTRUCTOR = 'chatPosition';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }

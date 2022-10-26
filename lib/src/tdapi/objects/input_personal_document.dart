@@ -12,11 +12,10 @@ class InputPersonalDocument extends TdObject {
 
   /// Parse from a json
   InputPersonalDocument.fromJson(Map<String, dynamic> json) {
-    this.files = List<InputFile>.from((json['files'] ?? [])
-        .map((item) => InputFile.fromJson(item ?? <String, dynamic>{}))
-        .toList());
+    this.files = List<InputFile>.from(
+        (json['files'] ?? []).map((item) => InputFile.fromJson(item)).toList());
     this.translation = List<InputFile>.from((json['translation'] ?? [])
-        .map((item) => InputFile.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => InputFile.fromJson(item))
         .toList());
   }
 

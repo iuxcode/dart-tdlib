@@ -94,8 +94,7 @@ class InlineQueryResultArticle extends InlineQueryResult {
     this.hideUrl = json['hide_url'];
     this.title = json['title'];
     this.description = json['description'];
-    this.thumbnail =
-        Thumbnail.fromJson(json['thumbnail'] ?? <String, dynamic>{});
+    this.thumbnail = Thumbnail.fromJson(json['thumbnail']);
   }
 
   @override
@@ -133,9 +132,8 @@ class InlineQueryResultContact extends InlineQueryResult {
   /// Parse from a json
   InlineQueryResultContact.fromJson(Map<String, dynamic> json) {
     this.id = json['id'];
-    this.contact = Contact.fromJson(json['contact'] ?? <String, dynamic>{});
-    this.thumbnail =
-        Thumbnail.fromJson(json['thumbnail'] ?? <String, dynamic>{});
+    this.contact = Contact.fromJson(json['contact']);
+    this.thumbnail = Thumbnail.fromJson(json['thumbnail']);
   }
 
   @override
@@ -174,10 +172,9 @@ class InlineQueryResultLocation extends InlineQueryResult {
   /// Parse from a json
   InlineQueryResultLocation.fromJson(Map<String, dynamic> json) {
     this.id = json['id'];
-    this.location = Location.fromJson(json['location'] ?? <String, dynamic>{});
+    this.location = Location.fromJson(json['location']);
     this.title = json['title'];
-    this.thumbnail =
-        Thumbnail.fromJson(json['thumbnail'] ?? <String, dynamic>{});
+    this.thumbnail = Thumbnail.fromJson(json['thumbnail']);
   }
 
   @override
@@ -213,9 +210,8 @@ class InlineQueryResultVenue extends InlineQueryResult {
   /// Parse from a json
   InlineQueryResultVenue.fromJson(Map<String, dynamic> json) {
     this.id = json['id'];
-    this.venue = Venue.fromJson(json['venue'] ?? <String, dynamic>{});
-    this.thumbnail =
-        Thumbnail.fromJson(json['thumbnail'] ?? <String, dynamic>{});
+    this.venue = Venue.fromJson(json['venue']);
+    this.thumbnail = Thumbnail.fromJson(json['thumbnail']);
   }
 
   @override
@@ -247,7 +243,7 @@ class InlineQueryResultGame extends InlineQueryResult {
   /// Parse from a json
   InlineQueryResultGame.fromJson(Map<String, dynamic> json) {
     this.id = json['id'];
-    this.game = Game.fromJson(json['game'] ?? <String, dynamic>{});
+    this.game = Game.fromJson(json['game']);
   }
 
   @override
@@ -281,8 +277,7 @@ class InlineQueryResultAnimation extends InlineQueryResult {
   /// Parse from a json
   InlineQueryResultAnimation.fromJson(Map<String, dynamic> json) {
     this.id = json['id'];
-    this.animation =
-        Animation.fromJson(json['animation'] ?? <String, dynamic>{});
+    this.animation = Animation.fromJson(json['animation']);
     this.title = json['title'];
   }
 
@@ -315,7 +310,7 @@ class InlineQueryResultAudio extends InlineQueryResult {
   /// Parse from a json
   InlineQueryResultAudio.fromJson(Map<String, dynamic> json) {
     this.id = json['id'];
-    this.audio = Audio.fromJson(json['audio'] ?? <String, dynamic>{});
+    this.audio = Audio.fromJson(json['audio']);
   }
 
   @override
@@ -353,7 +348,7 @@ class InlineQueryResultDocument extends InlineQueryResult {
   /// Parse from a json
   InlineQueryResultDocument.fromJson(Map<String, dynamic> json) {
     this.id = json['id'];
-    this.document = Document.fromJson(json['document'] ?? <String, dynamic>{});
+    this.document = Document.fromJson(json['document']);
     this.title = json['title'];
     this.description = json['description'];
   }
@@ -394,7 +389,7 @@ class InlineQueryResultPhoto extends InlineQueryResult {
   /// Parse from a json
   InlineQueryResultPhoto.fromJson(Map<String, dynamic> json) {
     this.id = json['id'];
-    this.photo = Photo.fromJson(json['photo'] ?? <String, dynamic>{});
+    this.photo = Photo.fromJson(json['photo']);
     this.title = json['title'];
     this.description = json['description'];
   }
@@ -429,7 +424,7 @@ class InlineQueryResultSticker extends InlineQueryResult {
   /// Parse from a json
   InlineQueryResultSticker.fromJson(Map<String, dynamic> json) {
     this.id = json['id'];
-    this.sticker = Sticker.fromJson(json['sticker'] ?? <String, dynamic>{});
+    this.sticker = Sticker.fromJson(json['sticker']);
   }
 
   @override
@@ -466,7 +461,7 @@ class InlineQueryResultVideo extends InlineQueryResult {
   /// Parse from a json
   InlineQueryResultVideo.fromJson(Map<String, dynamic> json) {
     this.id = json['id'];
-    this.video = Video.fromJson(json['video'] ?? <String, dynamic>{});
+    this.video = Video.fromJson(json['video']);
     this.title = json['title'];
     this.description = json['description'];
   }
@@ -504,8 +499,7 @@ class InlineQueryResultVoiceNote extends InlineQueryResult {
   /// Parse from a json
   InlineQueryResultVoiceNote.fromJson(Map<String, dynamic> json) {
     this.id = json['id'];
-    this.voiceNote =
-        VoiceNote.fromJson(json['voice_note'] ?? <String, dynamic>{});
+    this.voiceNote = VoiceNote.fromJson(json['voice_note']);
     this.title = json['title'];
   }
 

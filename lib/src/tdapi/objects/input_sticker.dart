@@ -44,10 +44,9 @@ class InputStickerStatic extends InputSticker {
 
   /// Parse from a json
   InputStickerStatic.fromJson(Map<String, dynamic> json) {
-    this.sticker = InputFile.fromJson(json['sticker'] ?? <String, dynamic>{});
+    this.sticker = InputFile.fromJson(json['sticker']);
     this.emojis = json['emojis'];
-    this.maskPosition =
-        MaskPosition.fromJson(json['mask_position'] ?? <String, dynamic>{});
+    this.maskPosition = MaskPosition.fromJson(json['mask_position']);
   }
 
   @override
@@ -79,7 +78,7 @@ class InputStickerAnimated extends InputSticker {
 
   /// Parse from a json
   InputStickerAnimated.fromJson(Map<String, dynamic> json) {
-    this.sticker = InputFile.fromJson(json['sticker'] ?? <String, dynamic>{});
+    this.sticker = InputFile.fromJson(json['sticker']);
     this.emojis = json['emojis'];
   }
 

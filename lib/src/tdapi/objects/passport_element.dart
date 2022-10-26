@@ -74,8 +74,7 @@ class PassportElementPersonalDetails extends PassportElement {
 
   /// Parse from a json
   PassportElementPersonalDetails.fromJson(Map<String, dynamic> json) {
-    this.personalDetails = PersonalDetails.fromJson(
-        json['personal_details'] ?? <String, dynamic>{});
+    this.personalDetails = PersonalDetails.fromJson(json['personal_details']);
     this.extra = json['@extra'];
   }
 
@@ -106,8 +105,7 @@ class PassportElementPassport extends PassportElement {
 
   /// Parse from a json
   PassportElementPassport.fromJson(Map<String, dynamic> json) {
-    this.passport =
-        IdentityDocument.fromJson(json['passport'] ?? <String, dynamic>{});
+    this.passport = IdentityDocument.fromJson(json['passport']);
     this.extra = json['@extra'];
   }
 
@@ -137,8 +135,7 @@ class PassportElementDriverLicense extends PassportElement {
 
   /// Parse from a json
   PassportElementDriverLicense.fromJson(Map<String, dynamic> json) {
-    this.driverLicense = IdentityDocument.fromJson(
-        json['driver_license'] ?? <String, dynamic>{});
+    this.driverLicense = IdentityDocument.fromJson(json['driver_license']);
     this.extra = json['@extra'];
   }
 
@@ -169,8 +166,7 @@ class PassportElementIdentityCard extends PassportElement {
 
   /// Parse from a json
   PassportElementIdentityCard.fromJson(Map<String, dynamic> json) {
-    this.identityCard =
-        IdentityDocument.fromJson(json['identity_card'] ?? <String, dynamic>{});
+    this.identityCard = IdentityDocument.fromJson(json['identity_card']);
     this.extra = json['@extra'];
   }
 
@@ -201,8 +197,8 @@ class PassportElementInternalPassport extends PassportElement {
 
   /// Parse from a json
   PassportElementInternalPassport.fromJson(Map<String, dynamic> json) {
-    this.internalPassport = IdentityDocument.fromJson(
-        json['internal_passport'] ?? <String, dynamic>{});
+    this.internalPassport =
+        IdentityDocument.fromJson(json['internal_passport']);
     this.extra = json['@extra'];
   }
 
@@ -234,7 +230,7 @@ class PassportElementAddress extends PassportElement {
 
   /// Parse from a json
   PassportElementAddress.fromJson(Map<String, dynamic> json) {
-    this.address = Address.fromJson(json['address'] ?? <String, dynamic>{});
+    this.address = Address.fromJson(json['address']);
     this.extra = json['@extra'];
   }
 
@@ -264,8 +260,7 @@ class PassportElementUtilityBill extends PassportElement {
 
   /// Parse from a json
   PassportElementUtilityBill.fromJson(Map<String, dynamic> json) {
-    this.utilityBill =
-        PersonalDocument.fromJson(json['utility_bill'] ?? <String, dynamic>{});
+    this.utilityBill = PersonalDocument.fromJson(json['utility_bill']);
     this.extra = json['@extra'];
   }
 
@@ -296,8 +291,7 @@ class PassportElementBankStatement extends PassportElement {
 
   /// Parse from a json
   PassportElementBankStatement.fromJson(Map<String, dynamic> json) {
-    this.bankStatement = PersonalDocument.fromJson(
-        json['bank_statement'] ?? <String, dynamic>{});
+    this.bankStatement = PersonalDocument.fromJson(json['bank_statement']);
     this.extra = json['@extra'];
   }
 
@@ -328,8 +322,7 @@ class PassportElementRentalAgreement extends PassportElement {
 
   /// Parse from a json
   PassportElementRentalAgreement.fromJson(Map<String, dynamic> json) {
-    this.rentalAgreement = PersonalDocument.fromJson(
-        json['rental_agreement'] ?? <String, dynamic>{});
+    this.rentalAgreement = PersonalDocument.fromJson(json['rental_agreement']);
     this.extra = json['@extra'];
   }
 
@@ -360,8 +353,8 @@ class PassportElementPassportRegistration extends PassportElement {
 
   /// Parse from a json
   PassportElementPassportRegistration.fromJson(Map<String, dynamic> json) {
-    this.passportRegistration = PersonalDocument.fromJson(
-        json['passport_registration'] ?? <String, dynamic>{});
+    this.passportRegistration =
+        PersonalDocument.fromJson(json['passport_registration']);
     this.extra = json['@extra'];
   }
 
@@ -393,8 +386,8 @@ class PassportElementTemporaryRegistration extends PassportElement {
 
   /// Parse from a json
   PassportElementTemporaryRegistration.fromJson(Map<String, dynamic> json) {
-    this.temporaryRegistration = PersonalDocument.fromJson(
-        json['temporary_registration'] ?? <String, dynamic>{});
+    this.temporaryRegistration =
+        PersonalDocument.fromJson(json['temporary_registration']);
     this.extra = json['@extra'];
   }
 

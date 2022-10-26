@@ -20,7 +20,7 @@ class FoundMessages extends TdObject {
   FoundMessages.fromJson(Map<String, dynamic> json) {
     this.totalCount = json['total_count'];
     this.messages = List<Message>.from((json['messages'] ?? [])
-        .map((item) => Message.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => Message.fromJson(item))
         .toList());
     this.nextOffset = json['next_offset'];
     this.extra = json['@extra'];

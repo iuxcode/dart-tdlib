@@ -12,9 +12,8 @@ class TestVectorIntObject extends TdObject {
 
   /// Parse from a json
   TestVectorIntObject.fromJson(Map<String, dynamic> json) {
-    this.value = List<TestInt>.from((json['value'] ?? [])
-        .map((item) => TestInt.fromJson(item ?? <String, dynamic>{}))
-        .toList());
+    this.value = List<TestInt>.from(
+        (json['value'] ?? []).map((item) => TestInt.fromJson(item)).toList());
     this.extra = json['@extra'];
   }
 

@@ -96,8 +96,7 @@ class TMeUrlTypeChatInvite extends TMeUrlType {
 
   /// Parse from a json
   TMeUrlTypeChatInvite.fromJson(Map<String, dynamic> json) {
-    this.info =
-        ChatInviteLinkInfo.fromJson(json['info'] ?? <String, dynamic>{});
+    this.info = ChatInviteLinkInfo.fromJson(json['info']);
   }
 
   @override

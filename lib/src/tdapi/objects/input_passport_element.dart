@@ -71,8 +71,7 @@ class InputPassportElementPersonalDetails extends InputPassportElement {
 
   /// Parse from a json
   InputPassportElementPersonalDetails.fromJson(Map<String, dynamic> json) {
-    this.personalDetails = PersonalDetails.fromJson(
-        json['personal_details'] ?? <String, dynamic>{});
+    this.personalDetails = PersonalDetails.fromJson(json['personal_details']);
   }
 
   @override
@@ -99,8 +98,7 @@ class InputPassportElementPassport extends InputPassportElement {
 
   /// Parse from a json
   InputPassportElementPassport.fromJson(Map<String, dynamic> json) {
-    this.passport =
-        InputIdentityDocument.fromJson(json['passport'] ?? <String, dynamic>{});
+    this.passport = InputIdentityDocument.fromJson(json['passport']);
   }
 
   @override
@@ -126,8 +124,7 @@ class InputPassportElementDriverLicense extends InputPassportElement {
 
   /// Parse from a json
   InputPassportElementDriverLicense.fromJson(Map<String, dynamic> json) {
-    this.driverLicense = InputIdentityDocument.fromJson(
-        json['driver_license'] ?? <String, dynamic>{});
+    this.driverLicense = InputIdentityDocument.fromJson(json['driver_license']);
   }
 
   @override
@@ -154,8 +151,7 @@ class InputPassportElementIdentityCard extends InputPassportElement {
 
   /// Parse from a json
   InputPassportElementIdentityCard.fromJson(Map<String, dynamic> json) {
-    this.identityCard = InputIdentityDocument.fromJson(
-        json['identity_card'] ?? <String, dynamic>{});
+    this.identityCard = InputIdentityDocument.fromJson(json['identity_card']);
   }
 
   @override
@@ -182,8 +178,8 @@ class InputPassportElementInternalPassport extends InputPassportElement {
 
   /// Parse from a json
   InputPassportElementInternalPassport.fromJson(Map<String, dynamic> json) {
-    this.internalPassport = InputIdentityDocument.fromJson(
-        json['internal_passport'] ?? <String, dynamic>{});
+    this.internalPassport =
+        InputIdentityDocument.fromJson(json['internal_passport']);
   }
 
   @override
@@ -211,7 +207,7 @@ class InputPassportElementAddress extends InputPassportElement {
 
   /// Parse from a json
   InputPassportElementAddress.fromJson(Map<String, dynamic> json) {
-    this.address = Address.fromJson(json['address'] ?? <String, dynamic>{});
+    this.address = Address.fromJson(json['address']);
   }
 
   @override
@@ -237,8 +233,7 @@ class InputPassportElementUtilityBill extends InputPassportElement {
 
   /// Parse from a json
   InputPassportElementUtilityBill.fromJson(Map<String, dynamic> json) {
-    this.utilityBill = InputPersonalDocument.fromJson(
-        json['utility_bill'] ?? <String, dynamic>{});
+    this.utilityBill = InputPersonalDocument.fromJson(json['utility_bill']);
   }
 
   @override
@@ -265,8 +260,7 @@ class InputPassportElementBankStatement extends InputPassportElement {
 
   /// Parse from a json
   InputPassportElementBankStatement.fromJson(Map<String, dynamic> json) {
-    this.bankStatement = InputPersonalDocument.fromJson(
-        json['bank_statement'] ?? <String, dynamic>{});
+    this.bankStatement = InputPersonalDocument.fromJson(json['bank_statement']);
   }
 
   @override
@@ -293,8 +287,8 @@ class InputPassportElementRentalAgreement extends InputPassportElement {
 
   /// Parse from a json
   InputPassportElementRentalAgreement.fromJson(Map<String, dynamic> json) {
-    this.rentalAgreement = InputPersonalDocument.fromJson(
-        json['rental_agreement'] ?? <String, dynamic>{});
+    this.rentalAgreement =
+        InputPersonalDocument.fromJson(json['rental_agreement']);
   }
 
   @override
@@ -321,8 +315,8 @@ class InputPassportElementPassportRegistration extends InputPassportElement {
 
   /// Parse from a json
   InputPassportElementPassportRegistration.fromJson(Map<String, dynamic> json) {
-    this.passportRegistration = InputPersonalDocument.fromJson(
-        json['passport_registration'] ?? <String, dynamic>{});
+    this.passportRegistration =
+        InputPersonalDocument.fromJson(json['passport_registration']);
   }
 
   @override
@@ -351,8 +345,8 @@ class InputPassportElementTemporaryRegistration extends InputPassportElement {
   /// Parse from a json
   InputPassportElementTemporaryRegistration.fromJson(
       Map<String, dynamic> json) {
-    this.temporaryRegistration = InputPersonalDocument.fromJson(
-        json['temporary_registration'] ?? <String, dynamic>{});
+    this.temporaryRegistration =
+        InputPersonalDocument.fromJson(json['temporary_registration']);
   }
 
   @override

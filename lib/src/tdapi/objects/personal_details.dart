@@ -52,7 +52,7 @@ class PersonalDetails extends TdObject {
     this.nativeFirstName = json['native_first_name'];
     this.nativeMiddleName = json['native_middle_name'];
     this.nativeLastName = json['native_last_name'];
-    this.birthdate = Date.fromJson(json['birthdate'] ?? <String, dynamic>{});
+    this.birthdate = Date.fromJson(json['birthdate']);
     this.gender = json['gender'];
     this.countryCode = json['country_code'];
     this.residenceCountryCode = json['residence_country_code'];

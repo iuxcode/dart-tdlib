@@ -78,7 +78,7 @@ class BackgroundTypePattern extends BackgroundType {
 
   /// Parse from a json
   BackgroundTypePattern.fromJson(Map<String, dynamic> json) {
-    this.fill = BackgroundFill.fromJson(json['fill'] ?? <String, dynamic>{});
+    this.fill = BackgroundFill.fromJson(json['fill']);
     this.intensity = json['intensity'];
     this.isMoving = json['is_moving'];
   }
@@ -108,7 +108,7 @@ class BackgroundTypeFill extends BackgroundType {
 
   /// Parse from a json
   BackgroundTypeFill.fromJson(Map<String, dynamic> json) {
-    this.fill = BackgroundFill.fromJson(json['fill'] ?? <String, dynamic>{});
+    this.fill = BackgroundFill.fromJson(json['fill']);
   }
 
   @override

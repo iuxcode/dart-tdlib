@@ -16,8 +16,8 @@ class File extends TdObject {
         id: json['id'],
         size: json['size'],
         expectedSize: json['expected_size'],
-        local: LocalFile.fromJson(json['local'] ?? <String, dynamic>{}),
-        remote: RemoteFile.fromJson(json['remote'] ?? <String, dynamic>{}),
+        local: LocalFile.fromJson(json['local']),
+        remote: RemoteFile.fromJson(json['remote']),
         extra: json['@extra'],
       );
 
@@ -49,11 +49,11 @@ class File extends TdObject {
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "id": this.id,
-      "size": this.size,
-      "expected_size": this.expectedSize,
-      "local": this.local.toJson(),
-      "remote": this.remote.toJson(),
+      "id": id,
+      "size": size,
+      "expected_size": expectedSize,
+      "local": local.toJson(),
+      "remote": remote.toJson(),
     };
   }
 }

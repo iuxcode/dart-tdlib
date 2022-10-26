@@ -23,12 +23,11 @@ class NotificationGroup extends TdObject {
   /// Parse from a json
   NotificationGroup.fromJson(Map<String, dynamic> json) {
     this.id = json['id'];
-    this.type =
-        NotificationGroupType.fromJson(json['type'] ?? <String, dynamic>{});
+    this.type = NotificationGroupType.fromJson(json['type']);
     this.chatId = json['chat_id'];
     this.totalCount = json['total_count'];
     this.notifications = List<Notification>.from((json['notifications'] ?? [])
-        .map((item) => Notification.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => Notification.fromJson(item))
         .toList());
   }
 

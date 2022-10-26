@@ -14,8 +14,7 @@ class RecommendedChatFilters extends TdObject {
   RecommendedChatFilters.fromJson(Map<String, dynamic> json) {
     this.chatFilters = List<RecommendedChatFilter>.from(
         (json['chat_filters'] ?? [])
-            .map((item) =>
-                RecommendedChatFilter.fromJson(item ?? <String, dynamic>{}))
+            .map((item) => RecommendedChatFilter.fromJson(item))
             .toList());
     this.extra = json['@extra'];
   }

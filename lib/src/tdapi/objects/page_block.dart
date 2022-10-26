@@ -119,7 +119,7 @@ class PageBlockTitle extends PageBlock {
 
   /// Parse from a json
   PageBlockTitle.fromJson(Map<String, dynamic> json) {
-    this.title = RichText.fromJson(json['title'] ?? <String, dynamic>{});
+    this.title = RichText.fromJson(json['title']);
   }
 
   @override
@@ -145,7 +145,7 @@ class PageBlockSubtitle extends PageBlock {
 
   /// Parse from a json
   PageBlockSubtitle.fromJson(Map<String, dynamic> json) {
-    this.subtitle = RichText.fromJson(json['subtitle'] ?? <String, dynamic>{});
+    this.subtitle = RichText.fromJson(json['subtitle']);
   }
 
   @override
@@ -174,7 +174,7 @@ class PageBlockAuthorDate extends PageBlock {
 
   /// Parse from a json
   PageBlockAuthorDate.fromJson(Map<String, dynamic> json) {
-    this.author = RichText.fromJson(json['author'] ?? <String, dynamic>{});
+    this.author = RichText.fromJson(json['author']);
     this.publishDate = json['publish_date'];
   }
 
@@ -202,7 +202,7 @@ class PageBlockHeader extends PageBlock {
 
   /// Parse from a json
   PageBlockHeader.fromJson(Map<String, dynamic> json) {
-    this.header = RichText.fromJson(json['header'] ?? <String, dynamic>{});
+    this.header = RichText.fromJson(json['header']);
   }
 
   @override
@@ -228,8 +228,7 @@ class PageBlockSubheader extends PageBlock {
 
   /// Parse from a json
   PageBlockSubheader.fromJson(Map<String, dynamic> json) {
-    this.subheader =
-        RichText.fromJson(json['subheader'] ?? <String, dynamic>{});
+    this.subheader = RichText.fromJson(json['subheader']);
   }
 
   @override
@@ -255,7 +254,7 @@ class PageBlockKicker extends PageBlock {
 
   /// Parse from a json
   PageBlockKicker.fromJson(Map<String, dynamic> json) {
-    this.kicker = RichText.fromJson(json['kicker'] ?? <String, dynamic>{});
+    this.kicker = RichText.fromJson(json['kicker']);
   }
 
   @override
@@ -281,7 +280,7 @@ class PageBlockParagraph extends PageBlock {
 
   /// Parse from a json
   PageBlockParagraph.fromJson(Map<String, dynamic> json) {
-    this.text = RichText.fromJson(json['text'] ?? <String, dynamic>{});
+    this.text = RichText.fromJson(json['text']);
   }
 
   @override
@@ -310,7 +309,7 @@ class PageBlockPreformatted extends PageBlock {
 
   /// Parse from a json
   PageBlockPreformatted.fromJson(Map<String, dynamic> json) {
-    this.text = RichText.fromJson(json['text'] ?? <String, dynamic>{});
+    this.text = RichText.fromJson(json['text']);
     this.language = json['language'];
   }
 
@@ -338,7 +337,7 @@ class PageBlockFooter extends PageBlock {
 
   /// Parse from a json
   PageBlockFooter.fromJson(Map<String, dynamic> json) {
-    this.footer = RichText.fromJson(json['footer'] ?? <String, dynamic>{});
+    this.footer = RichText.fromJson(json['footer']);
   }
 
   @override
@@ -411,7 +410,7 @@ class PageBlockList extends PageBlock {
   /// Parse from a json
   PageBlockList.fromJson(Map<String, dynamic> json) {
     this.items = List<PageBlockListItem>.from((json['items'] ?? [])
-        .map((item) => PageBlockListItem.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => PageBlockListItem.fromJson(item))
         .toList());
   }
 
@@ -441,8 +440,8 @@ class PageBlockBlockQuote extends PageBlock {
 
   /// Parse from a json
   PageBlockBlockQuote.fromJson(Map<String, dynamic> json) {
-    this.text = RichText.fromJson(json['text'] ?? <String, dynamic>{});
-    this.credit = RichText.fromJson(json['credit'] ?? <String, dynamic>{});
+    this.text = RichText.fromJson(json['text']);
+    this.credit = RichText.fromJson(json['credit']);
   }
 
   @override
@@ -472,8 +471,8 @@ class PageBlockPullQuote extends PageBlock {
 
   /// Parse from a json
   PageBlockPullQuote.fromJson(Map<String, dynamic> json) {
-    this.text = RichText.fromJson(json['text'] ?? <String, dynamic>{});
-    this.credit = RichText.fromJson(json['credit'] ?? <String, dynamic>{});
+    this.text = RichText.fromJson(json['text']);
+    this.credit = RichText.fromJson(json['credit']);
   }
 
   @override
@@ -506,10 +505,8 @@ class PageBlockAnimation extends PageBlock {
 
   /// Parse from a json
   PageBlockAnimation.fromJson(Map<String, dynamic> json) {
-    this.animation =
-        Animation.fromJson(json['animation'] ?? <String, dynamic>{});
-    this.caption =
-        PageBlockCaption.fromJson(json['caption'] ?? <String, dynamic>{});
+    this.animation = Animation.fromJson(json['animation']);
+    this.caption = PageBlockCaption.fromJson(json['caption']);
     this.needAutoplay = json['need_autoplay'];
   }
 
@@ -541,9 +538,8 @@ class PageBlockAudio extends PageBlock {
 
   /// Parse from a json
   PageBlockAudio.fromJson(Map<String, dynamic> json) {
-    this.audio = Audio.fromJson(json['audio'] ?? <String, dynamic>{});
-    this.caption =
-        PageBlockCaption.fromJson(json['caption'] ?? <String, dynamic>{});
+    this.audio = Audio.fromJson(json['audio']);
+    this.caption = PageBlockCaption.fromJson(json['caption']);
   }
 
   @override
@@ -576,9 +572,8 @@ class PageBlockPhoto extends PageBlock {
 
   /// Parse from a json
   PageBlockPhoto.fromJson(Map<String, dynamic> json) {
-    this.photo = Photo.fromJson(json['photo'] ?? <String, dynamic>{});
-    this.caption =
-        PageBlockCaption.fromJson(json['caption'] ?? <String, dynamic>{});
+    this.photo = Photo.fromJson(json['photo']);
+    this.caption = PageBlockCaption.fromJson(json['caption']);
     this.url = json['url'];
   }
 
@@ -616,9 +611,8 @@ class PageBlockVideo extends PageBlock {
 
   /// Parse from a json
   PageBlockVideo.fromJson(Map<String, dynamic> json) {
-    this.video = Video.fromJson(json['video'] ?? <String, dynamic>{});
-    this.caption =
-        PageBlockCaption.fromJson(json['caption'] ?? <String, dynamic>{});
+    this.video = Video.fromJson(json['video']);
+    this.caption = PageBlockCaption.fromJson(json['caption']);
     this.needAutoplay = json['need_autoplay'];
     this.isLooped = json['is_looped'];
   }
@@ -652,10 +646,8 @@ class PageBlockVoiceNote extends PageBlock {
 
   /// Parse from a json
   PageBlockVoiceNote.fromJson(Map<String, dynamic> json) {
-    this.voiceNote =
-        VoiceNote.fromJson(json['voice_note'] ?? <String, dynamic>{});
-    this.caption =
-        PageBlockCaption.fromJson(json['caption'] ?? <String, dynamic>{});
+    this.voiceNote = VoiceNote.fromJson(json['voice_note']);
+    this.caption = PageBlockCaption.fromJson(json['caption']);
   }
 
   @override
@@ -682,7 +674,7 @@ class PageBlockCover extends PageBlock {
 
   /// Parse from a json
   PageBlockCover.fromJson(Map<String, dynamic> json) {
-    this.cover = PageBlock.fromJson(json['cover'] ?? <String, dynamic>{});
+    this.cover = PageBlock.fromJson(json['cover']);
   }
 
   @override
@@ -739,12 +731,10 @@ class PageBlockEmbedded extends PageBlock {
   PageBlockEmbedded.fromJson(Map<String, dynamic> json) {
     this.url = json['url'];
     this.html = json['html'];
-    this.posterPhoto =
-        Photo.fromJson(json['poster_photo'] ?? <String, dynamic>{});
+    this.posterPhoto = Photo.fromJson(json['poster_photo']);
     this.width = json['width'];
     this.height = json['height'];
-    this.caption =
-        PageBlockCaption.fromJson(json['caption'] ?? <String, dynamic>{});
+    this.caption = PageBlockCaption.fromJson(json['caption']);
     this.isFullWidth = json['is_full_width'];
     this.allowScrolling = json['allow_scrolling'];
   }
@@ -803,14 +793,12 @@ class PageBlockEmbeddedPost extends PageBlock {
   PageBlockEmbeddedPost.fromJson(Map<String, dynamic> json) {
     this.url = json['url'];
     this.author = json['author'];
-    this.authorPhoto =
-        Photo.fromJson(json['author_photo'] ?? <String, dynamic>{});
+    this.authorPhoto = Photo.fromJson(json['author_photo']);
     this.date = json['date'];
     this.pageBlocks = List<PageBlock>.from((json['page_blocks'] ?? [])
-        .map((item) => PageBlock.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => PageBlock.fromJson(item))
         .toList());
-    this.caption =
-        PageBlockCaption.fromJson(json['caption'] ?? <String, dynamic>{});
+    this.caption = PageBlockCaption.fromJson(json['caption']);
   }
 
   @override
@@ -846,10 +834,9 @@ class PageBlockCollage extends PageBlock {
   /// Parse from a json
   PageBlockCollage.fromJson(Map<String, dynamic> json) {
     this.pageBlocks = List<PageBlock>.from((json['page_blocks'] ?? [])
-        .map((item) => PageBlock.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => PageBlock.fromJson(item))
         .toList());
-    this.caption =
-        PageBlockCaption.fromJson(json['caption'] ?? <String, dynamic>{});
+    this.caption = PageBlockCaption.fromJson(json['caption']);
   }
 
   @override
@@ -880,10 +867,9 @@ class PageBlockSlideshow extends PageBlock {
   /// Parse from a json
   PageBlockSlideshow.fromJson(Map<String, dynamic> json) {
     this.pageBlocks = List<PageBlock>.from((json['page_blocks'] ?? [])
-        .map((item) => PageBlock.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => PageBlock.fromJson(item))
         .toList());
-    this.caption =
-        PageBlockCaption.fromJson(json['caption'] ?? <String, dynamic>{});
+    this.caption = PageBlockCaption.fromJson(json['caption']);
   }
 
   @override
@@ -917,7 +903,7 @@ class PageBlockChatLink extends PageBlock {
   /// Parse from a json
   PageBlockChatLink.fromJson(Map<String, dynamic> json) {
     this.title = json['title'];
-    this.photo = ChatPhotoInfo.fromJson(json['photo'] ?? <String, dynamic>{});
+    this.photo = ChatPhotoInfo.fromJson(json['photo']);
     this.username = json['username'];
   }
 
@@ -955,11 +941,10 @@ class PageBlockTable extends PageBlock {
 
   /// Parse from a json
   PageBlockTable.fromJson(Map<String, dynamic> json) {
-    this.caption = RichText.fromJson(json['caption'] ?? <String, dynamic>{});
+    this.caption = RichText.fromJson(json['caption']);
     this.cells = List<List<PageBlockTableCell>>.from((json['cells'] ?? [])
         .map((item) => List<PageBlockTableCell>.from((item ?? [])
-            .map((innerItem) =>
-                PageBlockTableCell.fromJson(innerItem ?? <String, dynamic>{}))
+            .map((innerItem) => PageBlockTableCell.fromJson(innerItem))
             .toList()))
         .toList());
     this.isBordered = json['is_bordered'];
@@ -999,9 +984,9 @@ class PageBlockDetails extends PageBlock {
 
   /// Parse from a json
   PageBlockDetails.fromJson(Map<String, dynamic> json) {
-    this.header = RichText.fromJson(json['header'] ?? <String, dynamic>{});
+    this.header = RichText.fromJson(json['header']);
     this.pageBlocks = List<PageBlock>.from((json['page_blocks'] ?? [])
-        .map((item) => PageBlock.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => PageBlock.fromJson(item))
         .toList());
     this.isOpen = json['is_open'];
   }
@@ -1034,10 +1019,9 @@ class PageBlockRelatedArticles extends PageBlock {
 
   /// Parse from a json
   PageBlockRelatedArticles.fromJson(Map<String, dynamic> json) {
-    this.header = RichText.fromJson(json['header'] ?? <String, dynamic>{});
+    this.header = RichText.fromJson(json['header']);
     this.articles = List<PageBlockRelatedArticle>.from((json['articles'] ?? [])
-        .map((item) =>
-            PageBlockRelatedArticle.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => PageBlockRelatedArticle.fromJson(item))
         .toList());
   }
 
@@ -1078,12 +1062,11 @@ class PageBlockMap extends PageBlock {
 
   /// Parse from a json
   PageBlockMap.fromJson(Map<String, dynamic> json) {
-    this.location = Location.fromJson(json['location'] ?? <String, dynamic>{});
+    this.location = Location.fromJson(json['location']);
     this.zoom = json['zoom'];
     this.width = json['width'];
     this.height = json['height'];
-    this.caption =
-        PageBlockCaption.fromJson(json['caption'] ?? <String, dynamic>{});
+    this.caption = PageBlockCaption.fromJson(json['caption']);
   }
 
   @override

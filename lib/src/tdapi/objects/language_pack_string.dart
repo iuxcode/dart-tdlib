@@ -13,8 +13,7 @@ class LanguagePackString extends TdObject {
   /// Parse from a json
   LanguagePackString.fromJson(Map<String, dynamic> json) {
     this.key = json['key'];
-    this.value =
-        LanguagePackStringValue.fromJson(json['value'] ?? <String, dynamic>{});
+    this.value = LanguagePackStringValue.fromJson(json['value']);
   }
 
   @override

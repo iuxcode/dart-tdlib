@@ -20,13 +20,13 @@ class Poll extends TdObject {
         id: int.parse(json['id']),
         question: json['question'],
         options: List<PollOption>.from((json['options'] ?? [])
-            .map((item) => PollOption.fromJson(item ?? <String, dynamic>{}))
+            .map((item) => PollOption.fromJson(item))
             .toList()),
         totalVoterCount: json['total_voter_count'],
         recentVoterUserIds: List<int>.from(
             (json['recent_voter_user_ids'] ?? []).map((item) => item).toList()),
         isAnonymous: json['is_anonymous'],
-        type: PollType.fromJson(json['type'] ?? <String, dynamic>{}),
+        type: PollType.fromJson(json['type']),
         openPeriod: json['open_period'],
         closeDate: json['close_date'],
         isClosed: json['is_closed'],

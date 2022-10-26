@@ -1,7 +1,9 @@
+// ignore_for_file: constant_identifier_names
+
 part of '../index.dart';
 
+/// Contains information about the time when a scheduled message will be sent
 class MessageSchedulingState extends TdObject {
-  /// Contains information about the time when a scheduled message will be sent
   MessageSchedulingState();
 
   /// a MessageSchedulingState return type can be :
@@ -18,41 +20,42 @@ class MessageSchedulingState extends TdObject {
     }
   }
 
-  @override
-  Map<String, dynamic> toJson() {
-    return {};
-  }
-
+  // ignore: constant_identifier_names
   static const CONSTRUCTOR = 'messageSchedulingState';
 
   @override
   String getConstructor() => CONSTRUCTOR;
+
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 }
 
+/// The message will be sent at the specified date
 class MessageSchedulingStateSendAtDate extends MessageSchedulingState {
-  /// The message will be sent at the specified date
-  MessageSchedulingStateSendAtDate({this.sendDate});
-
-  /// [sendDate] Date the message will be sent. The date must be within 367 days in the future
-  int? sendDate;
+  MessageSchedulingStateSendAtDate({required this.sendDate});
 
   /// Parse from a json
-  MessageSchedulingStateSendAtDate.fromJson(Map<String, dynamic> json) {
-    this.sendDate = json['send_date'];
-  }
+  factory MessageSchedulingStateSendAtDate.fromJson(
+          Map<String, dynamic> json) =>
+      MessageSchedulingStateSendAtDate(sendDate: json['send_date']);
+
+  static const CONSTRUCTOR = 'messageSchedulingStateSendAtDate';
+
+  /// [sendDate] Date the message will be sent. The date must be within 367 days in the future
+  int sendDate;
+
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "send_date": this.sendDate,
+      "send_date": sendDate,
     };
   }
-
-  static const CONSTRUCTOR = 'messageSchedulingStateSendAtDate';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }
 
 class MessageSchedulingStateSendWhenOnline extends MessageSchedulingState {
@@ -62,15 +65,15 @@ class MessageSchedulingStateSendWhenOnline extends MessageSchedulingState {
   /// Parse from a json
   MessageSchedulingStateSendWhenOnline.fromJson(Map<String, dynamic> json);
 
+  static const CONSTRUCTOR = 'messageSchedulingStateSendWhenOnline';
+
+  @override
+  String getConstructor() => CONSTRUCTOR;
+
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
     };
   }
-
-  static const CONSTRUCTOR = 'messageSchedulingStateSendWhenOnline';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }

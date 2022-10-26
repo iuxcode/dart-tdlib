@@ -16,11 +16,11 @@ class ChatsNearby extends TdObject {
   /// Parse from a json
   ChatsNearby.fromJson(Map<String, dynamic> json) {
     this.usersNearby = List<ChatNearby>.from((json['users_nearby'] ?? [])
-        .map((item) => ChatNearby.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => ChatNearby.fromJson(item))
         .toList());
     this.supergroupsNearby = List<ChatNearby>.from(
         (json['supergroups_nearby'] ?? [])
-            .map((item) => ChatNearby.fromJson(item ?? <String, dynamic>{}))
+            .map((item) => ChatNearby.fromJson(item))
             .toList());
     this.extra = json['@extra'];
   }

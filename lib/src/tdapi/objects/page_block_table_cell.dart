@@ -30,14 +30,12 @@ class PageBlockTableCell extends TdObject {
 
   /// Parse from a json
   PageBlockTableCell.fromJson(Map<String, dynamic> json) {
-    this.text = RichText.fromJson(json['text'] ?? <String, dynamic>{});
+    this.text = RichText.fromJson(json['text']);
     this.isHeader = json['is_header'];
     this.colspan = json['colspan'];
     this.rowspan = json['rowspan'];
-    this.align = PageBlockHorizontalAlignment.fromJson(
-        json['align'] ?? <String, dynamic>{});
-    this.valign = PageBlockVerticalAlignment.fromJson(
-        json['valign'] ?? <String, dynamic>{});
+    this.align = PageBlockHorizontalAlignment.fromJson(json['align']);
+    this.valign = PageBlockVerticalAlignment.fromJson(json['valign']);
   }
 
   @override

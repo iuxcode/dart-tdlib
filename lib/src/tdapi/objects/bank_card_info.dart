@@ -17,8 +17,7 @@ class BankCardInfo extends TdObject {
   BankCardInfo.fromJson(Map<String, dynamic> json) {
     this.title = json['title'];
     this.actions = List<BankCardActionOpenUrl>.from((json['actions'] ?? [])
-        .map((item) =>
-            BankCardActionOpenUrl.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => BankCardActionOpenUrl.fromJson(item))
         .toList());
     this.extra = json['@extra'];
   }

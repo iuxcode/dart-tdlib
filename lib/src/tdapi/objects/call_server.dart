@@ -25,7 +25,7 @@ class CallServer extends TdObject {
     this.ipAddress = json['ip_address'];
     this.ipv6Address = json['ipv6_address'];
     this.port = json['port'];
-    this.type = CallServerType.fromJson(json['type'] ?? <String, dynamic>{});
+    this.type = CallServerType.fromJson(json['type']);
   }
 
   @override

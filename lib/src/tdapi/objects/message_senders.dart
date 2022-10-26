@@ -17,7 +17,7 @@ class MessageSenders extends TdObject {
   MessageSenders.fromJson(Map<String, dynamic> json) {
     this.totalCount = json['total_count'];
     this.senders = List<MessageSender>.from((json['senders'] ?? [])
-        .map((item) => MessageSender.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => MessageSender.fromJson(item))
         .toList());
     this.extra = json['@extra'];
   }

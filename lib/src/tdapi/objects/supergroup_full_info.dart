@@ -89,7 +89,7 @@ class SupergroupFullInfo extends TdObject {
 
   /// Parse from a json
   SupergroupFullInfo.fromJson(Map<String, dynamic> json) {
-    this.photo = ChatPhoto.fromJson(json['photo'] ?? <String, dynamic>{});
+    this.photo = ChatPhoto.fromJson(json['photo']);
     this.description = json['description'];
     this.memberCount = json['member_count'];
     this.administratorCount = json['administrator_count'];
@@ -105,8 +105,7 @@ class SupergroupFullInfo extends TdObject {
     this.canGetStatistics = json['can_get_statistics'];
     this.isAllHistoryAvailable = json['is_all_history_available'];
     this.stickerSetId = int.tryParse(json['sticker_set_id'] ?? "");
-    this.location =
-        ChatLocation.fromJson(json['location'] ?? <String, dynamic>{});
+    this.location = ChatLocation.fromJson(json['location']);
     this.inviteLink = json['invite_link'];
     this.upgradedFromBasicGroupId = json['upgraded_from_basic_group_id'];
     this.upgradedFromMaxMessageId = json['upgraded_from_max_message_id'];

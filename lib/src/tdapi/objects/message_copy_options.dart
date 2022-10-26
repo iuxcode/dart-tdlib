@@ -17,8 +17,7 @@ class MessageCopyOptions extends TdObject {
   MessageCopyOptions.fromJson(Map<String, dynamic> json) {
     this.sendCopy = json['send_copy'];
     this.replaceCaption = json['replace_caption'];
-    this.newCaption =
-        FormattedText.fromJson(json['new_caption'] ?? <String, dynamic>{});
+    this.newCaption = FormattedText.fromJson(json['new_caption']);
   }
 
   @override

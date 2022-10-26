@@ -31,13 +31,11 @@ class MessageThreadInfo extends TdObject {
   MessageThreadInfo.fromJson(Map<String, dynamic> json) {
     this.chatId = json['chat_id'];
     this.messageThreadId = json['message_thread_id'];
-    this.replyInfo =
-        MessageReplyInfo.fromJson(json['reply_info'] ?? <String, dynamic>{});
+    this.replyInfo = MessageReplyInfo.fromJson(json['reply_info']);
     this.messages = List<Message>.from((json['messages'] ?? [])
-        .map((item) => Message.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => Message.fromJson(item))
         .toList());
-    this.draftMessage =
-        DraftMessage.fromJson(json['draft_message'] ?? <String, dynamic>{});
+    this.draftMessage = DraftMessage.fromJson(json['draft_message']);
     this.extra = json['@extra'];
   }
 

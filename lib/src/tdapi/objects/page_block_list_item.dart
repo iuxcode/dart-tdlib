@@ -14,7 +14,7 @@ class PageBlockListItem extends TdObject {
   PageBlockListItem.fromJson(Map<String, dynamic> json) {
     this.label = json['label'];
     this.pageBlocks = List<PageBlock>.from((json['page_blocks'] ?? [])
-        .map((item) => PageBlock.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => PageBlock.fromJson(item))
         .toList());
   }
 

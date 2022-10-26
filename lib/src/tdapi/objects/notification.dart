@@ -21,7 +21,7 @@ class Notification extends TdObject {
     this.id = json['id'];
     this.date = json['date'];
     this.isSilent = json['is_silent'];
-    this.type = NotificationType.fromJson(json['type'] ?? <String, dynamic>{});
+    this.type = NotificationType.fromJson(json['type']);
   }
 
   @override

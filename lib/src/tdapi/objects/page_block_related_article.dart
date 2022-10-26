@@ -33,7 +33,7 @@ class PageBlockRelatedArticle extends TdObject {
     this.url = json['url'];
     this.title = json['title'];
     this.description = json['description'];
-    this.photo = Photo.fromJson(json['photo'] ?? <String, dynamic>{});
+    this.photo = Photo.fromJson(json['photo']);
     this.author = json['author'];
     this.publishDate = json['publish_date'];
   }

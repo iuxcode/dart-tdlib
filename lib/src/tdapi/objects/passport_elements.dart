@@ -13,7 +13,7 @@ class PassportElements extends TdObject {
   /// Parse from a json
   PassportElements.fromJson(Map<String, dynamic> json) {
     this.elements = List<PassportElement>.from((json['elements'] ?? [])
-        .map((item) => PassportElement.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => PassportElement.fromJson(item))
         .toList());
     this.extra = json['@extra'];
   }

@@ -17,8 +17,7 @@ class NetworkStatistics extends TdObject {
   NetworkStatistics.fromJson(Map<String, dynamic> json) {
     this.sinceDate = json['since_date'];
     this.entries = List<NetworkStatisticsEntry>.from((json['entries'] ?? [])
-        .map((item) =>
-            NetworkStatisticsEntry.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => NetworkStatisticsEntry.fromJson(item))
         .toList());
     this.extra = json['@extra'];
   }

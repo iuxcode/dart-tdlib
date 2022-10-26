@@ -15,7 +15,7 @@ class StorageStatisticsByFileType extends TdObject {
 
   /// Parse from a json
   StorageStatisticsByFileType.fromJson(Map<String, dynamic> json) {
-    this.fileType = FileType.fromJson(json['file_type'] ?? <String, dynamic>{});
+    this.fileType = FileType.fromJson(json['file_type']);
     this.size = json['size'];
     this.count = json['count'];
   }

@@ -31,14 +31,12 @@ class IdentityDocument extends TdObject {
   /// Parse from a json
   IdentityDocument.fromJson(Map<String, dynamic> json) {
     this.number = json['number'];
-    this.expiryDate = Date.fromJson(json['expiry_date'] ?? <String, dynamic>{});
-    this.frontSide =
-        DatedFile.fromJson(json['front_side'] ?? <String, dynamic>{});
-    this.reverseSide =
-        DatedFile.fromJson(json['reverse_side'] ?? <String, dynamic>{});
-    this.selfie = DatedFile.fromJson(json['selfie'] ?? <String, dynamic>{});
+    this.expiryDate = Date.fromJson(json['expiry_date']);
+    this.frontSide = DatedFile.fromJson(json['front_side']);
+    this.reverseSide = DatedFile.fromJson(json['reverse_side']);
+    this.selfie = DatedFile.fromJson(json['selfie']);
     this.translation = List<DatedFile>.from((json['translation'] ?? [])
-        .map((item) => DatedFile.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => DatedFile.fromJson(item))
         .toList());
   }
 

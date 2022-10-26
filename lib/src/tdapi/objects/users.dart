@@ -1,37 +1,42 @@
 part of '../index.dart';
 
+/// Represents a list of users
 class Users extends TdObject {
-  /// Represents a list of users
-  Users({this.totalCount, this.userIds});
+  Users({
+    required this.totalCount,
+    required this.userIds,
+    this.extra,
+  });
 
-  /// [totalCount] Approximate total count of users found
-  int? totalCount;
+  /// Parse from a json
+  factory Users.fromJson(Map<String, dynamic> json) => Users(
+        totalCount: json['total_count'],
+        userIds: List<int>.from(
+            (json['user_ids'] ?? []).map((item) => item).toList()),
+        extra: json['@extra'],
+      );
 
-  /// [userIds] A list of user identifiers
-  List<int>? userIds;
+  // ignore: constant_identifier_names
+  static const CONSTRUCTOR = 'users';
 
   /// callback sign
   dynamic extra;
 
-  /// Parse from a json
-  Users.fromJson(Map<String, dynamic> json) {
-    this.totalCount = json['total_count'];
-    this.userIds =
-        List<int>.from((json['user_ids'] ?? []).map((item) => item).toList());
-    this.extra = json['@extra'];
-  }
+  /// [totalCount] Approximate total count of users found
+  int totalCount;
+
+  /// [userIds] A list of user identifiers
+  List<int> userIds;
+
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "total_count": this.totalCount,
-      "user_ids": this.userIds!.map((i) => i).toList(),
+      "total_count": totalCount,
+      "user_ids": userIds.map((i) => i).toList(),
     };
   }
-
-  static const CONSTRUCTOR = 'users';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }

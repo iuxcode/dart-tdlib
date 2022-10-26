@@ -19,7 +19,7 @@ class PhoneNumberInfo extends TdObject {
 
   /// Parse from a json
   PhoneNumberInfo.fromJson(Map<String, dynamic> json) {
-    this.country = CountryInfo.fromJson(json['country'] ?? <String, dynamic>{});
+    this.country = CountryInfo.fromJson(json['country']);
     this.countryCallingCode = json['country_calling_code'];
     this.formattedPhoneNumber = json['formatted_phone_number'];
     this.extra = json['@extra'];

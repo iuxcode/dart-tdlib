@@ -14,15 +14,14 @@ class ChatPhoto extends TdObject {
   factory ChatPhoto.fromJson(Map<String, dynamic> json) => ChatPhoto(
         id: int.parse(json['id']),
         addedDate: json['added_date'],
-        minithumbnail:
-            Minithumbnail.fromJson(json['minithumbnail'] ?? <String, dynamic>{}),
+        minithumbnail: Minithumbnail.fromJson(json['minithumbnail']),
         sizes: List<PhotoSize>.from((json['sizes'] ?? [])
-            .map((item) => PhotoSize.fromJson(item ?? <String, dynamic>{}))
+            .map((item) => PhotoSize.fromJson(item))
             .toList()),
-        animation:
-            AnimatedChatPhoto.fromJson(json['animation'] ?? <String, dynamic>{}),
+        animation: AnimatedChatPhoto.fromJson(json['animation']),
       );
 
+  // ignore: constant_identifier_names
   static const CONSTRUCTOR = 'chatPhoto';
 
   /// [addedDate] Point in time (Unix timestamp) when the photo has been added
@@ -47,11 +46,11 @@ class ChatPhoto extends TdObject {
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "id": this.id,
-      "added_date": this.addedDate,
-      "minithumbnail": this.minithumbnail?.toJson(),
-      "sizes": this.sizes.map((i) => i.toJson()).toList(),
-      "animation": this.animation == null ? null : this.animation!.toJson(),
+      "id": id,
+      "added_date": addedDate,
+      "minithumbnail": minithumbnail?.toJson(),
+      "sizes": sizes.map((i) => i.toJson()).toList(),
+      "animation": animation == null ? null : animation!.toJson(),
     };
   }
 }

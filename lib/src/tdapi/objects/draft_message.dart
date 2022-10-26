@@ -15,21 +15,19 @@ class DraftMessage extends TdObject {
 
   /// Parse from a json
   DraftMessage.fromJson(Map<String, dynamic> json) {
-    this.replyToMessageId = json['reply_to_message_id'];
-    this.date = json['date'];
-    this.inputMessageText = InputMessageContent.fromJson(
-        json['input_message_text'] ?? <String, dynamic>{});
+    replyToMessageId = json['reply_to_message_id'];
+    date = json['date'];
+    inputMessageText = InputMessageContent.fromJson(json['input_message_text']);
   }
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "reply_to_message_id": this.replyToMessageId,
-      "date": this.date,
-      "input_message_text": this.inputMessageText == null
-          ? null
-          : this.inputMessageText!.toJson(),
+      "reply_to_message_id": replyToMessageId,
+      "date": date,
+      "input_message_text":
+          inputMessageText == null ? null : inputMessageText!.toJson(),
     };
   }
 

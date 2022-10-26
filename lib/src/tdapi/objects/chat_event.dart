@@ -21,8 +21,7 @@ class ChatEvent extends TdObject {
     this.id = int.tryParse(json['id'] ?? "");
     this.date = json['date'];
     this.userId = json['user_id'];
-    this.action =
-        ChatEventAction.fromJson(json['action'] ?? <String, dynamic>{});
+    this.action = ChatEventAction.fromJson(json['action']);
   }
 
   @override

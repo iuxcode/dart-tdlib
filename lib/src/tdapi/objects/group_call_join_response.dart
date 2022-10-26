@@ -15,12 +15,10 @@ class GroupCallJoinResponse extends TdObject {
 
   /// Parse from a json
   GroupCallJoinResponse.fromJson(Map<String, dynamic> json) {
-    this.payload =
-        GroupCallPayload.fromJson(json['payload'] ?? <String, dynamic>{});
+    this.payload = GroupCallPayload.fromJson(json['payload']);
     this.candidates = List<GroupCallJoinResponseCandidate>.from(
         (json['candidates'] ?? [])
-            .map((item) => GroupCallJoinResponseCandidate.fromJson(
-                item ?? <String, dynamic>{}))
+            .map((item) => GroupCallJoinResponseCandidate.fromJson(item))
             .toList());
     this.extra = json['@extra'];
   }

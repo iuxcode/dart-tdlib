@@ -67,11 +67,11 @@ class DiceStickersSlotMachine extends DiceStickers {
   /// Parse from a json
   factory DiceStickersSlotMachine.fromJson(Map<String, dynamic> json) =>
       DiceStickersSlotMachine(
-        background: Sticker.fromJson(json['background'] ?? <String, dynamic>{}),
-        lever: Sticker.fromJson(json['lever'] ?? <String, dynamic>{}),
-        leftReel: Sticker.fromJson(json['left_reel'] ?? <String, dynamic>{}),
-        centerReel: Sticker.fromJson(json['center_reel'] ?? <String, dynamic>{}),
-        rightReel: Sticker.fromJson(json['right_reel'] ?? <String, dynamic>{}),
+        background: Sticker.fromJson(json['background']),
+        lever: Sticker.fromJson(json['lever']),
+        leftReel: Sticker.fromJson(json['left_reel']),
+        centerReel: Sticker.fromJson(json['center_reel']),
+        rightReel: Sticker.fromJson(json['right_reel']),
       );
 
   static const CONSTRUCTOR = 'diceStickersSlotMachine';

@@ -122,10 +122,9 @@ class CallStateReady extends CallState {
 
   /// Parse from a json
   CallStateReady.fromJson(Map<String, dynamic> json) {
-    this.protocol =
-        CallProtocol.fromJson(json['protocol'] ?? <String, dynamic>{});
+    this.protocol = CallProtocol.fromJson(json['protocol']);
     this.servers = List<CallServer>.from((json['servers'] ?? [])
-        .map((item) => CallServer.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => CallServer.fromJson(item))
         .toList());
     this.config = json['config'];
     this.encryptionKey = json['encryption_key'];
@@ -188,8 +187,7 @@ class CallStateDiscarded extends CallState {
 
   /// Parse from a json
   CallStateDiscarded.fromJson(Map<String, dynamic> json) {
-    this.reason =
-        CallDiscardReason.fromJson(json['reason'] ?? <String, dynamic>{});
+    this.reason = CallDiscardReason.fromJson(json['reason']);
     this.needRating = json['need_rating'];
     this.needDebugInformation = json['need_debug_information'];
   }
@@ -219,7 +217,7 @@ class CallStateError extends CallState {
 
   /// Parse from a json
   CallStateError.fromJson(Map<String, dynamic> json) {
-    this.error = TdError.fromJson(json['error'] ?? <String, dynamic>{});
+    this.error = TdError.fromJson(json['error']);
   }
 
   @override

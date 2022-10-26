@@ -1,21 +1,23 @@
+// ignore_for_file: constant_identifier_names
+
 part of '../index.dart';
 
+/// Represents the current authorization state of the TDLib client
+/// a AuthorizationState return type can be :
+/// * AuthorizationStateWaitTdlibParameters
+/// * AuthorizationStateWaitEncryptionKey
+/// * AuthorizationStateWaitPhoneNumber
+/// * AuthorizationStateWaitCode
+/// * AuthorizationStateWaitOtherDeviceConfirmation
+/// * AuthorizationStateWaitRegistration
+/// * AuthorizationStateWaitPassword
+/// * AuthorizationStateReady
+/// * AuthorizationStateLoggingOut
+/// * AuthorizationStateClosing
+/// * AuthorizationStateClosed
 class AuthorizationState extends TdObject {
-  /// Represents the current authorization state of the TDLib client
   AuthorizationState();
 
-  /// a AuthorizationState return type can be :
-  /// * AuthorizationStateWaitTdlibParameters
-  /// * AuthorizationStateWaitEncryptionKey
-  /// * AuthorizationStateWaitPhoneNumber
-  /// * AuthorizationStateWaitCode
-  /// * AuthorizationStateWaitOtherDeviceConfirmation
-  /// * AuthorizationStateWaitRegistration
-  /// * AuthorizationStateWaitPassword
-  /// * AuthorizationStateReady
-  /// * AuthorizationStateLoggingOut
-  /// * AuthorizationStateClosing
-  /// * AuthorizationStateClosed
   factory AuthorizationState.fromJson(Map<String, dynamic> json) {
     switch (json["@type"]) {
       case AuthorizationStateWaitTdlibParameters.CONSTRUCTOR:
@@ -45,320 +47,315 @@ class AuthorizationState extends TdObject {
     }
   }
 
-  @override
-  Map<String, dynamic> toJson() {
-    return {};
-  }
-
   static const CONSTRUCTOR = 'authorizationState';
 
   @override
   String getConstructor() => CONSTRUCTOR;
-}
-
-class AuthorizationStateWaitTdlibParameters extends AuthorizationState {
-  /// TDLib needs TdlibParameters for initialization
-  AuthorizationStateWaitTdlibParameters();
-
-  /// callback sign
-  dynamic extra;
-
-  /// Parse from a json
-  AuthorizationStateWaitTdlibParameters.fromJson(Map<String, dynamic> json) {
-    this.extra = json['@extra'];
-  }
 
   @override
   Map<String, dynamic> toJson() {
-    return {
-      "@type": CONSTRUCTOR,
-    };
+    return {};
   }
+}
+
+/// TDLib needs TdlibParameters for initialization
+class AuthorizationStateWaitTdlibParameters extends AuthorizationState {
+  AuthorizationStateWaitTdlibParameters({this.extra});
+
+  /// Parse from a json
+  factory AuthorizationStateWaitTdlibParameters.fromJson(
+          Map<String, dynamic> json) =>
+      AuthorizationStateWaitTdlibParameters(extra: json['@extra']);
 
   static const CONSTRUCTOR = 'authorizationStateWaitTdlibParameters';
 
-  @override
-  String getConstructor() => CONSTRUCTOR;
-}
-
-class AuthorizationStateWaitEncryptionKey extends AuthorizationState {
-  /// TDLib needs an encryption key to decrypt the local database
-  AuthorizationStateWaitEncryptionKey({this.isEncrypted});
-
-  /// [isEncrypted] True, if the database is currently encrypted
-  bool? isEncrypted;
-
   /// callback sign
   dynamic extra;
 
-  /// Parse from a json
-  AuthorizationStateWaitEncryptionKey.fromJson(Map<String, dynamic> json) {
-    this.isEncrypted = json['is_encrypted'];
-    this.extra = json['@extra'];
-  }
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "is_encrypted": this.isEncrypted,
     };
   }
+}
+
+/// TDLib needs an encryption key to decrypt the local database
+class AuthorizationStateWaitEncryptionKey extends AuthorizationState {
+  AuthorizationStateWaitEncryptionKey({this.isEncrypted = false, this.extra});
+
+  /// Parse from a json
+  factory AuthorizationStateWaitEncryptionKey.fromJson(
+          Map<String, dynamic> json) =>
+      AuthorizationStateWaitEncryptionKey(
+        isEncrypted: json['is_encrypted'],
+        extra: json['@extra'],
+      );
 
   static const CONSTRUCTOR = 'authorizationStateWaitEncryptionKey';
 
-  @override
-  String getConstructor() => CONSTRUCTOR;
-}
-
-class AuthorizationStateWaitPhoneNumber extends AuthorizationState {
-  /// TDLib needs the user's phone number to authorize. Call
-  AuthorizationStateWaitPhoneNumber();
-
   /// callback sign
   dynamic extra;
 
-  /// Parse from a json
-  AuthorizationStateWaitPhoneNumber.fromJson(Map<String, dynamic> json) {
-    this.extra = json['@extra'];
-  }
+  /// [isEncrypted] True, if the database is currently encrypted
+  bool isEncrypted;
+
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
+      "is_encrypted": isEncrypted,
     };
+  }
+}
+
+/// TDLib needs the user's phone number to authorize. Call
+class AuthorizationStateWaitPhoneNumber extends AuthorizationState {
+  AuthorizationStateWaitPhoneNumber();
+
+  /// Parse from a json
+  AuthorizationStateWaitPhoneNumber.fromJson(Map<String, dynamic> json) {
+    extra = json['@extra'];
   }
 
   static const CONSTRUCTOR = 'authorizationStateWaitPhoneNumber';
 
-  @override
-  String getConstructor() => CONSTRUCTOR;
-}
-
-class AuthorizationStateWaitCode extends AuthorizationState {
-  /// TDLib needs the user's authentication code to authorize
-  AuthorizationStateWaitCode({this.codeInfo});
-
-  /// [codeInfo] Information about the authorization code that was sent
-  AuthenticationCodeInfo? codeInfo;
-
   /// callback sign
   dynamic extra;
 
-  /// Parse from a json
-  AuthorizationStateWaitCode.fromJson(Map<String, dynamic> json) {
-    this.codeInfo = AuthenticationCodeInfo.fromJson(
-        json['code_info'] ?? <String, dynamic>{});
-    this.extra = json['@extra'];
-  }
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "code_info": this.codeInfo == null ? null : this.codeInfo!.toJson(),
     };
   }
+}
+
+/// TDLib needs the user's authentication code to authorize
+class AuthorizationStateWaitCode extends AuthorizationState {
+  AuthorizationStateWaitCode({required this.codeInfo, this.extra});
+
+  /// Parse from a json
+  factory AuthorizationStateWaitCode.fromJson(Map<String, dynamic> json) =>
+      AuthorizationStateWaitCode(
+          codeInfo: AuthenticationCodeInfo.fromJson(json['code_info']),
+          extra: json['@extra']);
 
   static const CONSTRUCTOR = 'authorizationStateWaitCode';
 
-  @override
-  String getConstructor() => CONSTRUCTOR;
-}
-
-class AuthorizationStateWaitOtherDeviceConfirmation extends AuthorizationState {
-  /// The user needs to confirm authorization on another logged in device by scanning a QR code with the provided link
-  AuthorizationStateWaitOtherDeviceConfirmation({this.link});
-
-  /// [link] A tg:// URL for the QR code. The link will be updated frequently
-  String? link;
+  /// [codeInfo] Information about the authorization code that was sent
+  AuthenticationCodeInfo codeInfo;
 
   /// callback sign
   dynamic extra;
 
-  /// Parse from a json
-  AuthorizationStateWaitOtherDeviceConfirmation.fromJson(
-      Map<String, dynamic> json) {
-    this.link = json['link'];
-    this.extra = json['@extra'];
-  }
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "link": this.link,
+      "code_info": codeInfo.toJson(),
     };
   }
+}
+
+/// The user needs to confirm authorization on another logged in device by scanning a QR code with the provided link
+class AuthorizationStateWaitOtherDeviceConfirmation extends AuthorizationState {
+  AuthorizationStateWaitOtherDeviceConfirmation({
+    required this.link,
+    this.extra,
+  });
+
+  /// Parse from a json
+  factory AuthorizationStateWaitOtherDeviceConfirmation.fromJson(
+          Map<String, dynamic> json) =>
+      AuthorizationStateWaitOtherDeviceConfirmation(
+        link: json['link'],
+        extra: json['@extra'],
+      );
 
   static const CONSTRUCTOR = 'authorizationStateWaitOtherDeviceConfirmation';
 
-  @override
-  String getConstructor() => CONSTRUCTOR;
-}
-
-class AuthorizationStateWaitRegistration extends AuthorizationState {
-  /// The user is unregistered and need to accept terms of service and enter their first name and last name to finish registration
-  AuthorizationStateWaitRegistration({this.termsOfService});
-
-  /// [termsOfService] Telegram terms of service
-  TermsOfService? termsOfService;
-
   /// callback sign
   dynamic extra;
 
-  /// Parse from a json
-  AuthorizationStateWaitRegistration.fromJson(Map<String, dynamic> json) {
-    this.termsOfService = TermsOfService.fromJson(
-        json['terms_of_service'] ?? <String, dynamic>{});
-    this.extra = json['@extra'];
-  }
+  /// [link] A tg:// URL for the QR code. The link will be updated frequently
+  String link;
+
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "terms_of_service":
-          this.termsOfService == null ? null : this.termsOfService!.toJson(),
+      "link": link,
     };
   }
+}
+
+/// The user is unregistered and need to accept terms of service
+/// and enter their first name and last name to finish registration
+class AuthorizationStateWaitRegistration extends AuthorizationState {
+  AuthorizationStateWaitRegistration({
+    required this.termsOfService,
+    this.extra,
+  });
+
+  /// Parse from a json
+  factory AuthorizationStateWaitRegistration.fromJson(
+          Map<String, dynamic> json) =>
+      AuthorizationStateWaitRegistration(
+        termsOfService: TermsOfService.fromJson(json['terms_of_service']),
+        extra: json['@extra'],
+      );
 
   static const CONSTRUCTOR = 'authorizationStateWaitRegistration';
 
+  /// callback sign
+  dynamic extra;
+
+  /// [termsOfService] Telegram terms of service
+  TermsOfService termsOfService;
+
   @override
   String getConstructor() => CONSTRUCTOR;
+
+  @override
+  Map<String, dynamic> toJson() {
+    return {
+      "@type": CONSTRUCTOR,
+      "terms_of_service": termsOfService.toJson(),
+      "extra": extra,
+    };
+  }
 }
 
+/// The user has been authorized, but needs to enter a password to start using the application
 class AuthorizationStateWaitPassword extends AuthorizationState {
-  /// The user has been authorized, but needs to enter a password to start using the application
-  AuthorizationStateWaitPassword(
-      {this.passwordHint,
-      this.hasRecoveryEmailAddress,
-      this.recoveryEmailAddressPattern});
+  AuthorizationStateWaitPassword({
+    this.passwordHint,
+    this.hasRecoveryEmailAddress = false,
+    this.recoveryEmailAddressPattern,
+    this.extra,
+  });
+
+  /// Parse from a json
+  factory AuthorizationStateWaitPassword.fromJson(Map<String, dynamic> json) =>
+      AuthorizationStateWaitPassword(
+        passwordHint: json['password_hint'],
+        hasRecoveryEmailAddress: json['has_recovery_email_address'],
+        recoveryEmailAddressPattern: json['recovery_email_address_pattern'],
+        extra: json['@extra'],
+      );
+
+  static const CONSTRUCTOR = 'authorizationStateWaitPassword';
+
+  /// callback sign
+  dynamic extra;
+
+  /// [hasRecoveryEmailAddress] True, if a recovery email address has been set up
+  bool hasRecoveryEmailAddress;
 
   /// [passwordHint] Hint for the password; may be empty
   String? passwordHint;
 
-  /// [hasRecoveryEmailAddress] True, if a recovery email address has been set up
-  bool? hasRecoveryEmailAddress;
-
   /// [recoveryEmailAddressPattern] Pattern of the email address to which the recovery email was sent; empty until a recovery email has been sent
   String? recoveryEmailAddressPattern;
 
-  /// callback sign
-  dynamic extra;
-
-  /// Parse from a json
-  AuthorizationStateWaitPassword.fromJson(Map<String, dynamic> json) {
-    this.passwordHint = json['password_hint'];
-    this.hasRecoveryEmailAddress = json['has_recovery_email_address'];
-    this.recoveryEmailAddressPattern = json['recovery_email_address_pattern'];
-    this.extra = json['@extra'];
-  }
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "password_hint": this.passwordHint,
-      "has_recovery_email_address": this.hasRecoveryEmailAddress,
-      "recovery_email_address_pattern": this.recoveryEmailAddressPattern,
+      "password_hint": passwordHint,
+      "has_recovery_email_address": hasRecoveryEmailAddress,
+      "recovery_email_address_pattern": recoveryEmailAddressPattern,
     };
   }
-
-  static const CONSTRUCTOR = 'authorizationStateWaitPassword';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }
 
+/// The user has been successfully authorized. TDLib is now ready to answer queries
 class AuthorizationStateReady extends AuthorizationState {
-  /// The user has been successfully authorized. TDLib is now ready to answer queries
   AuthorizationStateReady();
-
-  /// callback sign
-  dynamic extra;
 
   /// Parse from a json
   AuthorizationStateReady.fromJson(Map<String, dynamic> json) {
-    this.extra = json['@extra'];
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return {
-      "@type": CONSTRUCTOR,
-    };
+    extra = json['@extra'];
   }
 
   static const CONSTRUCTOR = 'authorizationStateReady';
 
-  @override
-  String getConstructor() => CONSTRUCTOR;
-}
-
-class AuthorizationStateLoggingOut extends AuthorizationState {
-  /// The user is currently logging out
-  AuthorizationStateLoggingOut();
-
   /// callback sign
   dynamic extra;
 
-  /// Parse from a json
-  AuthorizationStateLoggingOut.fromJson(Map<String, dynamic> json) {
-    this.extra = json['@extra'];
-  }
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
     };
+  }
+}
+
+/// The user is currently logging out
+class AuthorizationStateLoggingOut extends AuthorizationState {
+  AuthorizationStateLoggingOut();
+
+  /// Parse from a json
+  AuthorizationStateLoggingOut.fromJson(Map<String, dynamic> json) {
+    extra = json['@extra'];
   }
 
   static const CONSTRUCTOR = 'authorizationStateLoggingOut';
 
-  @override
-  String getConstructor() => CONSTRUCTOR;
-}
-
-class AuthorizationStateClosing extends AuthorizationState {
-  /// TDLib is closing, all subsequent queries will be answered with the error 500. Note that closing TDLib can take a while. All resources will be freed only after authorizationStateClosed has been received
-  AuthorizationStateClosing();
-
   /// callback sign
   dynamic extra;
 
-  /// Parse from a json
-  AuthorizationStateClosing.fromJson(Map<String, dynamic> json) {
-    this.extra = json['@extra'];
-  }
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
     };
+  }
+}
+
+/// TDLib is closing, all subsequent queries will be answered with the error 500.
+/// Note that closing TDLib can take a while.
+/// All resources will be freed only after authorizationStateClosed has been received
+class AuthorizationStateClosing extends AuthorizationState {
+  AuthorizationStateClosing();
+
+  /// Parse from a json
+  AuthorizationStateClosing.fromJson(Map<String, dynamic> json) {
+    extra = json['@extra'];
   }
 
   static const CONSTRUCTOR = 'authorizationStateClosing';
 
-  @override
-  String getConstructor() => CONSTRUCTOR;
-}
-
-class AuthorizationStateClosed extends AuthorizationState {
-  /// TDLib client is in its final state. All databases are closed and all resources are released. No other updates will be received after this. All queries will be responded to. with error code 500. To continue working, one should create a new instance of the TDLib client
-  AuthorizationStateClosed();
-
   /// callback sign
   dynamic extra;
 
-  /// Parse from a json
-  AuthorizationStateClosed.fromJson(Map<String, dynamic> json) {
-    this.extra = json['@extra'];
-  }
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
@@ -366,9 +363,32 @@ class AuthorizationStateClosed extends AuthorizationState {
       "@type": CONSTRUCTOR,
     };
   }
+}
+
+/// TDLib client is in its final state.
+/// All databases are closed and all resources are released.
+/// No other updates will be received after this. All queries will be responded to.
+/// with error code 500. To continue working, one should create a new instance of the TDLib client
+class AuthorizationStateClosed extends AuthorizationState {
+  AuthorizationStateClosed();
+
+  /// Parse from a json
+  AuthorizationStateClosed.fromJson(Map<String, dynamic> json) {
+    extra = json['@extra'];
+  }
 
   static const CONSTRUCTOR = 'authorizationStateClosed';
 
+  /// callback sign
+  dynamic extra;
+
   @override
   String getConstructor() => CONSTRUCTOR;
+
+  @override
+  Map<String, dynamic> toJson() {
+    return {
+      "@type": CONSTRUCTOR,
+    };
+  }
 }

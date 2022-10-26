@@ -142,8 +142,7 @@ class PushMessageContentAnimation extends PushMessageContent {
 
   /// Parse from a json
   PushMessageContentAnimation.fromJson(Map<String, dynamic> json) {
-    this.animation =
-        Animation.fromJson(json['animation'] ?? <String, dynamic>{});
+    this.animation = Animation.fromJson(json['animation']);
     this.caption = json['caption'];
     this.isPinned = json['is_pinned'];
   }
@@ -176,7 +175,7 @@ class PushMessageContentAudio extends PushMessageContent {
 
   /// Parse from a json
   PushMessageContentAudio.fromJson(Map<String, dynamic> json) {
-    this.audio = Audio.fromJson(json['audio'] ?? <String, dynamic>{});
+    this.audio = Audio.fromJson(json['audio']);
     this.isPinned = json['is_pinned'];
   }
 
@@ -258,7 +257,7 @@ class PushMessageContentDocument extends PushMessageContent {
 
   /// Parse from a json
   PushMessageContentDocument.fromJson(Map<String, dynamic> json) {
-    this.document = Document.fromJson(json['document'] ?? <String, dynamic>{});
+    this.document = Document.fromJson(json['document']);
     this.isPinned = json['is_pinned'];
   }
 
@@ -425,7 +424,7 @@ class PushMessageContentPhoto extends PushMessageContent {
 
   /// Parse from a json
   PushMessageContentPhoto.fromJson(Map<String, dynamic> json) {
-    this.photo = Photo.fromJson(json['photo'] ?? <String, dynamic>{});
+    this.photo = Photo.fromJson(json['photo']);
     this.caption = json['caption'];
     this.isSecret = json['is_secret'];
     this.isPinned = json['is_pinned'];
@@ -519,7 +518,7 @@ class PushMessageContentSticker extends PushMessageContent {
 
   /// Parse from a json
   PushMessageContentSticker.fromJson(Map<String, dynamic> json) {
-    this.sticker = Sticker.fromJson(json['sticker'] ?? <String, dynamic>{});
+    this.sticker = Sticker.fromJson(json['sticker']);
     this.emoji = json['emoji'];
     this.isPinned = json['is_pinned'];
   }
@@ -590,7 +589,7 @@ class PushMessageContentVideo extends PushMessageContent {
 
   /// Parse from a json
   PushMessageContentVideo.fromJson(Map<String, dynamic> json) {
-    this.video = Video.fromJson(json['video'] ?? <String, dynamic>{});
+    this.video = Video.fromJson(json['video']);
     this.caption = json['caption'];
     this.isSecret = json['is_secret'];
     this.isPinned = json['is_pinned'];
@@ -625,8 +624,7 @@ class PushMessageContentVideoNote extends PushMessageContent {
 
   /// Parse from a json
   PushMessageContentVideoNote.fromJson(Map<String, dynamic> json) {
-    this.videoNote =
-        VideoNote.fromJson(json['video_note'] ?? <String, dynamic>{});
+    this.videoNote = VideoNote.fromJson(json['video_note']);
     this.isPinned = json['is_pinned'];
   }
 
@@ -657,8 +655,7 @@ class PushMessageContentVoiceNote extends PushMessageContent {
 
   /// Parse from a json
   PushMessageContentVoiceNote.fromJson(Map<String, dynamic> json) {
-    this.voiceNote =
-        VoiceNote.fromJson(json['voice_note'] ?? <String, dynamic>{});
+    this.voiceNote = VoiceNote.fromJson(json['voice_note']);
     this.isPinned = json['is_pinned'];
   }
 

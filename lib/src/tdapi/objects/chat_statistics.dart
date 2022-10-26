@@ -102,45 +102,34 @@ class ChatStatisticsSupergroup extends ChatStatistics {
 
   /// Parse from a json
   ChatStatisticsSupergroup.fromJson(Map<String, dynamic> json) {
-    this.period = DateRange.fromJson(json['period'] ?? <String, dynamic>{});
-    this.memberCount =
-        StatisticalValue.fromJson(json['member_count'] ?? <String, dynamic>{});
-    this.messageCount =
-        StatisticalValue.fromJson(json['message_count'] ?? <String, dynamic>{});
-    this.viewerCount =
-        StatisticalValue.fromJson(json['viewer_count'] ?? <String, dynamic>{});
-    this.senderCount =
-        StatisticalValue.fromJson(json['sender_count'] ?? <String, dynamic>{});
-    this.memberCountGraph = StatisticalGraph.fromJson(
-        json['member_count_graph'] ?? <String, dynamic>{});
-    this.joinGraph =
-        StatisticalGraph.fromJson(json['join_graph'] ?? <String, dynamic>{});
-    this.joinBySourceGraph = StatisticalGraph.fromJson(
-        json['join_by_source_graph'] ?? <String, dynamic>{});
-    this.languageGraph = StatisticalGraph.fromJson(
-        json['language_graph'] ?? <String, dynamic>{});
-    this.messageContentGraph = StatisticalGraph.fromJson(
-        json['message_content_graph'] ?? <String, dynamic>{});
-    this.actionGraph =
-        StatisticalGraph.fromJson(json['action_graph'] ?? <String, dynamic>{});
-    this.dayGraph =
-        StatisticalGraph.fromJson(json['day_graph'] ?? <String, dynamic>{});
-    this.weekGraph =
-        StatisticalGraph.fromJson(json['week_graph'] ?? <String, dynamic>{});
+    this.period = DateRange.fromJson(json['period']);
+    this.memberCount = StatisticalValue.fromJson(json['member_count']);
+    this.messageCount = StatisticalValue.fromJson(json['message_count']);
+    this.viewerCount = StatisticalValue.fromJson(json['viewer_count']);
+    this.senderCount = StatisticalValue.fromJson(json['sender_count']);
+    this.memberCountGraph =
+        StatisticalGraph.fromJson(json['member_count_graph']);
+    this.joinGraph = StatisticalGraph.fromJson(json['join_graph']);
+    this.joinBySourceGraph =
+        StatisticalGraph.fromJson(json['join_by_source_graph']);
+    this.languageGraph = StatisticalGraph.fromJson(json['language_graph']);
+    this.messageContentGraph =
+        StatisticalGraph.fromJson(json['message_content_graph']);
+    this.actionGraph = StatisticalGraph.fromJson(json['action_graph']);
+    this.dayGraph = StatisticalGraph.fromJson(json['day_graph']);
+    this.weekGraph = StatisticalGraph.fromJson(json['week_graph']);
     this.topSenders = List<ChatStatisticsMessageSenderInfo>.from(
         (json['top_senders'] ?? [])
-            .map((item) => ChatStatisticsMessageSenderInfo.fromJson(
-                item ?? <String, dynamic>{}))
+            .map((item) => ChatStatisticsMessageSenderInfo.fromJson(item))
             .toList());
     this.topAdministrators = List<ChatStatisticsAdministratorActionsInfo>.from(
         (json['top_administrators'] ?? [])
-            .map((item) => ChatStatisticsAdministratorActionsInfo.fromJson(
-                item ?? <String, dynamic>{}))
+            .map(
+                (item) => ChatStatisticsAdministratorActionsInfo.fromJson(item))
             .toList());
     this.topInviters = List<ChatStatisticsInviterInfo>.from(
         (json['top_inviters'] ?? [])
-            .map((item) =>
-                ChatStatisticsInviterInfo.fromJson(item ?? <String, dynamic>{}))
+            .map((item) => ChatStatisticsInviterInfo.fromJson(item))
             .toList());
     this.extra = json['@extra'];
   }
@@ -256,38 +245,32 @@ class ChatStatisticsChannel extends ChatStatistics {
 
   /// Parse from a json
   ChatStatisticsChannel.fromJson(Map<String, dynamic> json) {
-    this.period = DateRange.fromJson(json['period'] ?? <String, dynamic>{});
-    this.memberCount =
-        StatisticalValue.fromJson(json['member_count'] ?? <String, dynamic>{});
-    this.meanViewCount = StatisticalValue.fromJson(
-        json['mean_view_count'] ?? <String, dynamic>{});
-    this.meanShareCount = StatisticalValue.fromJson(
-        json['mean_share_count'] ?? <String, dynamic>{});
+    this.period = DateRange.fromJson(json['period']);
+    this.memberCount = StatisticalValue.fromJson(json['member_count']);
+    this.meanViewCount = StatisticalValue.fromJson(json['mean_view_count']);
+    this.meanShareCount = StatisticalValue.fromJson(json['mean_share_count']);
     this.enabledNotificationsPercentage =
         json['enabled_notifications_percentage'];
-    this.memberCountGraph = StatisticalGraph.fromJson(
-        json['member_count_graph'] ?? <String, dynamic>{});
-    this.joinGraph =
-        StatisticalGraph.fromJson(json['join_graph'] ?? <String, dynamic>{});
-    this.muteGraph =
-        StatisticalGraph.fromJson(json['mute_graph'] ?? <String, dynamic>{});
-    this.viewCountByHourGraph = StatisticalGraph.fromJson(
-        json['view_count_by_hour_graph'] ?? <String, dynamic>{});
-    this.viewCountBySourceGraph = StatisticalGraph.fromJson(
-        json['view_count_by_source_graph'] ?? <String, dynamic>{});
-    this.joinBySourceGraph = StatisticalGraph.fromJson(
-        json['join_by_source_graph'] ?? <String, dynamic>{});
-    this.languageGraph = StatisticalGraph.fromJson(
-        json['language_graph'] ?? <String, dynamic>{});
-    this.messageInteractionGraph = StatisticalGraph.fromJson(
-        json['message_interaction_graph'] ?? <String, dynamic>{});
-    this.instantViewInteractionGraph = StatisticalGraph.fromJson(
-        json['instant_view_interaction_graph'] ?? <String, dynamic>{});
+    this.memberCountGraph =
+        StatisticalGraph.fromJson(json['member_count_graph']);
+    this.joinGraph = StatisticalGraph.fromJson(json['join_graph']);
+    this.muteGraph = StatisticalGraph.fromJson(json['mute_graph']);
+    this.viewCountByHourGraph =
+        StatisticalGraph.fromJson(json['view_count_by_hour_graph']);
+    this.viewCountBySourceGraph =
+        StatisticalGraph.fromJson(json['view_count_by_source_graph']);
+    this.joinBySourceGraph =
+        StatisticalGraph.fromJson(json['join_by_source_graph']);
+    this.languageGraph = StatisticalGraph.fromJson(json['language_graph']);
+    this.messageInteractionGraph =
+        StatisticalGraph.fromJson(json['message_interaction_graph']);
+    this.instantViewInteractionGraph =
+        StatisticalGraph.fromJson(json['instant_view_interaction_graph']);
     this.recentMessageInteractions =
         List<ChatStatisticsMessageInteractionInfo>.from(
             (json['recent_message_interactions'] ?? [])
-                .map((item) => ChatStatisticsMessageInteractionInfo.fromJson(
-                    item ?? <String, dynamic>{}))
+                .map((item) =>
+                    ChatStatisticsMessageInteractionInfo.fromJson(item))
                 .toList());
     this.extra = json['@extra'];
   }

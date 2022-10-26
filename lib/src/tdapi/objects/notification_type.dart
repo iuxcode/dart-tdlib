@@ -44,7 +44,7 @@ class NotificationTypeNewMessage extends NotificationType {
 
   /// Parse from a json
   NotificationTypeNewMessage.fromJson(Map<String, dynamic> json) {
-    this.message = Message.fromJson(json['message'] ?? <String, dynamic>{});
+    this.message = Message.fromJson(json['message']);
   }
 
   @override
@@ -134,11 +134,10 @@ class NotificationTypeNewPushMessage extends NotificationType {
   /// Parse from a json
   NotificationTypeNewPushMessage.fromJson(Map<String, dynamic> json) {
     this.messageId = json['message_id'];
-    this.sender = MessageSender.fromJson(json['sender'] ?? <String, dynamic>{});
+    this.sender = MessageSender.fromJson(json['sender']);
     this.senderName = json['sender_name'];
     this.isOutgoing = json['is_outgoing'];
-    this.content =
-        PushMessageContent.fromJson(json['content'] ?? <String, dynamic>{});
+    this.content = PushMessageContent.fromJson(json['content']);
   }
 
   @override

@@ -113,10 +113,8 @@ class ChatEventMessageEdited extends ChatEventAction {
 
   /// Parse from a json
   ChatEventMessageEdited.fromJson(Map<String, dynamic> json) {
-    this.oldMessage =
-        Message.fromJson(json['old_message'] ?? <String, dynamic>{});
-    this.newMessage =
-        Message.fromJson(json['new_message'] ?? <String, dynamic>{});
+    this.oldMessage = Message.fromJson(json['old_message']);
+    this.newMessage = Message.fromJson(json['new_message']);
   }
 
   @override
@@ -143,7 +141,7 @@ class ChatEventMessageDeleted extends ChatEventAction {
 
   /// Parse from a json
   ChatEventMessageDeleted.fromJson(Map<String, dynamic> json) {
-    this.message = Message.fromJson(json['message'] ?? <String, dynamic>{});
+    this.message = Message.fromJson(json['message']);
   }
 
   @override
@@ -169,7 +167,7 @@ class ChatEventPollStopped extends ChatEventAction {
 
   /// Parse from a json
   ChatEventPollStopped.fromJson(Map<String, dynamic> json) {
-    this.message = Message.fromJson(json['message'] ?? <String, dynamic>{});
+    this.message = Message.fromJson(json['message']);
   }
 
   @override
@@ -195,7 +193,7 @@ class ChatEventMessagePinned extends ChatEventAction {
 
   /// Parse from a json
   ChatEventMessagePinned.fromJson(Map<String, dynamic> json) {
-    this.message = Message.fromJson(json['message'] ?? <String, dynamic>{});
+    this.message = Message.fromJson(json['message']);
   }
 
   @override
@@ -221,7 +219,7 @@ class ChatEventMessageUnpinned extends ChatEventAction {
 
   /// Parse from a json
   ChatEventMessageUnpinned.fromJson(Map<String, dynamic> json) {
-    this.message = Message.fromJson(json['message'] ?? <String, dynamic>{});
+    this.message = Message.fromJson(json['message']);
   }
 
   @override
@@ -291,8 +289,7 @@ class ChatEventMemberInvited extends ChatEventAction {
   /// Parse from a json
   ChatEventMemberInvited.fromJson(Map<String, dynamic> json) {
     this.userId = json['user_id'];
-    this.status =
-        ChatMemberStatus.fromJson(json['status'] ?? <String, dynamic>{});
+    this.status = ChatMemberStatus.fromJson(json['status']);
   }
 
   @override
@@ -326,10 +323,8 @@ class ChatEventMemberPromoted extends ChatEventAction {
   /// Parse from a json
   ChatEventMemberPromoted.fromJson(Map<String, dynamic> json) {
     this.userId = json['user_id'];
-    this.oldStatus =
-        ChatMemberStatus.fromJson(json['old_status'] ?? <String, dynamic>{});
-    this.newStatus =
-        ChatMemberStatus.fromJson(json['new_status'] ?? <String, dynamic>{});
+    this.oldStatus = ChatMemberStatus.fromJson(json['old_status']);
+    this.newStatus = ChatMemberStatus.fromJson(json['new_status']);
   }
 
   @override
@@ -364,10 +359,8 @@ class ChatEventMemberRestricted extends ChatEventAction {
   /// Parse from a json
   ChatEventMemberRestricted.fromJson(Map<String, dynamic> json) {
     this.userId = json['user_id'];
-    this.oldStatus =
-        ChatMemberStatus.fromJson(json['old_status'] ?? <String, dynamic>{});
-    this.newStatus =
-        ChatMemberStatus.fromJson(json['new_status'] ?? <String, dynamic>{});
+    this.oldStatus = ChatMemberStatus.fromJson(json['old_status']);
+    this.newStatus = ChatMemberStatus.fromJson(json['new_status']);
   }
 
   @override
@@ -429,10 +422,8 @@ class ChatEventPermissionsChanged extends ChatEventAction {
 
   /// Parse from a json
   ChatEventPermissionsChanged.fromJson(Map<String, dynamic> json) {
-    this.oldPermissions = ChatPermissions.fromJson(
-        json['old_permissions'] ?? <String, dynamic>{});
-    this.newPermissions = ChatPermissions.fromJson(
-        json['new_permissions'] ?? <String, dynamic>{});
+    this.oldPermissions = ChatPermissions.fromJson(json['old_permissions']);
+    this.newPermissions = ChatPermissions.fromJson(json['new_permissions']);
   }
 
   @override
@@ -526,10 +517,8 @@ class ChatEventPhotoChanged extends ChatEventAction {
 
   /// Parse from a json
   ChatEventPhotoChanged.fromJson(Map<String, dynamic> json) {
-    this.oldPhoto =
-        ChatPhoto.fromJson(json['old_photo'] ?? <String, dynamic>{});
-    this.newPhoto =
-        ChatPhoto.fromJson(json['new_photo'] ?? <String, dynamic>{});
+    this.oldPhoto = ChatPhoto.fromJson(json['old_photo']);
+    this.newPhoto = ChatPhoto.fromJson(json['new_photo']);
   }
 
   @override
@@ -704,10 +693,8 @@ class ChatEventLocationChanged extends ChatEventAction {
 
   /// Parse from a json
   ChatEventLocationChanged.fromJson(Map<String, dynamic> json) {
-    this.oldLocation =
-        ChatLocation.fromJson(json['old_location'] ?? <String, dynamic>{});
-    this.newLocation =
-        ChatLocation.fromJson(json['new_location'] ?? <String, dynamic>{});
+    this.oldLocation = ChatLocation.fromJson(json['old_location']);
+    this.newLocation = ChatLocation.fromJson(json['new_location']);
   }
 
   @override

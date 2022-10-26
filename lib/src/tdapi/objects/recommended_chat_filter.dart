@@ -12,7 +12,7 @@ class RecommendedChatFilter extends TdObject {
 
   /// Parse from a json
   RecommendedChatFilter.fromJson(Map<String, dynamic> json) {
-    this.filter = ChatFilter.fromJson(json['filter'] ?? <String, dynamic>{});
+    this.filter = ChatFilter.fromJson(json['filter']);
     this.description = json['description'];
   }
 

@@ -64,8 +64,7 @@ class Supergroup extends TdObject {
     this.id = json['id'];
     this.username = json['username'];
     this.date = json['date'];
-    this.status =
-        ChatMemberStatus.fromJson(json['status'] ?? <String, dynamic>{});
+    this.status = ChatMemberStatus.fromJson(json['status']);
     this.memberCount = json['member_count'];
     this.hasLinkedChat = json['has_linked_chat'];
     this.hasLocation = json['has_location'];

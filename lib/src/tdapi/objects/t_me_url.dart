@@ -13,7 +13,7 @@ class TMeUrl extends TdObject {
   /// Parse from a json
   TMeUrl.fromJson(Map<String, dynamic> json) {
     this.url = json['url'];
-    this.type = TMeUrlType.fromJson(json['type'] ?? <String, dynamic>{});
+    this.type = TMeUrlType.fromJson(json['type']);
   }
 
   @override

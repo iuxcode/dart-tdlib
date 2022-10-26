@@ -67,7 +67,7 @@ class InputChatPhotoStatic extends InputChatPhoto {
 
   /// Parse from a json
   InputChatPhotoStatic.fromJson(Map<String, dynamic> json) {
-    this.photo = InputFile.fromJson(json['photo'] ?? <String, dynamic>{});
+    this.photo = InputFile.fromJson(json['photo']);
   }
 
   @override
@@ -96,8 +96,7 @@ class InputChatPhotoAnimation extends InputChatPhoto {
 
   /// Parse from a json
   InputChatPhotoAnimation.fromJson(Map<String, dynamic> json) {
-    this.animation =
-        InputFile.fromJson(json['animation'] ?? <String, dynamic>{});
+    this.animation = InputFile.fromJson(json['animation']);
     this.mainFrameTimestamp = json['main_frame_timestamp'];
   }
 

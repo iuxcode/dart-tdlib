@@ -28,11 +28,9 @@ class VideoNote extends TdObject {
   VideoNote.fromJson(Map<String, dynamic> json) {
     this.duration = json['duration'];
     this.length = json['length'];
-    this.minithumbnail =
-        Minithumbnail.fromJson(json['minithumbnail'] ?? <String, dynamic>{});
-    this.thumbnail =
-        Thumbnail.fromJson(json['thumbnail'] ?? <String, dynamic>{});
-    this.video = File.fromJson(json['video'] ?? <String, dynamic>{});
+    this.minithumbnail = Minithumbnail.fromJson(json['minithumbnail']);
+    this.thumbnail = Thumbnail.fromJson(json['thumbnail']);
+    this.video = File.fromJson(json['video']);
   }
 
   @override

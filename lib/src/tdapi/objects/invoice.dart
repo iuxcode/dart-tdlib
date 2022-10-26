@@ -48,7 +48,7 @@ class Invoice extends TdObject {
   Invoice.fromJson(Map<String, dynamic> json) {
     this.currency = json['currency'];
     this.priceParts = List<LabeledPricePart>.from((json['price_parts'] ?? [])
-        .map((item) => LabeledPricePart.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => LabeledPricePart.fromJson(item))
         .toList());
     this.isTest = json['is_test'];
     this.needName = json['need_name'];

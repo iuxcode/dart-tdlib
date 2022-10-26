@@ -43,9 +43,9 @@ class ChatInviteLinkInfo extends TdObject {
   ChatInviteLinkInfo.fromJson(Map<String, dynamic> json) {
     this.chatId = json['chat_id'];
     this.accessibleFor = json['accessible_for'];
-    this.type = ChatType.fromJson(json['type'] ?? <String, dynamic>{});
+    this.type = ChatType.fromJson(json['type']);
     this.title = json['title'];
-    this.photo = ChatPhotoInfo.fromJson(json['photo'] ?? <String, dynamic>{});
+    this.photo = ChatPhotoInfo.fromJson(json['photo']);
     this.memberCount = json['member_count'];
     this.memberUserIds = List<int>.from(
         (json['member_user_ids'] ?? []).map((item) => item).toList());

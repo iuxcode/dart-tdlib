@@ -37,11 +37,10 @@ class Game extends TdObject {
     this.id = int.tryParse(json['id'] ?? "");
     this.shortName = json['short_name'];
     this.title = json['title'];
-    this.text = FormattedText.fromJson(json['text'] ?? <String, dynamic>{});
+    this.text = FormattedText.fromJson(json['text']);
     this.description = json['description'];
-    this.photo = Photo.fromJson(json['photo'] ?? <String, dynamic>{});
-    this.animation =
-        Animation.fromJson(json['animation'] ?? <String, dynamic>{});
+    this.photo = Photo.fromJson(json['photo']);
+    this.animation = Animation.fromJson(json['animation']);
   }
 
   @override

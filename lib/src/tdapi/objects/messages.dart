@@ -17,7 +17,7 @@ class Messages extends TdObject {
   Messages.fromJson(Map<String, dynamic> json) {
     this.totalCount = json['total_count'];
     this.messages = List<Message>.from((json['messages'] ?? [])
-        .map((item) => Message.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => Message.fromJson(item))
         .toList());
     this.extra = json['@extra'];
   }

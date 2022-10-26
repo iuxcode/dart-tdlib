@@ -22,8 +22,7 @@ class PassportSuitableElement extends TdObject {
 
   /// Parse from a json
   PassportSuitableElement.fromJson(Map<String, dynamic> json) {
-    this.type =
-        PassportElementType.fromJson(json['type'] ?? <String, dynamic>{});
+    this.type = PassportElementType.fromJson(json['type']);
     this.isSelfieRequired = json['is_selfie_required'];
     this.isTranslationRequired = json['is_translation_required'];
     this.isNativeNameRequired = json['is_native_name_required'];

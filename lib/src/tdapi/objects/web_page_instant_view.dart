@@ -26,7 +26,7 @@ class WebPageInstantView extends TdObject {
   /// Parse from a json
   WebPageInstantView.fromJson(Map<String, dynamic> json) {
     this.pageBlocks = List<PageBlock>.from((json['page_blocks'] ?? [])
-        .map((item) => PageBlock.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => PageBlock.fromJson(item))
         .toList());
     this.viewCount = json['view_count'];
     this.version = json['version'];

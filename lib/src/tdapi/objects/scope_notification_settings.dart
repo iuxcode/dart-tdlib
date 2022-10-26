@@ -2,40 +2,44 @@ part of '../index.dart';
 
 class ScopeNotificationSettings extends TdObject {
   /// Contains information about notification settings for several chats
-  ScopeNotificationSettings(
-      {this.muteFor,
-      this.sound,
-      this.showPreview,
-      this.disablePinnedMessageNotifications,
-      this.disableMentionNotifications});
+  ScopeNotificationSettings({
+    required this.muteFor,
+    required this.sound,
+    this.showPreview = false,
+    this.disablePinnedMessageNotifications = false,
+    this.disableMentionNotifications = false,
+    this.extra,
+  });
 
   /// [muteFor] Time left before notifications will be unmuted, in seconds
-  int? muteFor;
+  int muteFor;
 
   /// [sound] The name of an audio file to be used for notification sounds; only applies to iOS applications
-  String? sound;
+  String sound;
 
   /// [showPreview] True, if message content should be displayed in notifications
-  bool? showPreview;
+  bool showPreview;
 
   /// [disablePinnedMessageNotifications] True, if notifications for incoming pinned messages will be created as for an ordinary unread message
-  bool? disablePinnedMessageNotifications;
+  bool disablePinnedMessageNotifications;
 
   /// [disableMentionNotifications] True, if notifications for messages with mentions will be created as for an ordinary unread message
-  bool? disableMentionNotifications;
+  bool disableMentionNotifications;
 
   /// callback sign
   dynamic extra;
 
   /// Parse from a json
-  ScopeNotificationSettings.fromJson(Map<String, dynamic> json) {
-    this.muteFor = json['mute_for'];
-    this.sound = json['sound'];
-    this.showPreview = json['show_preview'];
-    this.disablePinnedMessageNotifications =
-        json['disable_pinned_message_notifications'];
-    this.disableMentionNotifications = json['disable_mention_notifications'];
-    this.extra = json['@extra'];
+  factory ScopeNotificationSettings.fromJson(Map<String, dynamic> json) {
+    return ScopeNotificationSettings(
+      muteFor: json['mute_for'],
+      sound: json['sound'],
+      showPreview: json['show_preview'],
+      disablePinnedMessageNotifications:
+          json['disable_pinned_message_notifications'],
+      disableMentionNotifications: json['disable_mention_notifications'],
+      extra: json['@extra'],
+    );
   }
 
   @override

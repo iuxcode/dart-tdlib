@@ -18,8 +18,8 @@ class MessageSendOptions extends TdObject {
   MessageSendOptions.fromJson(Map<String, dynamic> json) {
     this.disableNotification = json['disable_notification'];
     this.fromBackground = json['from_background'];
-    this.schedulingState = MessageSchedulingState.fromJson(
-        json['scheduling_state'] ?? <String, dynamic>{});
+    this.schedulingState =
+        MessageSchedulingState.fromJson(json['scheduling_state']);
   }
 
   @override

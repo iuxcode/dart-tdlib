@@ -12,11 +12,10 @@ class PersonalDocument extends TdObject {
 
   /// Parse from a json
   PersonalDocument.fromJson(Map<String, dynamic> json) {
-    this.files = List<DatedFile>.from((json['files'] ?? [])
-        .map((item) => DatedFile.fromJson(item ?? <String, dynamic>{}))
-        .toList());
+    this.files = List<DatedFile>.from(
+        (json['files'] ?? []).map((item) => DatedFile.fromJson(item)).toList());
     this.translation = List<DatedFile>.from((json['translation'] ?? [])
-        .map((item) => DatedFile.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => DatedFile.fromJson(item))
         .toList());
   }
 

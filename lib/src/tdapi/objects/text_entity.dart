@@ -8,7 +8,7 @@ class TextEntity extends TdObject {
   factory TextEntity.fromJson(Map<String, dynamic> json) => TextEntity(
         offset: json['offset'],
         length: json['length'],
-        type: TextEntityType.fromJson(json['type'] ?? <String, dynamic>{}),
+        type: TextEntityType.fromJson(json['type']),
       );
 
   static const CONSTRUCTOR = 'textEntity';

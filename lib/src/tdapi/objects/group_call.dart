@@ -67,8 +67,7 @@ class GroupCall extends TdObject {
     this.loadedAllParticipants = json['loaded_all_participants'];
     this.recentSpeakers = List<GroupCallRecentSpeaker>.from(
         (json['recent_speakers'] ?? [])
-            .map((item) =>
-                GroupCallRecentSpeaker.fromJson(item ?? <String, dynamic>{}))
+            .map((item) => GroupCallRecentSpeaker.fromJson(item))
             .toList());
     this.muteNewParticipants = json['mute_new_participants'];
     this.allowedChangeMuteNewParticipants =

@@ -24,8 +24,7 @@ class StorageStatisticsByChat extends TdObject {
     this.count = json['count'];
     this.byFileType = List<StorageStatisticsByFileType>.from(
         (json['by_file_type'] ?? [])
-            .map((item) => StorageStatisticsByFileType.fromJson(
-                item ?? <String, dynamic>{}))
+            .map((item) => StorageStatisticsByFileType.fromJson(item))
             .toList());
   }
 

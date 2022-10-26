@@ -21,8 +21,7 @@ class StorageStatistics extends TdObject {
     this.size = json['size'];
     this.count = json['count'];
     this.byChat = List<StorageStatisticsByChat>.from((json['by_chat'] ?? [])
-        .map((item) =>
-            StorageStatisticsByChat.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => StorageStatisticsByChat.fromJson(item))
         .toList());
     this.extra = json['@extra'];
   }

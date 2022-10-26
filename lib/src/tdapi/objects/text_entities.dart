@@ -13,7 +13,7 @@ class TextEntities extends TdObject {
   /// Parse from a json
   TextEntities.fromJson(Map<String, dynamic> json) {
     this.entities = List<TextEntity>.from((json['entities'] ?? [])
-        .map((item) => TextEntity.fromJson(item ?? <String, dynamic>{}))
+        .map((item) => TextEntity.fromJson(item))
         .toList());
     this.extra = json['@extra'];
   }

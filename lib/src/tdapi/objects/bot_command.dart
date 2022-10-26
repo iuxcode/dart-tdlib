@@ -1,32 +1,32 @@
 part of '../index.dart';
 
+/// Represents a command supported by a bot
 class BotCommand extends TdObject {
-  /// Represents a command supported by a bot
-  BotCommand({this.command, this.description});
-
-  /// [command] Text of the bot command
-  String? command;
-
-  /// [description] Description of the bot command
-  String? description;
+  BotCommand({required this.command, required this.description});
 
   /// Parse from a json
-  BotCommand.fromJson(Map<String, dynamic> json) {
-    this.command = json['command'];
-    this.description = json['description'];
-  }
+  factory BotCommand.fromJson(Map<String, dynamic> json) => BotCommand(
+        command: json['command'],
+        description: json['description'],
+      );
+
+  static const CONSTRUCTOR = 'botCommand';
+
+  /// [command] Text of the bot command
+  String command;
+
+  /// [description] Description of the bot command
+  String description;
+
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "command": this.command,
-      "description": this.description,
+      "command": command,
+      "description": description,
     };
   }
-
-  static const CONSTRUCTOR = 'botCommand';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }
