@@ -1,11 +1,12 @@
 part of '../index.dart';
 
 class AnimatedEmoji extends TdObject {
-  AnimatedEmoji({required this.sticker, required this.fitzpatrickType, this.sound});
+  AnimatedEmoji(
+      {required this.sticker, required this.fitzpatrickType, this.sound});
 
   factory AnimatedEmoji.fromJson(Map<String, dynamic> json) => AnimatedEmoji(
         sticker: Sticker.fromJson(json['sticker']),
-        fitzpatrickType: int.parse(json['fitzpatrickType']),
+        fitzpatrickType: json['fitzpatrick_type'] ?? 0,
         sound: json['sound'] != null ? File.fromJson(json['sound']) : null,
       );
 
@@ -29,7 +30,7 @@ class AnimatedEmoji extends TdObject {
     return {
       "@type": CONSTRUCTOR,
       "sticker": this.sticker,
-      "fitzpatrickType": this.fitzpatrickType,
+      "fitzpatrick_type": this.fitzpatrickType,
       "sound": this.sound?.toJson(),
     };
   }

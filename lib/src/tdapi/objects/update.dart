@@ -968,7 +968,9 @@ class UpdateChatLastMessage extends Update {
   factory UpdateChatLastMessage.fromJson(Map<String, dynamic> json) {
     return UpdateChatLastMessage(
       chatId: json['chat_id'],
-      lastMessage: Message.fromJson(json['last_message']),
+      lastMessage: json['last_message'] != null
+          ? Message.fromJson(json['last_message'])
+          : null,
       positions: List<ChatPosition>.from((json['positions'] ?? [])
           .map((item) => ChatPosition.fromJson(item))
           .toList()),
