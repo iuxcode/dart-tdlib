@@ -544,7 +544,9 @@ class UpdateMessageEdited extends Update {
       chatId: json['chat_id'],
       messageId: json['message_id'],
       editDate: json['edit_date'],
-      replyMarkup: ReplyMarkup.fromJson(json['reply_markup']),
+      replyMarkup: json['reply_markup'] != null
+          ? ReplyMarkup.fromJson(json['reply_markup'])
+          : null,
       extra: json['@extra'],
     );
   }
@@ -564,7 +566,7 @@ class UpdateMessageEdited extends Update {
   int messageId;
 
   /// [replyMarkup] New message reply markup; may be null
-  ReplyMarkup replyMarkup;
+  ReplyMarkup? replyMarkup;
 
   @override
   String getConstructor() => CONSTRUCTOR;
@@ -576,7 +578,7 @@ class UpdateMessageEdited extends Update {
       "chat_id": chatId,
       "message_id": messageId,
       "edit_date": editDate,
-      "reply_markup": replyMarkup.toJson(),
+      "reply_markup": replyMarkup?.toJson(),
     };
   }
 }
