@@ -1,32 +1,43 @@
 part of '../index.dart';
 
+/// Describes a call
 class Call extends TdObject {
-  /// Describes a call
-  Call({this.id, this.userId, this.isOutgoing, this.isVideo, this.state});
-
-  /// [id] Call identifier, not persistent
-  int? id;
-
-  /// [userId] Peer user identifier
-  int? userId;
-
-  /// [isOutgoing] True, if the call is outgoing
-  bool? isOutgoing;
-
-  /// [isVideo] True, if the call is a video call
-  bool? isVideo;
-
-  /// [state] Call state
-  CallState? state;
+  Call({
+    required this.id,
+    required this.userId,
+    this.isOutgoing = false,
+    this.isVideo = false,
+    required this.state,
+  });
 
   /// Parse from a json
-  Call.fromJson(Map<String, dynamic> json) {
-    this.id = json['id'];
-    this.userId = json['user_id'];
-    this.isOutgoing = json['is_outgoing'];
-    this.isVideo = json['is_video'];
-    this.state = CallState.fromJson(json['state']);
-  }
+  factory Call.fromJson(Map<String, dynamic> json) => Call(
+        id: json['id'],
+        userId: json['user_id'],
+        isOutgoing: json['is_outgoing'],
+        isVideo: json['is_video'],
+        state: CallState.fromJson(json['state']),
+      );
+
+  static const CONSTRUCTOR = 'call';
+
+  /// [id] Call identifier, not persistent
+  int id;
+
+  /// [isOutgoing] True, if the call is outgoing
+  bool isOutgoing;
+
+  /// [isVideo] True, if the call is a video call
+  bool isVideo;
+
+  /// [state] Call state
+  CallState state;
+
+  /// [userId] Peer user identifier
+  int userId;
+
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
@@ -36,12 +47,7 @@ class Call extends TdObject {
       "user_id": this.userId,
       "is_outgoing": this.isOutgoing,
       "is_video": this.isVideo,
-      "state": this.state == null ? null : this.state!.toJson(),
+      "state": this.state.toJson(),
     };
   }
-
-  static const CONSTRUCTOR = 'call';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }

@@ -1,15 +1,15 @@
 part of '../index.dart';
 
+/// Describes the reason why a call was discarded
+/// a CallDiscardReason return type can be :
+/// * CallDiscardReasonEmpty
+/// * CallDiscardReasonMissed
+/// * CallDiscardReasonDeclined
+/// * CallDiscardReasonDisconnected
+/// * CallDiscardReasonHungUp
 class CallDiscardReason extends TdObject {
-  /// Describes the reason why a call was discarded
   CallDiscardReason();
 
-  /// a CallDiscardReason return type can be :
-  /// * CallDiscardReasonEmpty
-  /// * CallDiscardReasonMissed
-  /// * CallDiscardReasonDeclined
-  /// * CallDiscardReasonDisconnected
-  /// * CallDiscardReasonHungUp
   factory CallDiscardReason.fromJson(Map<String, dynamic> json) {
     switch (json["@type"]) {
       case CallDiscardReasonEmpty.CONSTRUCTOR:

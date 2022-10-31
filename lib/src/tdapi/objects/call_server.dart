@@ -1,23 +1,14 @@
 part of '../index.dart';
 
+/// Describes a server for relaying call data
 class CallServer extends TdObject {
-  /// Describes a server for relaying call data
-  CallServer({this.id, this.ipAddress, this.ipv6Address, this.port, this.type});
-
-  /// [id] Server identifier
-  int? id;
-
-  /// [ipAddress] Server IPv4 address
-  String? ipAddress;
-
-  /// [ipv6Address] Server IPv6 address
-  String? ipv6Address;
-
-  /// [port] Server port number
-  int? port;
-
-  /// [type] Server type
-  CallServerType? type;
+  CallServer({
+    required this.id,
+    required this.ipAddress,
+    required this.ipv6Address,
+    required this.port,
+    required this.type,
+  });
 
   /// Parse from a json
   CallServer.fromJson(Map<String, dynamic> json) {
@@ -27,6 +18,26 @@ class CallServer extends TdObject {
     this.port = json['port'];
     this.type = CallServerType.fromJson(json['type']);
   }
+
+  static const CONSTRUCTOR = 'callServer';
+
+  /// [id] Server identifier
+  int id;
+
+  /// [ipAddress] Server IPv4 address
+  String ipAddress;
+
+  /// [ipv6Address] Server IPv6 address
+  String ipv6Address;
+
+  /// [port] Server port number
+  int port;
+
+  /// [type] Server type
+  CallServerType type;
+
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
@@ -39,9 +50,4 @@ class CallServer extends TdObject {
       "type": this.type == null ? null : this.type!.toJson(),
     };
   }
-
-  static const CONSTRUCTOR = 'callServer';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }

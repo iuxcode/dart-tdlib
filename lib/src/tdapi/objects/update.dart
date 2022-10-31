@@ -2339,20 +2339,20 @@ class UpdateFileGenerationStop extends Update {
   }
 }
 
+/// New call was created or information about a call was updated
 class UpdateCall extends Update {
-  /// New call was created or information about a call was updated
-  UpdateCall({this.call});
+  UpdateCall({required this.call});
 
   /// Parse from a json
-  UpdateCall.fromJson(Map<String, dynamic> json) {
-    call = Call.fromJson(json['call']);
-    extra = json['@extra'];
-  }
+  factory UpdateCall.fromJson(Map<String, dynamic> json) => UpdateCall(
+        call: Call.fromJson(json['call']),
+        extra: json['@extra'],
+      );
 
   static const CONSTRUCTOR = 'updateCall';
 
   /// [call] New data about a call
-  Call? call;
+  Call call;
 
   /// callback sign
   dynamic extra;
