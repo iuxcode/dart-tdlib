@@ -1,17 +1,22 @@
 part of '../index.dart';
 
+/// Deletes a file from the TDLib file cache
 class DeleteFile extends TdFunction {
-  /// Deletes a file from the TDLib file cache
-  DeleteFile({this.fileId});
+  DeleteFile({required this.fileId});
 
-  /// [fileId] Identifier of the file to delete
-  int? fileId;
+  /// Parse from a json
+  // DeleteFile.fromJson(Map<String, dynamic> json);
+
+  static const CONSTRUCTOR = 'deleteFile';
 
   /// callback sign
   dynamic extra;
 
-  /// Parse from a json
-  DeleteFile.fromJson(Map<String, dynamic> json);
+  /// [fileId] Identifier of the file to delete
+  int fileId;
+
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
@@ -21,9 +26,4 @@ class DeleteFile extends TdFunction {
       "@extra": this.extra,
     };
   }
-
-  static const CONSTRUCTOR = 'deleteFile';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }

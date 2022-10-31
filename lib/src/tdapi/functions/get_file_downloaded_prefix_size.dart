@@ -1,20 +1,28 @@
 part of '../index.dart';
 
+/// Returns file downloaded prefix size from a given offset
 class GetFileDownloadedPrefixSize extends TdFunction {
-  /// Returns file downloaded prefix size from a given offset
-  GetFileDownloadedPrefixSize({this.fileId, this.offset});
+  GetFileDownloadedPrefixSize({
+    required this.fileId,
+    required this.offset,
+  });
 
-  /// [fileId] Identifier of the file
-  int? fileId;
-
-  /// [offset] Offset from which downloaded prefix size should be calculated
-  int? offset;
+  static const CONSTRUCTOR = 'getFileDownloadedPrefixSize';
 
   /// callback sign
   dynamic extra;
 
+  /// [fileId] Identifier of the file
+  int fileId;
+
+  /// [offset] Offset from which downloaded prefix size should be calculated
+  int offset;
+
+  @override
+  String getConstructor() => CONSTRUCTOR;
+
   /// Parse from a json
-  GetFileDownloadedPrefixSize.fromJson(Map<String, dynamic> json);
+  // GetFileDownloadedPrefixSize.fromJson(Map<String, dynamic> json);
 
   @override
   Map<String, dynamic> toJson() {
@@ -25,9 +33,4 @@ class GetFileDownloadedPrefixSize extends TdFunction {
       "@extra": this.extra,
     };
   }
-
-  static const CONSTRUCTOR = 'getFileDownloadedPrefixSize';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }

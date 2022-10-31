@@ -1,20 +1,29 @@
 part of '../index.dart';
 
+/// Stops the downloading of a file. If a file has already been downloaded, does nothing
 class CancelDownloadFile extends TdFunction {
-  /// Stops the downloading of a file. If a file has already been downloaded, does nothing
-  CancelDownloadFile({this.fileId, this.onlyIfPending});
+  CancelDownloadFile({
+    required this.fileId,
+    this.onlyIfPending = false,
+  });
 
-  /// [fileId] Identifier of a file to stop downloading
-  int? fileId;
+  /// Parse from a json
+  // CancelDownloadFile.fromJson(Map<String, dynamic> json);
 
-  /// [onlyIfPending] Pass true to stop downloading only if it hasn't been started, i.e. request hasn't been sent to server
-  bool? onlyIfPending;
+  static const CONSTRUCTOR = 'cancelDownloadFile';
 
   /// callback sign
   dynamic extra;
 
-  /// Parse from a json
-  CancelDownloadFile.fromJson(Map<String, dynamic> json);
+  /// [fileId] Identifier of a file to stop downloading
+  int fileId;
+
+  /// [onlyIfPending] Pass true to stop downloading only if it hasn't been started,
+  /// i.e. request hasn't been sent to server
+  bool onlyIfPending;
+
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
@@ -25,9 +34,4 @@ class CancelDownloadFile extends TdFunction {
       "@extra": this.extra,
     };
   }
-
-  static const CONSTRUCTOR = 'cancelDownloadFile';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }
