@@ -11,13 +11,13 @@ class CallServer extends TdObject {
   });
 
   /// Parse from a json
-  CallServer.fromJson(Map<String, dynamic> json) {
-    this.id = int.tryParse(json['id'] ?? "");
-    this.ipAddress = json['ip_address'];
-    this.ipv6Address = json['ipv6_address'];
-    this.port = json['port'];
-    this.type = CallServerType.fromJson(json['type']);
-  }
+  factory CallServer.fromJson(Map<String, dynamic> json) => CallServer(
+        id: json['id'],
+        ipAddress: json['ip_address'],
+        ipv6Address: json['ipv6_address'],
+        port: json['port'],
+        type: CallServerType.fromJson(json['type']),
+      );
 
   static const CONSTRUCTOR = 'callServer';
 

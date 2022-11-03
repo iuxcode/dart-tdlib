@@ -34,7 +34,7 @@ class CallServerTypeTelegramReflector extends CallServerType {
   CallServerTypeTelegramReflector({required this.peerTag});
 
   /// Parse from a json
-  CallServerTypeTelegramReflector.fromJson(Map<String, dynamic> json) =>
+  factory CallServerTypeTelegramReflector.fromJson(Map<String, dynamic> json) =>
       CallServerTypeTelegramReflector(peerTag: json['peer_tag']);
 
   static const CONSTRUCTOR = 'callServerTypeTelegramReflector';
@@ -64,7 +64,7 @@ class CallServerTypeWebrtc extends CallServerType {
   });
 
   /// Parse from a json
-  CallServerTypeWebrtc.fromJson(Map<String, dynamic> json) =>
+  factory CallServerTypeWebrtc.fromJson(Map<String, dynamic> json) =>
       CallServerTypeWebrtc(
         username: json['username'],
         password: json['password'],

@@ -1,23 +1,24 @@
 part of '../index.dart';
 
-  /// Specifies the supported call protocols
+/// Specifies the supported call protocols
 class CallProtocol extends TdObject {
-  CallProtocol(
-      {this.udpP2p = false,
-      this.udpReflector = false,
-      this.minLayer = 65,
-      this.maxLayer = 65,
-      this.libraryVersions = [],});
+  CallProtocol({
+    this.udpP2p = false,
+    this.udpReflector = false,
+    this.minLayer = 65,
+    this.maxLayer = 65,
+    this.libraryVersions = const [],
+  });
 
   /// Parse from a json
   factory CallProtocol.fromJson(Map<String, dynamic> json) => CallProtocol(
-    udpP2p : json['udp_p2p'],
-    udpReflector : json['udp_reflector'],
-    minLayer : json['min_layer'],
-    maxLayer : json['max_layer'],
-    libraryVersions: List<String>.from(
-        (json['library_versions'] ?? []).map((item) => item).toList());
-  );
+        udpP2p: json['udp_p2p'],
+        udpReflector: json['udp_reflector'],
+        minLayer: json['min_layer'],
+        maxLayer: json['max_layer'],
+        libraryVersions: List<String>.from(
+            (json['library_versions'] ?? []).map((item) => item).toList()),
+      );
 
   static const CONSTRUCTOR = 'callProtocol';
 

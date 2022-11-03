@@ -1,38 +1,42 @@
 part of '../index.dart';
 
+/// Contains a list of messages
 class Messages extends TdObject {
-  /// Contains a list of messages
-  Messages({this.totalCount, this.messages});
+  Messages({
+    required this.totalCount,
+    this.messages = const [],
+    this.extra,
+  });
 
-  /// [totalCount] Approximate total count of messages found
-  int? totalCount;
+  /// Parse from a json
+  factory Messages.fromJson(Map<String, dynamic> json) => Messages(
+        totalCount: json['total_count'],
+        messages: List<Message>.from((json['messages'] ?? [])
+            .map((item) => Message.fromJson(item))
+            .toList()),
+        extra: json['@extra'],
+      );
 
-  /// [messages] List of messages; messages may be null
-  List<Message>? messages;
+  static const CONSTRUCTOR = 'messages';
 
   /// callback sign
   dynamic extra;
 
-  /// Parse from a json
-  Messages.fromJson(Map<String, dynamic> json) {
-    this.totalCount = json['total_count'];
-    this.messages = List<Message>.from((json['messages'] ?? [])
-        .map((item) => Message.fromJson(item))
-        .toList());
-    this.extra = json['@extra'];
-  }
+  /// [messages] List of messages; messages may be null
+  List<Message> messages;
+
+  /// [totalCount] Approximate total count of messages found
+  int totalCount;
+
+  @override
+  String getConstructor() => CONSTRUCTOR;
 
   @override
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
       "total_count": this.totalCount,
-      "messages": this.messages!.map((i) => i.toJson()).toList(),
+      "messages": this.messages.map((i) => i.toJson()).toList(),
     };
   }
-
-  static const CONSTRUCTOR = 'messages';
-
-  @override
-  String getConstructor() => CONSTRUCTOR;
 }

@@ -2341,7 +2341,7 @@ class UpdateFileGenerationStop extends Update {
 
 /// New call was created or information about a call was updated
 class UpdateCall extends Update {
-  UpdateCall({required this.call});
+  UpdateCall({required this.call, this.extra});
 
   /// Parse from a json
   factory UpdateCall.fromJson(Map<String, dynamic> json) => UpdateCall(
