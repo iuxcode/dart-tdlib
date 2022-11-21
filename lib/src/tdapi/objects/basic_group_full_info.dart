@@ -33,9 +33,10 @@ class BasicGroupFullInfo extends TdObject {
         json['photo'] != null ? ChatPhoto.fromJson(json['photo']) : null;
     this.description = json['description'];
     this.creatorUserId = json['creator_user_id'];
-    this.members = List<ChatMember>.from((json['members'] ?? [])
-        .map((item) => ChatMember.fromJson(item))
-        .toList());
+    this.members = json['members'] != null
+        ? List<ChatMember>.from(
+            json['members'].map((item) => ChatMember.fromJson(item)).toList())
+        : [];
     this.inviteLink = json['invite_link'] != null
         ? ChatInviteLink.fromJson(json['invite_link'])
         : null;
