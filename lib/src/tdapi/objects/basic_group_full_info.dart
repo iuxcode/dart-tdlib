@@ -7,7 +7,8 @@ class BasicGroupFullInfo extends TdObject {
       this.description,
       this.creatorUserId,
       this.members,
-      this.inviteLink});
+      this.inviteLink,
+      this.extra});
 
   /// [photo] Chat photo; may be null
   ChatPhoto? photo;
@@ -28,19 +29,20 @@ class BasicGroupFullInfo extends TdObject {
   dynamic extra;
 
   /// Parse from a json
-  BasicGroupFullInfo.fromJson(Map<String, dynamic> json) {
-    this.photo =
-        json['photo'] != null ? ChatPhoto.fromJson(json['photo']) : null;
-    this.description = json['description'];
-    this.creatorUserId = json['creator_user_id'];
-    this.members = json['members'] != null
-        ? List<ChatMember>.from(
-            json['members'].map((item) => ChatMember.fromJson(item)).toList())
-        : [];
-    this.inviteLink = json['invite_link'] != null
-        ? ChatInviteLink.fromJson(json['invite_link'])
-        : null;
-    this.extra = json['@extra'] ?? '';
+  factory BasicGroupFullInfo.fromJson(Map<String, dynamic> json) {
+    return BasicGroupFullInfo(
+        photo: json['photo'] != null ? ChatPhoto.fromJson(json['photo']) : null,
+        description: json['description'],
+        creatorUserId: json['creator_user_id'],
+        members: json['members'] != null
+            ? List<ChatMember>.from(json['members']
+                .map((item) => ChatMember.fromJson(item))
+                .toList())
+            : [],
+        inviteLink: json['invite_link'] != null
+            ? ChatInviteLink.fromJson(json['invite_link'])
+            : null,
+        extra: json['@extra'] ?? '');
   }
 
   @override
@@ -53,7 +55,7 @@ class BasicGroupFullInfo extends TdObject {
       "members": List<ChatMember>.from(this.members ?? [])
           .map((i) => i.toJson())
           .toList(),
-      "invite_link": this.inviteLink == null ? null : this.inviteLink!.toJson(),
+      "invite_link": this.inviteLink?.toJson(),
     };
   }
 

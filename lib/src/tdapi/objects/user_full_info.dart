@@ -9,7 +9,7 @@ class UserFullInfo extends TdObject {
     this.supportsVideoCalls = false,
     this.hasPrivateCalls = false,
     this.needPhoneNumberPrivacyException = false,
-    required this.bio,
+    this.bio,
     this.shareText,
     this.groupInCommonCount = 0,
     this.botInfo,
@@ -25,7 +25,7 @@ class UserFullInfo extends TdObject {
         hasPrivateCalls: json['has_private_calls'],
         needPhoneNumberPrivacyException:
             json['need_phone_number_privacy_exception'],
-        bio: FormattedText.fromJson(json['bio']),
+        bio: json['bio'] != null ? FormattedText.fromJson(json['bio']) : null,
         shareText: json['share_text'],
         groupInCommonCount: json['group_in_common_count'],
         botInfo: json['bot_info'] != null
@@ -37,7 +37,7 @@ class UserFullInfo extends TdObject {
   static const CONSTRUCTOR = 'userFullInfo';
 
   /// [bio] A short user bio
-  FormattedText bio;
+  FormattedText? bio;
 
   /// [botInfo] If the user is a bot, information about the bot; may be null
   BotInfo? botInfo;

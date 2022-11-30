@@ -85,7 +85,7 @@ class SupergroupFullInfo extends TdObject {
   ChatLocation? location;
 
   /// [inviteLink] Invite link for this chat
-  String? inviteLink;
+  ChatInviteLink? inviteLink;
 
   /// [upgradedFromBasicGroupId] Identifier of the basic group from which supergroup was upgraded;
   ///  0 if none
@@ -120,7 +120,9 @@ class SupergroupFullInfo extends TdObject {
       location: json['location'] != null
           ? ChatLocation.fromJson(json['location'])
           : null,
-      inviteLink: json['invite_link'],
+      inviteLink: json['invite_link'] != null
+          ? ChatInviteLink.fromJson(json['invite_link'])
+          : null,
       upgradedFromBasicGroupId: json['upgraded_from_basic_group_id'],
       upgradedFromMaxMessageId: json['upgraded_from_max_message_id'],
       extra: json['@extra'],
@@ -148,7 +150,7 @@ class SupergroupFullInfo extends TdObject {
       "is_all_history_available": this.isAllHistoryAvailable,
       "sticker_set_id": this.stickerSetId,
       "location": this.location == null ? null : this.location!.toJson(),
-      "invite_link": this.inviteLink,
+      "invite_link": this.inviteLink?.toJson(),
       "upgraded_from_basic_group_id": this.upgradedFromBasicGroupId,
       "upgraded_from_max_message_id": this.upgradedFromMaxMessageId,
     };
