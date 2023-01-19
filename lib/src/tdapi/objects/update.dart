@@ -1966,14 +1966,17 @@ class UpdateUserStatus extends Update {
   }
 }
 
+  /// Some data of a user has changed.
+  /// This update is guaranteed to come before the user identifier is returned to the applicatio
 class UpdateUser extends Update {
-  /// Some data of a user has changed. This update is guaranteed to come before the user identifier is returned to the application
-  UpdateUser({this.user});
+  UpdateUser({required this.user, this.extra});
 
   /// Parse from a json
-  UpdateUser.fromJson(Map<String, dynamic> json) {
-    user = User.fromJson(json['user']);
-    extra = json['@extra'];
+  factory UpdateUser.fromJson(Map<String, dynamic> json) {
+    return UpdateUser(
+    user: User.fromJson(json['user']),
+    extra: json['@extra'],
+    );
   }
 
   static const CONSTRUCTOR = 'updateUser';
@@ -1982,7 +1985,7 @@ class UpdateUser extends Update {
   dynamic extra;
 
   /// [user] New data about the user
-  User? user;
+  User user;
 
   @override
   String getConstructor() => CONSTRUCTOR;
@@ -1991,25 +1994,27 @@ class UpdateUser extends Update {
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "user": user == null ? null : user!.toJson(),
+      "user": user.toJson(),
     };
   }
 }
 
+  /// Some data of a basic group has changed. 
+  /// This update is guaranteed to come before the basic group identifier is returned to the application
 class UpdateBasicGroup extends Update {
-  /// Some data of a basic group has changed. This update is guaranteed to come before the basic group identifier is returned to the application
-  UpdateBasicGroup({this.basicGroup});
+  UpdateBasicGroup({required this.basicGroup, this.extra});
 
   /// Parse from a json
-  UpdateBasicGroup.fromJson(Map<String, dynamic> json) {
-    basicGroup = BasicGroup.fromJson(json['basic_group']);
-    extra = json['@extra'];
+  factory UpdateBasicGroup.fromJson(Map<String, dynamic> json) {
+    return UpdateBasicGroup(
+    basicGroup: BasicGroup.fromJson(json['basic_group']),
+    extra: json['@extra']);
   }
 
   static const CONSTRUCTOR = 'updateBasicGroup';
 
   /// [basicGroup] New data about the group
-  BasicGroup? basicGroup;
+  BasicGroup basicGroup;
 
   /// callback sign
   dynamic extra;
@@ -2021,19 +2026,22 @@ class UpdateBasicGroup extends Update {
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "basic_group": basicGroup == null ? null : basicGroup!.toJson(),
+      "basic_group": basicGroup.toJson(),
     };
   }
 }
 
+  /// Some data of a supergroup or a channel has changed.
+  /// This update is guaranteed to come before the supergroup identifier is returned to the application
 class UpdateSupergroup extends Update {
-  /// Some data of a supergroup or a channel has changed. This update is guaranteed to come before the supergroup identifier is returned to the application
-  UpdateSupergroup({this.supergroup});
+  UpdateSupergroup({required this.supergroup, this.extra});
 
   /// Parse from a json
-  UpdateSupergroup.fromJson(Map<String, dynamic> json) {
-    supergroup = Supergroup.fromJson(json['supergroup']);
-    extra = json['@extra'];
+  factory UpdateSupergroup.fromJson(Map<String, dynamic> json) {
+    return UpdateSupergroup(
+      supergroup : Supergroup.fromJson(json['supergroup']),
+    extra : json['@extra']
+    );
   }
 
   static const CONSTRUCTOR = 'updateSupergroup';
@@ -2042,7 +2050,7 @@ class UpdateSupergroup extends Update {
   dynamic extra;
 
   /// [supergroup] New data about the supergroup
-  Supergroup? supergroup;
+  Supergroup supergroup;
 
   @override
   String getConstructor() => CONSTRUCTOR;
@@ -2051,20 +2059,21 @@ class UpdateSupergroup extends Update {
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "supergroup": supergroup == null ? null : supergroup!.toJson(),
+      "supergroup": supergroup.toJson(),
     };
   }
 }
 
+  /// Some data of a secret chat has changed.
+  /// This update is guaranteed to come before the secret chat identifier is returned to the application
 class UpdateSecretChat extends Update {
-  /// Some data of a secret chat has changed. This update is guaranteed to come before the secret chat identifier is returned to the application
-  UpdateSecretChat({this.secretChat});
+  UpdateSecretChat({required this.secretChat, this.extra});
 
   /// Parse from a json
-  UpdateSecretChat.fromJson(Map<String, dynamic> json) {
-    secretChat = SecretChat.fromJson(json['secret_chat']);
-    extra = json['@extra'];
-  }
+  factory UpdateSecretChat.fromJson(Map<String, dynamic> json) => UpdateSecretChat(
+    secretChat: SecretChat.fromJson(json['secret_chat']),
+    extra: json['@extra']
+  );
 
   static const CONSTRUCTOR = 'updateSecretChat';
 
@@ -2072,7 +2081,7 @@ class UpdateSecretChat extends Update {
   dynamic extra;
 
   /// [secretChat] New data about the secret chat
-  SecretChat? secretChat;
+  SecretChat secretChat;
 
   @override
   String getConstructor() => CONSTRUCTOR;
@@ -2081,7 +2090,7 @@ class UpdateSecretChat extends Update {
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "secret_chat": secretChat == null ? null : secretChat!.toJson(),
+      "secret_chat": secretChat.toJson(),
     };
   }
 }
@@ -2921,14 +2930,15 @@ class UpdateLanguagePackStrings extends Update {
   }
 }
 
+/// The connection state has changed. This update must be used only to
+/// show a human-readable description of the connection state
 class UpdateConnectionState extends Update {
-  /// The connection state has changed. This update must be used only to show a human-readable description of the connection state
-  UpdateConnectionState({this.state});
+  UpdateConnectionState({required this.state, this.extra});
 
   /// Parse from a json
-  UpdateConnectionState.fromJson(Map<String, dynamic> json) {
-    state = ConnectionState.fromJson(json['state']);
-    extra = json['@extra'];
+  factory UpdateConnectionState.fromJson(Map<String, dynamic> json) {
+    return UpdateConnectionState(
+        state: ConnectionState.fromJson(json['state']), extra: json['@extra']);
   }
 
   static const CONSTRUCTOR = 'updateConnectionState';
@@ -2937,7 +2947,7 @@ class UpdateConnectionState extends Update {
   dynamic extra;
 
   /// [state] The new connection state
-  ConnectionState? state;
+  ConnectionState state;
 
   @override
   String getConstructor() => CONSTRUCTOR;
@@ -2946,13 +2956,15 @@ class UpdateConnectionState extends Update {
   Map<String, dynamic> toJson() {
     return {
       "@type": CONSTRUCTOR,
-      "state": state == null ? null : state!.toJson(),
+      "state": state.toJson(),
     };
   }
 }
 
+/// New terms of service must be accepted by the user.
+/// If the terms of service are declined, then the deleteAccount method should be called with the
+/// reason "Decline ToS update"
 class UpdateTermsOfService extends Update {
-  /// New terms of service must be accepted by the user. If the terms of service are declined, then the deleteAccount method should be called with the reason "Decline ToS update"
   UpdateTermsOfService({this.termsOfServiceId, this.termsOfService});
 
   /// Parse from a json
