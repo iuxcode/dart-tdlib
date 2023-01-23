@@ -4,7 +4,7 @@ part of '../index.dart';
 class Messages extends TdObject {
   Messages({
     required this.totalCount,
-    this.messages = const [],
+    this.messages,
     this.extra,
   });
 
@@ -23,7 +23,7 @@ class Messages extends TdObject {
   dynamic extra;
 
   /// [messages] List of messages; messages may be null
-  List<Message> messages;
+  List<Message>? messages;
 
   /// [totalCount] Approximate total count of messages found
   int totalCount;
@@ -36,7 +36,7 @@ class Messages extends TdObject {
     return {
       "@type": CONSTRUCTOR,
       "total_count": this.totalCount,
-      "messages": this.messages.map((i) => i.toJson()).toList(),
+      "messages": this.messages?.map((i) => i.toJson()).toList(),
     };
   }
 }
